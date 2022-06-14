@@ -53,4 +53,6 @@ else if (clase >=73 && clase <=81) {clase = "Monje"}
 else if (clase >=82 && clase <=91) {clase = "Paladín"}
 else if (clase >=92 && clase <=100) {clase = "Pícaro"}
 
-document.write(rasgoNPC + "</br>" + alineamiento + "</br>" + raza + "</br>" + clase);
+//document.write(rasgoNPC + "</br>" + alineamiento + "</br>" + raza + "</br>" + clase);
+
+document.getElementById('resultado').innerText = "text";
