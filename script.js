@@ -2,6 +2,8 @@
 // Fernando Maldonado Solís
 // fermaldonadosolis@gmail.com
 
+function randomizador() {
+
 //************** VARIABLES ******************//
 var rasgoNPC, alineamiento, raza, clase;
 
@@ -47,12 +49,29 @@ else if (clase >=19 && clase <=27) {clase = "Clérigo"}
 else if (clase >=28 && clase <=36) {clase = "Druida"}
 else if (clase >=37 && clase <=45) {clase = "Explorador"}
 else if (clase >=46 && clase <=54) {clase = "Guerrero"}
+else if (clase >=37 && clase <=45) {clase = "Explorador"}
 else if (clase >=55 && clase <=63) {clase = "Hechizero"}
 else if (clase >=64 && clase <=72) {clase = "Mago"}
 else if (clase >=73 && clase <=81) {clase = "Monje"}
 else if (clase >=82 && clase <=91) {clase = "Paladín"}
 else if (clase >=92 && clase <=100) {clase = "Pícaro"}
 
-//document.write(rasgoNPC + "</br>" + alineamiento + "</br>" + raza + "</br>" + clase);
+document.querySelector('#respuestas').innerHTML = '';
+document.querySelector('#respuestas2').innerHTML = '';
+document.querySelector('#respuestas3').innerHTML = '';
+document.querySelector('#respuestas4').innerHTML = '';
 
-document.getElementById('resultado').innerText = "text";
+var respuesta = document.createTextNode(rasgoNPC); //se pueden unir variables en creatTextNode
+document.getElementById("respuestas").appendChild(respuesta); //solo puede haber una variable en appenChild
+
+var respuesta2 = document.createTextNode(alineamiento);
+document.getElementById("respuestas2").appendChild(respuesta2);
+
+var respuesta3 = document.createTextNode(raza);
+document.getElementById("respuestas3").appendChild(respuesta3);
+
+var respuesta4 = document.createTextNode(clase);
+document.getElementById("respuestas4").appendChild(respuesta4);
+
+}
+
