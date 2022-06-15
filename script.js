@@ -129,13 +129,13 @@ else if (alineamiento >=98 && alineamiento <=100) {alineamiento = "Caótico Mali
 
 //************** RAZA ******************//
 if (raza >=1 && raza <=50) {raza = "Humanos"}
-else if (raza >=51 && raza <=58) {raza = "Vastayan Rúnicos"}
-else if (raza >=59 && raza <=66) {raza = "Vastayan Bestiales"}
-else if (raza >=67 && raza <=74) {raza = "Vastayan Terranos"}
-else if (raza >=75 && raza <=82) {raza = "Trolls"}
-else if (raza >=83 && raza <=90) {raza = "Yordles"}
-else if (raza >=90 && raza <=97) {raza = "Humanos Techmatúrgicos"}
-else if (raza >=98 && raza <=99) {raza = "Mestizos Elementales"}
+else if (raza >=51 && raza <=58) {raza = "Vastayan Rúnico"}
+else if (raza >=59 && raza <=66) {raza = "Vastayan Bestial"}
+else if (raza >=67 && raza <=74) {raza = "Vastayan Terrano"}
+else if (raza >=75 && raza <=82) {raza = "Troll"}
+else if (raza >=83 && raza <=90) {raza = "Yordle"}
+else if (raza >=90 && raza <=97) {raza = "Humano Techmatúrgico"}
+else if (raza >=98 && raza <=99) {raza = "Mestizo Elemental"}
 else if (raza ==100) {raza = "Oovicat"}
 
 //************** CLASE ******************//
