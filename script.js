@@ -18,7 +18,103 @@ clase = Math.floor((Math.random() * 100) + 1);
 if (rasgoNPC == 1) { rasgoNPC = "Cicatriz"}
 else if (rasgoNPC == 2) { rasgoNPC = "Altísimo"}
 else if (rasgoNPC == 3) { rasgoNPC = "Le falta un dedo"}
-
+else if (rasgoNPC == 4) { rasgoNPC = "Mal aliento"}
+else if (rasgoNPC == 5) { rasgoNPC = "Olor a perfume"}
+else if (rasgoNPC == 6) { rasgoNPC = "Extraño color de ojos"}
+else if (rasgoNPC == 7) { rasgoNPC = "Tos seca"}
+else if (rasgoNPC == 8) { rasgoNPC = "Voz muy baja"}
+else if (rasgoNPC == 9) { rasgoNPC = "Voz muy alta"}
+else if (rasgoNPC == 10) { rasgoNPC = "Mal hablado"}
+else if (rasgoNPC == 11) { rasgoNPC = "Ceceo"}
+else if (rasgoNPC == 12) { rasgoNPC = "Tartamudeo"}
+else if (rasgoNPC == 13) { rasgoNPC = "Tatuaje"}
+else if (rasgoNPC == 14) { rasgoNPC = "Extraño color de piel"}
+else if (rasgoNPC == 15) { rasgoNPC = "Calvo"}
+else if (rasgoNPC == 16) { rasgoNPC = "Pelo muy largo"}
+else if (rasgoNPC == 17) { rasgoNPC = "Extraño color de pelo"}
+else if (rasgoNPC == 18) { rasgoNPC = "Cojea"}
+else if (rasgoNPC == 19) { rasgoNPC = "Joyas características"}
+else if (rasgoNPC == 20) { rasgoNPC = "Ropas llamativas"}
+else if (rasgoNPC == 21) { rasgoNPC = "Mal vestido"}
+else if (rasgoNPC == 22) { rasgoNPC = "Tic en los ojos"}
+else if (rasgoNPC == 23) { rasgoNPC = "Nervioso y manotea"}
+else if (rasgoNPC == 24) { rasgoNPC = "Muy atractivo"}
+else if (rasgoNPC == 25) { rasgoNPC = "Espalda encorvada"}
+else if (rasgoNPC == 26) { rasgoNPC = "Chaparro"}
+else if (rasgoNPC == 27) { rasgoNPC = "En los huesos"}
+else if (rasgoNPC == 28) { rasgoNPC = "Obeso"}
+else if (rasgoNPC == 29) { rasgoNPC = "Se le va la onda"}
+else if (rasgoNPC == 30) { rasgoNPC = "Mastica algo"}
+else if (rasgoNPC == 31) { rasgoNPC = "Sucio y descuidado"}
+else if (rasgoNPC == 32) { rasgoNPC = "Egoista"}
+else if (rasgoNPC == 33) { rasgoNPC = "Servil"}
+else if (rasgoNPC == 34) { rasgoNPC = "Soñoliento"}
+else if (rasgoNPC == 35) { rasgoNPC = "Pedante"}
+else if (rasgoNPC == 36) { rasgoNPC = "Excesivamente crítico"}
+else if (rasgoNPC == 37) { rasgoNPC = "Amante del arte"}
+else if (rasgoNPC == 38) { rasgoNPC = "Coleccionista"}
+else if (rasgoNPC == 39) { rasgoNPC = "Tacaño"}
+else if (rasgoNPC == 40) { rasgoNPC = "Derrochador"}
+else if (rasgoNPC == 41) { rasgoNPC = "Pesimista"}
+else if (rasgoNPC == 42) { rasgoNPC = "Optimista"}
+else if (rasgoNPC == 43) { rasgoNPC = "Borracho"}
+else if (rasgoNPC == 44) { rasgoNPC = "Psíquico"}
+else if (rasgoNPC == 45) { rasgoNPC = "Cortés"}
+else if (rasgoNPC == 46) { rasgoNPC = "Ultra religioso"}
+else if (rasgoNPC == 47) { rasgoNPC = "Mal educado"}
+else if (rasgoNPC == 48) { rasgoNPC = "Asistadizo"}
+else if (rasgoNPC == 49) { rasgoNPC = "De alcurnia"}
+else if (rasgoNPC == 50) { rasgoNPC = "Orgulloso"}
+else if (rasgoNPC == 51) { rasgoNPC = "Mal genio"}
+else if (rasgoNPC == 52) { rasgoNPC = "Desquiciado"}
+else if (rasgoNPC == 53) { rasgoNPC = "Valiente"}
+else if (rasgoNPC == 54) { rasgoNPC = "Cobarde"}
+else if (rasgoNPC == 55) { rasgoNPC = "Curioso"}
+else if (rasgoNPC == 56) { rasgoNPC = "Veraz"}
+else if (rasgoNPC == 57) { rasgoNPC = "Mentiroso"}
+else if (rasgoNPC == 58) { rasgoNPC = "Perezoso"}
+else if (rasgoNPC == 59) { rasgoNPC = "Energético"}
+else if (rasgoNPC == 60) { rasgoNPC = "Moralista"}
+else if (rasgoNPC == 61) { rasgoNPC = "Cruel"}
+else if (rasgoNPC == 62) { rasgoNPC = "Sexista"}
+else if (rasgoNPC == 63) { rasgoNPC = "Racista"}
+else if (rasgoNPC == 64) { rasgoNPC = "Fascinado por la magia"}
+else if (rasgoNPC == 65) { rasgoNPC = "Receloso ante la magia"}
+else if (rasgoNPC == 66) { rasgoNPC = "Bromista"}
+else if (rasgoNPC == 67) { rasgoNPC = "Sin una extremidad"}
+else if (rasgoNPC == 68) { rasgoNPC = "Sexi"}
+else if (rasgoNPC == 69) { rasgoNPC = "Coqueto"}
+else if (rasgoNPC == 70) { rasgoNPC = "Muchas heridas"}
+else if (rasgoNPC == 71) { rasgoNPC = "Llagas y acné"}
+else if (rasgoNPC == 72) { rasgoNPC = "Partes metálicas"}
+else if (rasgoNPC == 73) { rasgoNPC = "Muy viejo"}
+else if (rasgoNPC == 74) { rasgoNPC = "Demasiado joven"}
+else if (rasgoNPC == 75) { rasgoNPC = "Animal compañia"}
+else if (rasgoNPC == 76) { rasgoNPC = "Gemelos"}
+else if (rasgoNPC == 77) { rasgoNPC = "Sádico"}
+else if (rasgoNPC == 78) { rasgoNPC = "Sabio"}
+else if (rasgoNPC == 79) { rasgoNPC = "Chismoso"}
+else if (rasgoNPC == 80) { rasgoNPC = "Hipster"}
+else if (rasgoNPC == 81) { rasgoNPC = "Hippie"}
+else if (rasgoNPC == 82) { rasgoNPC = "Fuertemente armado"}
+else if (rasgoNPC == 83) { rasgoNPC = "Andrógeno"}
+else if (rasgoNPC == 84) { rasgoNPC = "Lgbt"}
+else if (rasgoNPC == 85) { rasgoNPC = "Se queda viendo fijo"}
+else if (rasgoNPC == 86) { rasgoNPC = "Mudo"}
+else if (rasgoNPC == 87) { rasgoNPC = "Ciego"}
+else if (rasgoNPC == 88) { rasgoNPC = "Sordo"}
+else if (rasgoNPC == 89) { rasgoNPC = "Hostil"}
+else if (rasgoNPC == 90) { rasgoNPC = "Valora la fuerza"}
+else if (rasgoNPC == 91) { rasgoNPC = "De vida Salvaje"}
+else if (rasgoNPC == 92) { rasgoNPC = "Magia durmiente"}
+else if (rasgoNPC == 93) { rasgoNPC = "Pss.. espía aliado"}
+else if (rasgoNPC == 94) { rasgoNPC = "Feo"}
+else if (rasgoNPC == 95) { rasgoNPC = "Bruto"}
+else if (rasgoNPC == 96) { rasgoNPC = "Apostador"}
+else if (rasgoNPC == 97) { rasgoNPC = "Cyborg"}
+else if (rasgoNPC == 98) { rasgoNPC = "Contrabandista"}
+else if (rasgoNPC == 99) { rasgoNPC = "Misión alterna"}
+else if (rasgoNPC == 100) { rasgoNPC = "Avatar de ..."}
 
 //************** ALINEAMIENTO ******************//
 if (alineamiento >=1 && alineamiento <=35) {alineamiento = "Legal Bueno"}

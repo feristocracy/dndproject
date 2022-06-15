@@ -1,3 +1,7 @@
+/*Generador automático de NPC's
+Fernando Maldonado Solís
+fermaldonadosolis@gmail.com */
+
 body    
     {
     color: white;
@@ -71,7 +75,7 @@ body
             {
             width: 100%;
             text-align: center;
-            font-size: 25px;
+            font-size: 24px;
             margin: auto;
             position: absolute;
             top: 65%;
@@ -84,7 +88,7 @@ body
             {
             width: 100%;
             text-align: center;
-            font-size: 25px;
+            font-size: 24px;
             margin: auto;
             position: absolute;
             top: 74%;
@@ -97,7 +101,7 @@ body
             {
             width: 100%;
             text-align: center;
-            font-size: 25px;
+            font-size: 24px;
             margin: auto;
             position: absolute;
             top: 82%;
@@ -110,7 +114,7 @@ body
             {
             width: 100%;
             text-align: center;
-            font-size: 25px;
+            font-size: 24px;
             margin: auto;
             position: absolute;
             top: 90%;
