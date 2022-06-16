@@ -4,6 +4,12 @@
 
 var clic = 1;
 
+
+function appear(){
+    document.getElementById("backbtn").style.display = "inline-block";
+    setTimeout(appear,50000);
+}
+
 function divLogin(){ 
 
    if(clic==1){
@@ -11,7 +17,10 @@ function divLogin(){
    document.getElementById("mainBox").style.height = "400px";
    document.getElementById("botnpc").style.top = "45%";
    document.getElementById("botnpc").style.left = "50%";
-   document.getElementById("botloot").style.display = "none";
+   document.getElementById("botloot").style.display = "none";  
+   setTimeout(5000);
+   appear();
+   
 
    clic = clic + 1;
 

@@ -83,22 +83,18 @@ body
 
 /********* Botón de RETURN *********/
 
-.center-con {
-            display: flex;
-            height: 100vh;
-            align-items: center;
-            justify-content: center;
-            transform: rotate(180deg);
-            }
-
-
 
 .round {
+        background-color: rgb(41, 37, 37);
+        display: none;
         position: absolute;
-        border: 2px solid #fff;
+        border: 3px solid rgb(255, 255, 255);
         width: 40px;
         height: 40px;
         border-radius: 100%;
+        left: 13%;
+        top: 22%;
+        transform: rotate(180deg);
         }
 
 #cta{
