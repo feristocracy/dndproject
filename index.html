@@ -8,24 +8,43 @@ fermaldonadosolis@gmail.com -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D&D NPC Generator</title>
+    <title>D&D App</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 </head>
 
 <body>
-    <!------------- CONTENEDOR LOGIN Class------------>
-    <div class="login_contenedor">
+    <!------------- CONTENEDOR Principal Class------------>
+    <div class="login_contenedor" id="mainBox">
 
         <!--LOGO Class-->
         <img src="img/logo.png" alt="logotipo del sitio" class="logo">
 
-        <h1>NPC</br>Generator</h1>
+        <h1>D&D</br>App</h1>
 
-
-        <div class="boton">
-        <button type="button" onclick="randomizador()">Start</button>
+        <!-- Botón para regresar al menú principal-->
+        <div class="center-con">
+            <div class="round">
+                <div id="cta">
+                    <span class="arrow primera next "></span>
+                    <span class="arrow segunda next "></span>
+                </div>
+            </div>
         </div>
+
+        <!-- Botón para que aparezca el NPC Generator-->
+        <div class="boton" id="botnpc">
+        <button type="button" onclick="divLogin()">NPC</button>
+        </div>
+
+        <!-- Botón para que aparezca el Loot Generator-->
+        <div class="boton" id="botloot">
+        <button type="button" onclick="randomizador()">Loot</button>
+        </div>
+
+        <!--<div class="boton">
+        <button type="button" onclick="randomizadorNPC()">Start</button>
+        </div>-->
 
         <div id="respuestas"></div>
         <div id="respuestas2"></div>

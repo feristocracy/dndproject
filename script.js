@@ -2,7 +2,56 @@
 // Fernando Maldonado Solís
 // fermaldonadosolis@gmail.com
 
-function randomizador() {
+var clic = 1;
+
+function divLogin(){ 
+
+   if(clic==1){
+
+   document.getElementById("mainBox").style.height = "400px";
+   document.getElementById("botnpc").style.top = "45%";
+   document.getElementById("botnpc").style.left = "50%";
+   document.getElementById("botloot").style.display = "none";
+
+   clic = clic + 1;
+
+
+   /*const btn = document.getElementById("botnpc");
+
+   btn.addEventListener("click", ()=>{
+   
+       if(btn.innerHTML === "NPC"){
+           btn.innerHTML = "Back";
+       }else{
+           btn.innerHTML= "NPC";
+       }
+   });*/
+
+
+
+
+   } else{ 
+    
+        document.getElementById("botnpc").onclick(randomizadorNPC());
+
+       /*document.getElementById("mainBox").style.height = "250px";
+       document.getElementById("botnpc").style.top = "75%";
+       document.getElementById("botnpc").style.left = "30%";
+       document.getElementById("botloot").style.display = "block";      
+
+    clic = 1;*/
+
+   }   
+
+}
+
+
+
+
+
+
+//*****************************************  RANDOMIZADOR NPC *************************************//
+function randomizadorNPC() {
 
 //************** VARIABLES ******************//
 var rasgoNPC, alineamiento, raza, clase;
