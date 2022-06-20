@@ -4,58 +4,43 @@
 
 var clic = 1;
 
+function back() { //Regresar al menú principal
+                document.getElementById("mainBox").style.height = "250px"; // Vuelve el contenedor al tamaño original
+                document.getElementById("botnpc").style.top = "75%"; // vuelve el botón a la posición original
+                document.getElementById("botnpc").style.left = "30%"; //
+                document.getElementById("botloot").style.display = "block"; // vuelve a aparecer el botón de loot
+                clic = 1; // la variable vuelve a su valor original para que el botón no vuelva a disparar la función randomizador NPC
+                document.querySelector('#respuestas').innerHTML = ''; // se vacían los divs donde aparecían los valores random NPC
+                document.querySelector('#respuestas2').innerHTML = ''; //
+                document.querySelector('#respuestas3').innerHTML = ''; //
+                document.querySelector('#respuestas4').innerHTML = ''; //
+                document.getElementById("backbtn").style.display = "none"; // desaparece el botón "back"
+                }
 
-function appear(){
-    document.getElementById("backbtn").style.display = "inline-block";
-    setTimeout(appear,50000);
-}
 
-function divLogin(){ 
+
+function appear()   { //Aparece el botón "back"
+                    document.getElementById("backbtn").style.display = "inline-block";
+                    }
+
+function divLogin( ){ 
 
    if(clic==1){
-
-   document.getElementById("mainBox").style.height = "400px";
-   document.getElementById("botnpc").style.top = "45%";
-   document.getElementById("botnpc").style.left = "50%";
-   document.getElementById("botloot").style.display = "none";  
-   setTimeout(5000);
-   appear();
-   
-
-   clic = clic + 1;
-
-
-   /*const btn = document.getElementById("botnpc");
-
-   btn.addEventListener("click", ()=>{
-   
-       if(btn.innerHTML === "NPC"){
-           btn.innerHTML = "Back";
-       }else{
-           btn.innerHTML= "NPC";
-       }
-   });*/
-
-
-
-
-   } else{ 
+                document.getElementById("mainBox").style.height = "400px"; // Crece el contenedor
+                document.getElementById("botnpc").style.top = "45%"; // El botón NPC cambia de posición
+                document.getElementById("botnpc").style.left = "50%"; //
+                document.getElementById("botloot").style.display = "none"; // Desaparece el botón "Loot"
+                appear(); // Aparece el botón "back"
+                randomizadorNPC(); // Se ejecuta la función para generar NPC's
     
-        document.getElementById("botnpc").onclick(randomizadorNPC());
+                clic = clic + 1;
+                                } 
+   
+   else{ 
+        document.getElementById("botnpc").onclick(randomizadorNPC()); // Al presionar el botón NPC se sigue ejecutando la función
+        }   
 
-       /*document.getElementById("mainBox").style.height = "250px";
-       document.getElementById("botnpc").style.top = "75%";
-       document.getElementById("botnpc").style.left = "30%";
-       document.getElementById("botloot").style.display = "block";      
-
-    clic = 1;*/
-
-   }   
-
-}
-
-
-
+                    }
 
 
 
