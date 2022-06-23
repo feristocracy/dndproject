@@ -22,7 +22,6 @@ body
             margin: 0;
             position: absolute;
             top: 50%;
-            /*left: 50%;*/
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
             }
@@ -48,6 +47,38 @@ body
         transform: translate(-50%, -50%);
         transition: .4s;
         }
+
+#butt-one
+        {
+        margin: 0;
+        position: absolute;
+        top: 86%;
+        left: 32%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        transition: .4s;
+        display: none;
+        }
+
+#butt-two
+        {
+        margin: 0;
+        position: absolute;
+        top: 86%;
+        left: 73%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        transition: .4s;
+        display: none;
+        }
+
+        /*Prueba*/
+        #final-amount{
+                text-align: center;
+                font-size: 40px;
+                color: #000000;
+                font-family: 'Indie Flower', cursive; 
+                }
 
 .login_contenedor button
                         {
@@ -78,9 +109,38 @@ body
                                 color: black; 
                                 }
 
+
+/********* Loot Input *********/
+input   {
+
+        font-size: 20px;
+        border: 3px solid #000000;
+        color: #ff5959;
+        text-align: center;
+        }
+
+#nivel  {
+        margin: 0;
+        position: absolute;
+        top: 58%;
+        display: none;
+        }
+
+#porcentuales   {
+                margin: 0;
+                position: absolute;
+                top: 68%;
+                display: none;
+                }
+
+::placeholder{
+        color: #ff5959;
+        opacity: .25;
+        text-align: center;
+        }
+
+
 /********* Botón de RETURN *********/
-
-
 .round {
         background-color: rgb(41, 37, 37);
         display: none;
@@ -141,7 +201,6 @@ body
                             animation-iteration-count:infinite;
                             animation-timing-function:linear;
                             }
-
 
 /************************************ Respuestas NPC Generator **************************************************/
 

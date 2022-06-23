@@ -22,7 +22,7 @@ fermaldonadosolis@gmail.com -->
 
         <h1>D&D</br>App</h1>
 
-        <!-- Botón para regresar al menú principal-->
+        <!-------- Botón para regresar al menú principal ------->
             <div class="round" id="backbtn" onclick="back()">
                 <div id="cta">
                     <span class="arrow primera next "></span>
@@ -30,24 +30,42 @@ fermaldonadosolis@gmail.com -->
                 </div>
             </div>
 
-        <!-- Botón para que aparezca el NPC Generator-->
+        <!-------- Botón para que aparezca el NPC Generator ---------->
         <div class="boton" id="botnpc">
         <button type="button" onclick="divLogin()">NPC</button>
         </div>
 
-        <!-- Botón para que aparezca el Loot Generator-->
+        <!----------- Botón para que aparezca el Loot Generator -------->
         <div class="boton" id="botloot">
-        <button type="button" onclick="randomizador()">Loot</button>
+        <button type="button" onclick="divLogin2()">Loot</button>
         </div>
 
-        <!--<div class="boton">
-        <button type="button" onclick="randomizadorNPC()">Start</button>
-        </div>-->
+        <!----------- Loot Input -------->
+        <form id="nivel"> <!-- input nivel de encuentro -->
+            <input id="enter-num" type="number" placeholder="Nivel de Encuentro" name="tipTotal">
+        </form>
+        <form id="porcentuales"> <!-- input porcentuales-->
+            <input id="enter-num2" type="number" placeholder="Porcentuales">
+        </form>
+
+        <!-- div de los botones para calcular loot -->
+        <div class="boton" id="butt-one">
+            <button type="button">Calcular</button>
+        </div>
+        <div class="boton" id="butt-two">
+            <button type="button">Reset</button>
+        </div>
+<!--             <button class="boton2" id='butt-one'>Calcular</button>
+        <button class="boton2" id='butt-two'>Reset</button> -->
+
+
 
         <div id="respuestas"></div>
         <div id="respuestas2"></div>
         <div id="respuestas3"></div>
         <div id="respuestas4"></div>
+
+        <div id='calculo1'></div>
 
 
     </div>
