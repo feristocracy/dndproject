@@ -21,8 +21,6 @@ document.querySelector('#butt-two').addEventListener('click', function(e){
 
 
 
-
-
 //***************************************** BOTÓN BACK *************************************//
 function back() { //Regresar al menú principal
                 document.getElementById("mainBox").style.height = "250px"; // Vuelve el contenedor al tamaño original
@@ -82,7 +80,6 @@ function divLogin2( ){
                 document.getElementById("butt-one").style.display = "block"; // Aparece el botón de Calcular
                 document.getElementById("butt-two").style.display = "block"; // Aparece el botón de Reset
                 appear(); // Aparece el botón "back"
-                loot(); // Se ejecuta la función para generar Loot
                 clic = clic + 1;
                 }  
 
@@ -260,7 +257,7 @@ function randomizadorNPC() {
 
                             }
 
-//***************************************** FUNCIÓN LOOT *************************************//
+
 
 
 
