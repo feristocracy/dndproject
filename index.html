@@ -21,9 +21,9 @@ fermaldonadosolis@gmail.com -->
     <div class="login_contenedor" id="mainBox">
 
         <!--LOGO Class-->
-        <img src="img/logo.png" alt="logotipo del sitio" class="logo">
+        <img src="img/logo.png" alt="logotipo del sitio" class="logo" id="logoDD">
 
-        <h1>D&D</br>App</h1>
+        <h1 id="titulo">D&D</br>App</h1>
 
         <!-------- Botón para regresar al menú principal ------->
             <div class="round" id="backbtn" onclick="back()">
@@ -45,31 +45,37 @@ fermaldonadosolis@gmail.com -->
 
         <!----------- Loot Input -------->
         <form id="nivel"> <!-- input nivel de encuentro -->
-            <input id="enter-num" type="number" placeholder="Nivel de Encuentro" name="tipTotal">
+            <input id="enter-num" type="number" placeholder="Nivel de Encuentro" name="tipTotal" value=" " required>
         </form>
-        
+
         <form id="porcentuales"> <!-- input porcentuales-->
-            <input id="enter-num2" type="number" placeholder="Porcentuales">
+            <input id="enter-num2" type="number" placeholder="Porcentuales" value=" " required>
         </form>
 
         <!-- div de los botones para calcular loot -->
         <div class="boton" id="butt-one">
-            <button type="button">Calcular</button>
+            <button type="button" onclick="calcular()">Calcular</button>
         </div>
         <div class="boton" id="butt-two">
-            <button type="button">Reset</button>
+            <button type="button" onclick="reset()">Reset</button>
         </div>
 <!--             <button class="boton2" id='butt-one'>Calcular</button>
         <button class="boton2" id='butt-two'>Reset</button> -->
 
 
-
+        <!-- aqui van los resultados de npc generator -->
         <div id="respuestas"></div>
         <div id="respuestas2"></div>
         <div id="respuestas3"></div>
         <div id="respuestas4"></div>
 
-        <div id='calculo1'></div>
+        <!-- aquí van los resultados de loot generator -->
+        <div id="label1" class="label">ORO</div>
+        <div id='respuestaLoot1' class="respuestaLoot">one</div>
+        <div id="label2" class="label">VALIOSOS</div>
+        <div id='respuestaLoot2' class="respuestaLoot">two</div>
+        <div id="label3" class="label">OBJETO MUNDANO</div>
+        <div id='respuestaLoot3'class="respuestaLoot">three</div>
 
 
     </div>

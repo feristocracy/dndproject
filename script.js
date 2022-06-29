@@ -35,14 +35,24 @@ function back() { //Regresar al menú principal
                 document.querySelector('#respuestas2').innerHTML = ''; //
                 document.querySelector('#respuestas3').innerHTML = ''; //
                 document.querySelector('#respuestas4').innerHTML = ''; //
+                document.getElementById("respuestaLoot1").style.display = "none"; //desaparecen las respuestas loot
+                document.getElementById("respuestaLoot2").style.display = "none"; //
+                document.getElementById("respuestaLoot3").style.display = "none"; //
+                document.getElementById("label1").style.display = "none"; //desaparecen los labels loot
+                document.getElementById("label2").style.display = "none"; //
+                document.getElementById("label3").style.display = "none"; //
+                document.getElementById("backbtn").style.top = "22%"; // el boton back vuelve a su posicion original
                 document.getElementById("backbtn").style.display = "none"; // desaparece el botón "back"
-                document.getElementById("nivel").style.display = "none";
-                document.getElementById("porcentuales").style.display = "none";
-                document.getElementById("butt-one").style.display = "none";
-                document.getElementById("butt-two").style.display = "none";
+                document.getElementById("titulo").style.top = "25%"; // regresa el titulo a posición original
+                document.getElementById("logoDD").style.left = "calc(50% - 50px)"; // El logo regresa a la izquierda
+                document.getElementById("logoDD").style.top = "-50px"; // El logo regresa abajo
+                document.getElementById("nivel").style.display = "none";  // desaparece todo lo de loop
+                document.getElementById("porcentuales").style.display = "none"; //
+                document.getElementById("butt-one").style.display = "none"; //
+                document.getElementById("butt-two").style.display = "none"; //
+                document.getElementById("calculo1").style.display = "none"; //
+                document.getElementById("botloot").style.display = "inline-block"; // El botón Loot aparece
                 }
-
-
 
 
 
@@ -53,6 +63,7 @@ function divLogin( ){
                                 document.getElementById("botnpc").style.top = "45%"; // El botón NPC cambia de posición
                                 document.getElementById("botnpc").style.left = "50%"; //
                                 document.getElementById("botloot").style.display = "none"; // Desaparece el botón "Loot"
+                                document.getElementById("titulo").style.top = "16%";
                                 appear(); // Aparece el botón "back"
                                 randomizadorNPC(); // Se ejecuta la función para generar NPC's
                                 clic = clic + 1;
@@ -71,15 +82,21 @@ function appear()   { //Aparece el botón "back"
 //***************************************** BOTÓN LOOT *************************************// 
 function divLogin2( ){
     if(clic==1){
-                document.getElementById("mainBox").style.height = "400px"; // Crece el contenedor
-                document.getElementById("botloot").style.top = "45%"; // El botón Loot cambia de posición
-                document.getElementById("botloot").style.left = "50%"; //
+                document.getElementById("logoDD").style.top = "-25px"; // El logo baja
+                document.getElementById("logoDD").style.left = "75%"; // El logo se va a la derecha
+                document.getElementById("titulo").style.top = "3%"; // El titulo sube
+                document.getElementById("mainBox").style.height = "450px"; // Crece el contenedor
+                document.getElementById("botloot").style.display = "none"; // El botón Loot desaparece
                 document.getElementById("botnpc").style.display = "none"; // Desaparece el botón "NPC"
                 document.getElementById("nivel").style.display = "block"; // Aparece el input nivel
+                document.getElementById("label1").style.display = "block"; //aparecen los labels loot
+                document.getElementById("label2").style.display = "block"; //
+                document.getElementById("label3").style.display = "block"; //
                 document.getElementById("porcentuales").style.display = "block"; // Aparece el input porcentuales
                 document.getElementById("butt-one").style.display = "block"; // Aparece el botón de Calcular
                 document.getElementById("butt-two").style.display = "block"; // Aparece el botón de Reset
                 appear(); // Aparece el botón "back"
+                document.getElementById("backbtn").style.top = "5%";
                 clic = clic + 1;
                 }  
 
@@ -258,10 +275,22 @@ function randomizadorNPC() {
                             }
 
 
+//***************************************** FUNCIÓN CALCULAR LOOT *************************************//
+function calcular() {
+                    var valor1 = document.getElementById("enter-num").value;
+                    var valor2 = document.getElementById("enter-num2").value;
+                    document.querySelector('#respuestaLoot1').innerHTML = valor1;
+                    document.getElementById("respuestaLoot1").style.display = "inline-block";
+                    document.getElementById("respuestaLoot2").style.display = "inline-block";
+                    document.getElementById("respuestaLoot3").style.display = "inline-block";
+                    }
 
-
-
-
+//***************************************** FUNCIÓN RESET *************************************//
+function reset() {
+    document.getElementById("respuestaLoot1").style.display = "none";
+    document.getElementById("respuestaLoot2").style.display = "none";
+    document.getElementById("respuestaLoot3").style.display = "none";
+    }
 
 
 
