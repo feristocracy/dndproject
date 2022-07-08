@@ -86,12 +86,24 @@ let npcRandom = ["Cicatriz","Altísimo","Le falta un dedo","Mal aliento","Olor a
                 "Desquiciado","Valiente","Cobarde","Curioso","Veraz","Mentiroso","Perezoso","Energético","Moralista","Cruel","Sexista","Racista","Fascinado por la magia","Receloso ante la magia","Bromista","Sin una extremidad","Sexi","Coqueto","Muchas heridas","Llagas y acné","Partes metálicas","Muy viejo","Demasiado joven","Animal compañia","Gemelos","Sádico","Sabio","Chismoso","Hipster","Hippie","Fuertemente armado","Andrógeno","Lgbt","Se queda viendo fijo","Mudo","Ciego","Sordo","Hostil","Valora la fuerza",
                 "De vida Salvaje","Magia durmiente","Pss.. espía aliado","Feo","Bruto","Apostador","Cyborg","Contrabandista","Misión alterna","Avatar de ..."];
 
+let varitas = ["detectar magia","luz","manos ardientes","hechizar animal","hechizar persona","rociada de color","curar heridas leves","detectar puertas secretas","agrandar persona","proyectil mágico (1o)","contacto electrizante","convocar monstruo (I)","proyectil mágico (3ro)","proyectil mágico (5to)","resistencia de oso","fuerza de toro","gracia felina","curar heridas moderadas","oscuridad","luz del día","lentificar veneno","esplendor de águila","falsa vida",
+                "astucia de zorro","toque de necrófago","inmovilizar persona","invisibilidad","apertura","levitar","flecha ácida de Melf","imágen múltiple","sabiduría de búho","estallar","silencio","convocar monstruo (II)","telaraña","proyectil mágico (7mo)","proyectil mágico (9o)","Llamar al relámpago (5to)","hechizar persona, intensificado (conjuro 3er nivel)","contagio","curar heridas graves","disipar magia",
+                "bola de fuego (5to)","afiladura","rayo relampagueante (5to)","imágen mayor","ralentizar","sugestión","convocar monstruo (III)","bola de fuego (6to)","rayo relampagueante (6to)","luz abrasadora (6to)","llamar al relámpago (8vo)","bola de fuego (8vo)","rayo relampagueante (8vo)","hechizar monstruo","curar heridas críticas","ancla dimensional","miedo","invisibilidad mayor","inmovilizar persona, intensificado (4to nivel)","tormenta de hielo",
+                "inflingir heridas críticas","neutralizar veneno","veneno","polimorfarse","rayo de debilitamiento, intensificado (4to nivel)","sugestión, intensificado (4to nivel)","convocar monstruo (IV)","muro de fuego","muro de hielo","disipar magia (10vo)","bola de fuego (10vo)","rayo relampagueante","martillo del caos (8vo)","castigo divino (8vo)","ira del orden (8vo)","azote sacrílego (8vo)","reestablecimiento","piel pétrea"];
+
+let objMaravMenores = ["fetiche de plumas de Quaal (ancla)","disolvente universal","elixir de amor","ungüento de eternidad","fetiche de plumas de Quaal (abanico)","polvo de irrastreabilidad","elixir de esconderse","elixir de furtividad","elixir de nadar","elixir de visión","lustre de plato","fetiche de plumas de Quaal (pájaro)","fetiche de plumas de Quaal (árbol)","fetiche de plumas de Quaal (barco de cisne)","elixir de la verdad","fetiche de plumas de Quaal (látigo)",
+                    "polvo de sequedad","bolsa de trucos (gris)","mano del mago","brazales de armadura (+1)","capa de resistencia (+1)","perla de poder (conjuro de nivel 1)","filacteria de fidelidad","ungüento de resbalamiento","elixir de aliento de fuego","flauta de las alcantarillas","polvo de ilusión","gafas de visión minuciosa","broche de escudo","collar de bolas de fuego (tipo 1)","polvo de aparición","sombrero de disfraz","flauta del son",
+                        "carcaj de Ehlonnna","amuleto de armadura natural (+1)","morral práctico de Heward","cuerno de niebla","gema elemental","túnica de huesos","pegamento soberano","bolsa de contención (tipo 1)","botas élficas","botas de las tierras del invierno eterno","vela de la verdad","capa élfica","ojos de águila","escarabeo azote de gólem","collar de bolas de fuego (tipo 1)","piedra de alarma",
+                        "bolsa de trucos (óxido)","cuenta de fuerza","carillón de apertura","herraduras de velocidad","cuerda de escalada","polvo de desaparición","lente de detección","vestidura de los druidas","figurito de poder maravilloso (cuervo de plata)","amuleto de salud (+2)","brazales de armadura (+2)","capa de carisma (+2)","capa de resistencia (+2)","guanteletes de fuerza de ogro","guantes de atrapar flechas","guantes de destreza (+2)",
+                        "diadema del intelecto (+2)","piedra loun (huso transparente)","bálsamo de Keoghtom","maravillosos pigmentos de Nalzur","perla de poder (conjuro nivel 2)","presea de sabiduría (+2)","ungüento pétreo","collar de bolas de fuego (tipo III)","ceño de persuasión","babuchas de trepar cual arácnido","incienso de meditación","bolsa de contención (tipo II)","brazales de arquería (menores)","piedra loun (prisma rosa turbio)",
+                        "yelmo de comprensión idiomática y leer magia","atuendo de fuga","botella siemprehumeante","cuchara de Murlynd","collar de bolas de fuego (tipo IV)","botas de zancadas y brincos","abanico de viento","amuleto de puños poderosos","herraduras de un céfiro","flauta del desasosiego","collar de bolas de fuego (tipo V)","guantes de nadar y trepar","bolsa de trucos (canela)","ceño refulgente menor","cuemo de bondad/maldad","túnica de objetos útiles",
+                        "bote plegable","capa de la mantarraya","botella de aire","bolsa de contención (tipo III)","presea contra venenos"];
 
 //***************************************** DADOS *************************************//
-function tiroDeDados(dados,lados)   {
+function tiroDeDados(dados, lados)   {
                                     let resDado=0;
                                     for (i=0; i<dados; i++) {
-                                                            let resDado = resDado + Math.floor((Math.random() * lados) + 1);
+                                                            resDado = resDado + Math.floor((Math.random() * lados) + 1);
                                                             }
                                     return resDado;
                                     }
@@ -99,6 +111,7 @@ function tiroDeDados(dados,lados)   {
 //***************************************** BOTÓN BACK *************************************//
 function back() { //Regresar al menú principal
                 document.getElementById("mainBox").style.height = "250px"; // Vuelve el contenedor al tamaño original
+                document.getElementById("mainBox").style.width = "320px"; //
                 document.getElementById("botnpc").style.top = "75%"; // vuelve el botón NPC a la posición original
                 document.getElementById("botnpc").style.left = "30%"; //
                 document.getElementById("botloot").style.top = "75%"; // vuelve el botón Loot a la posición original
@@ -161,6 +174,7 @@ function divLogin2( ){
                 document.getElementById("logoDD").style.left = "75%"; // El logo se va a la derecha
                 document.getElementById("titulo").style.top = "3%"; // El titulo sube
                 document.getElementById("mainBox").style.height = "450px"; // Crece el contenedor
+                document.getElementById("mainBox").style.width = "450px"; // Crece el contenedor
                 document.getElementById("botloot").style.display = "none"; // El botón Loot desaparece
                 document.getElementById("botnpc").style.display = "none"; // Desaparece el botón "NPC"
                 document.getElementById("nivel").style.display = "block"; // Aparece el input nivel
@@ -271,17 +285,22 @@ function calcular() {
     document.querySelector('#respuestaLoot1').innerHTML = " ";
     document.querySelector('#respuestaLoot2').innerHTML = " ";
     document.querySelector('#respuestaLoot3').innerHTML = " ";
+    
 
     if (valor1 == 1){
-                    if (valor2 >= 1 && valor2 <= 14) {document.querySelector('#respuestaLoot1').innerHTML = '10 Cobre';}
+                    if (valor2 >= 1 && valor2 <= 14) {document.querySelector('#respuestaLoot1').innerHTML = "10 Cobres";}
                     else if (valor2 >= 15 && valor2 <= 29) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*10 + " Plata";}
                     else if (valor2 >= 30 && valor2 <= 70) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 6)*10 + " Plata";}
                     else if (valor2 >= 71 && valor2 <= 90)  {
                                                             document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 6)*10 + " Plata";
                                                             document.querySelector('#respuestaLoot2').innerHTML = gemas(1, 1);
-                                                            document.querySelector('#respuestaLoot3').innerHTML = mundano(1,4);
+                                                            document.querySelector('#respuestaLoot3').innerHTML = mundano(1,1);
                                                             }
-                    else if (valor2 >= 91 && valor2 <= 100) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*5 + " Oro"; document.querySelector('#respuestaLoot2').innerHTML = "1 Arte"; document.querySelector('#respuestaLoot3').innerHTML = " ";}
+                    else if (valor2 >= 91 && valor2 <= 100) {
+                                                            document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*5 + " Oro";
+                                                            document.querySelector('#respuestaLoot2').innerHTML = artes(1, 1);
+                                                            document.querySelector('#respuestaLoot3').innerHTML = menor(1, 1);
+                                                            }
                     }
 
     else if (valor1 == 2)   {
@@ -384,48 +403,47 @@ function gemas(dados , lados)   {
                                 let gemas6 = ["Esmeralda diáfana verde de gran brillo","Diamante azulado", "Diamante castaño", "Diamante rosa", "Diamante ambarino", "Jacinto"];
                                 
                                 if (segmento >= 1 && segmento <= 25){
-                                    for(let i=0; i<cantidad; i++)  {
-                                                                    let random = Math.floor((Math.random() * 10));
-                                                                    respuesta = respuesta + gemas1[random] + "; ";
-                                                                    }
+                                                                    for(i=0; i<cantidad; i++)   {
+                                                                                                let random = Math.floor((Math.random() * 10));
+                                                                                                respuesta = respuesta + gemas1[random] + "; ";
+                                                                                                }
                                                                     }
 
                                 else if (segmento >= 26 && segmento <= 50)  {
-                                    for(let i=0; i<cantidad; i++)  {
-                                                                    let random = Math.floor((Math.random() * 17));
-                                                                    respuesta = respuesta + gemas2[random] + "; ";
-                                                                    }
+                                                                            for(i=0; i<cantidad; i++)   {
+                                                                                                        let random = Math.floor((Math.random() * 17));
+                                                                                                        respuesta = respuesta + gemas2[random] + "; ";
+                                                                                                        }
                                                                             }
 
                                 else if (segmento >= 51 && segmento <= 70)  {
-                                    for(let i=0; i<cantidad; i++)  {
-                                                                    let random = Math.floor((Math.random() * 16));
-                                                                    respuesta = respuesta + gemas3[random] + "; ";
-                                                                    }
+                                                                            for(i=0; i<cantidad; i++)   {
+                                                                                                        let random = Math.floor((Math.random() * 16));
+                                                                                                        respuesta = respuesta + gemas3[random] + "; ";
+                                                                                                        }
                                                                             }
 
                                 else if (segmento >= 71 && segmento <= 90)  {
-                                    for(let i=0; i<cantidad; i++)  {
-                                                                    let random = Math.floor((Math.random() * 6));
-                                                                    respuesta = respuesta + gemas4[random] + "; ";
-                                                                    }
+                                                                            for(i=0; i<cantidad; i++)   {
+                                                                                                        let random = Math.floor((Math.random() * 6));
+                                                                                                        respuesta = respuesta + gemas4[random] + "; ";
+                                                                                                        }
                                                                             }
 
                                 else if (segmento >= 91 && segmento <= 99) {
-                                    for(let i=0; i<cantidad; i++)  {
-                                                                    let random = Math.floor((Math.random() * 10));
-                                                                    respuesta = respuesta + gemas5[random] + "; ";
-                                                                    }
+                                                                            for(i=0; i<cantidad; i++)   {
+                                                                                                        let random = Math.floor((Math.random() * 10));
+                                                                                                        respuesta = respuesta + gemas5[random] + "; ";
+                                                                                                        }
                                                                             }
 
                                 else if (segmento == 100)   {
-                                    for(let i=0; i<cantidad; i++)  {
-                                                                    let random = Math.floor((Math.random() * 6));
-                                                                    respuesta = respuesta + gemas6[random] + "; ";
-                                                                    }
+                                                            for(i=0; i<cantidad; i++)   {
+                                                                                        let random = Math.floor((Math.random() * 6));
+                                                                                        respuesta = respuesta + gemas6[random] + "; ";
+                                                                                        }
                                                             }
                                 return respuesta;
-
                                 }
 
 function mundano(dados, lados)  {
@@ -438,254 +456,102 @@ function mundano(dados, lados)  {
                                 let segmento2 = tiroDeDados(1, 100); // otro tiro de dados para el subsegmento
 
                                 if (segmento >= 1 && segmento <= 17){
-                                                                    if (segmento2 >= 1 && segmento2 <= 12)  {
-                                                                                                            respuesta = respuesta + tiroDeDados(1, 4) + " frasco(s) de fuego de alquimista; ";
-                                                                                                            }
-                                                                    else if (segmento2 >= 13 && segmento2 <= 24){
-                                                                                                                respuesta = respuesta + tiroDeDados(2, 4) + " frasco(s) de ácido; ";
-                                                                                                                }
-                                                                    else if (segmento2 >= 25 && segmento2 <= 36){
-                                                                                                                respuesta = respuesta + tiroDeDados(1, 4) + " vara(s) de ahumadera; ";
-                                                                                                                }
-                                                                    else if (segmento2 >= 37 && segmento2 <= 48){
-                                                                                                                respuesta = respuesta + tiroDeDados(1, 4) + " frasco(s) de fuego de agua bendita; ";
-                                                                                                                }
-                                                                    else if (segmento2 >= 49 && segmento2 <= 62){
-                                                                                                                respuesta = respuesta + tiroDeDados(1, 4) + " dosis(s) de contraveneno; ";
-                                                                                                                }
-                                                                    else if (segmento2 >= 63 && segmento2 <= 74){
-                                                                                                                respuesta = respuesta + " antorcha siempreardiente; ";
-                                                                                                                }
-                                                                    else if (segmento2 >= 75 && segmento2 <= 88){
-                                                                                                                respuesta = respuesta + tiroDeDados(1, 4) + " bolsa(s) de maraña; ";
-                                                                                                                }
-                                                                    else if (segmento2 >= 89 && segmento2 <= 100)   {
-                                                                                                                    respuesta = respuesta + tiroDeDados(1, 4) + " piedra(s) de trueno; ";
-                                                                                                                    }
+                                                                    if (segmento2 >= 1 && segmento2 <= 12) {respuesta = respuesta + tiroDeDados(1, 4) + " frasco(s) de fuego de alquimista; ";}
+                                                                    else if (segmento2 >= 13 && segmento2 <= 24) {respuesta = respuesta + tiroDeDados(2, 4) + " frasco(s) de ácido; ";}
+                                                                    else if (segmento2 >= 25 && segmento2 <= 36) {respuesta = respuesta + tiroDeDados(1, 4) + " vara(s) de ahumadera; ";}
+                                                                    else if (segmento2 >= 37 && segmento2 <= 48) {respuesta = respuesta + tiroDeDados(1, 4) + " frasco(s) de fuego de agua bendita; ";}
+                                                                    else if (segmento2 >= 49 && segmento2 <= 62) {respuesta = respuesta + tiroDeDados(1, 4) + " dosis(s) de contraveneno; ";}
+                                                                    else if (segmento2 >= 63 && segmento2 <= 74) {respuesta = respuesta + " antorcha siempreardiente; ";}
+                                                                    else if (segmento2 >= 75 && segmento2 <= 88) {respuesta = respuesta + tiroDeDados(1, 4) + " bolsa(s) de maraña; ";}
+                                                                    else if (segmento2 >= 89 && segmento2 <= 100) {respuesta = respuesta + tiroDeDados(1, 4) + " piedra(s) de trueno; ";}
                                                                     }
 
                                 else if (segmento >= 18 && segmento <= 50)  {
-                                                                            if (segmento2 >= 1 && segmento2 <= 12)  {
-                                                                                                                    respuesta = respuesta + " camisote de mallas; ";
-                                                                                                                    }
-                                                                            else if (segmento2 >= 13 && segmento2 <= 18){
-                                                                                                                    respuesta = respuesta + " armadura de cuero tachonado de gran calidad; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 19 && segmento2 <= 26){
-                                                                                                                    respuesta = respuesta  + " coraza; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 27 && segmento2 <= 34){
-                                                                                                                    respuesta = respuesta  + " cota de bandas; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 35 && segmento2 <= 54){
-                                                                                                                    respuesta = respuesta  + " armadura de placas y mallas; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 55 && segmento2 <= 80){
-                                                                                                                    respuesta = respuesta + " armadura completa; ";
-                                                                                                                        }
+                                                                            if (segmento2 >= 1 && segmento2 <= 12) {respuesta = respuesta + " camisote de mallas; ";}
+                                                                            else if (segmento2 >= 13 && segmento2 <= 18) {respuesta = respuesta + " armadura de cuero tachonado de gran calidad; ";}
+                                                                            else if (segmento2 >= 19 && segmento2 <= 26) {respuesta = respuesta  + " coraza; "; }
+                                                                            else if (segmento2 >= 27 && segmento2 <= 34) {respuesta = respuesta  + " cota de bandas; ";}
+                                                                            else if (segmento2 >= 35 && segmento2 <= 54) {respuesta = respuesta  + " armadura de placas y mallas; ";}
+                                                                            else if (segmento2 >= 55 && segmento2 <= 80) {respuesta = respuesta + " armadura completa; ";}
                                                                             else if (segmento2 >= 81 && segmento2 <= 90){
                                                                                                                         let subseg = tiroDeDados(1, 100);
-                                                                                                                        if (subseg >= 1 && subseg <= 50)    {
-                                                                                                                                                            respuesta = respuesta + " broquel de madera oscura; "
-                                                                                                                                                            }
-                                                                                                                        else if (subseg >= 51 && subseg <= 100) {
-                                                                                                                                                                respuesta = respuesta + " escudo de madera oscura; "
-                                                                                                                                                                }
+                                                                                                                        if (subseg >= 1 && subseg <= 50) {respuesta = respuesta + " broquel de madera oscura; "}
+                                                                                                                        else if (subseg >= 51 && subseg <= 100) {respuesta = respuesta + " escudo de madera oscura; "}
                                                                                                                         }
                                                                             else if (segmento2 >= 91 && segmento2 <= 100)   {
                                                                                                                             let subseg1 = tiroDeDados(1, 100);
-                                                                                                                            if (subseg1 >= 1 && subseg1 <= 17)  {
-                                                                                                                                                                respuesta = respuesta + " broquel de gran calidad; "
-                                                                                                                                                                }
-                                                                                                                            else if (subseg1 >= 18 && subseg1 <= 40){
-                                                                                                                                                                    respuesta = respuesta + " escudo ligero de madera de gran calidad; "
-                                                                                                                                                                    }
-                                                                                                                            else if (subseg1 >= 41 && subseg1 <= 60){
-                                                                                                                                                                    respuesta = respuesta + " escudo ligero de acero de gran calidad; "
-                                                                                                                                                                    }
-                                                                                                                            else if (subseg1 >= 61 && subseg1 <= 83){
-                                                                                                                                                                    respuesta = respuesta + " escudo pesado de madera de gran calidad; "
-                                                                                                                                                                    }
-                                                                                                                            else if (subseg1 >= 84 && subseg1 <= 100)   {
-                                                                                                                                                                        respuesta = respuesta + " escudo pesado de acero de gran calidad; "
-                                                                                                                                                                        }
+                                                                                                                            if (subseg1 >= 1 && subseg1 <= 17) {respuesta = respuesta + " broquel de gran calidad; "}
+                                                                                                                            else if (subseg1 >= 18 && subseg1 <= 40) {respuesta = respuesta + " escudo ligero de madera de gran calidad; "}
+                                                                                                                            else if (subseg1 >= 41 && subseg1 <= 60) {respuesta = respuesta + " escudo ligero de acero de gran calidad; "}
+                                                                                                                            else if (subseg1 >= 61 && subseg1 <= 83) {respuesta = respuesta + " escudo pesado de madera de gran calidad; "}
+                                                                                                                            else if (subseg1 >= 84 && subseg1 <= 100) {respuesta = respuesta + " escudo pesado de acero de gran calidad; "}
                                                                                                                             }   
                                                                             }
 
                                 else if (segmento >= 51 && segmento <= 83)  {
                                                                             if (segmento2 >= 1 && segmento2 <= 50)  {
                                                                                                                     let subseg2 = tiroDeDados(1,100);
-                                                                                                                    if (subseg2 >= 1 && subseg2 <= 3)   {
-                                                                                                                                                        respuesta = respuesta + " bastón; ";
-                                                                                                                                                        }
-                                                                                                                    else if (subseg2 >= 4 && subseg2 <= 8)  {
-                                                                                                                                                            respuesta = respuesta + " cimitarra; ";
-                                                                                                                                                            }
-                                                                                                                    else if (subseg2 >= 9 && subseg2 <= 12) {
-                                                                                                                                                            respuesta = respuesta + " daga; ";
-                                                                                                                                                            }
-                                                                                                                    else if (subseg2 >= 13 && subseg2 <= 22){
-                                                                                                                                                            respuesta = respuesta + " espada bastarda; ";
-                                                                                                                                                            }
-                                                                                                                    else if (subseg2 >= 23 && subseg2 <= 27){
-                                                                                                                                                            respuesta = respuesta + " espada corta; ";
-                                                                                                                                                            }
-                                                                                                                    else if (subseg2 >= 28 && subseg2 <= 40){
-                                                                                                                                                            respuesta = respuesta + " espada larga; ";
-                                                                                                                                                            }
-                                                                                                                    else if (subseg2 >= 41 && subseg2 <= 50){
-                                                                                                                                                            respuesta = respuesta + " espadón; ";
-                                                                                                                                                            }
-                                                                                                                    else if (subseg2 >= 51 && subseg2 <= 54){
-                                                                                                                                                            respuesta = respuesta + " estoque; ";
-                                                                                                                                                            }
-                                                                                                                    else if (subseg2 >= 55 && subseg2 <= 64){
-                                                                                                                                                            respuesta = respuesta + " gran hacha; ";
-                                                                                                                                                            }
-                                                                                                                    else if (subseg2 >= 65 && subseg2 <= 75){
-                                                                                                                                                            respuesta = respuesta + " hacha de guerra enana; ";
-                                                                                                                                                            }
-                                                                                                                    else if (subseg2 >= 76 && subseg2 <= 79){
-                                                                                                                                                            respuesta = respuesta + " kama; ";
-                                                                                                                                                            }
-                                                                                                                    else if (subseg2 >= 80 && subseg2 <= 83){
-                                                                                                                                                            respuesta = respuesta + " lanza corta; ";
-                                                                                                                                                            }
-                                                                                                                    else if (subseg2 >= 84 && subseg2 <= 87){
-                                                                                                                                                            respuesta = respuesta + " maza ligera; ";
-                                                                                                                                                            }
-                                                                                                                    else if (subseg2 >= 88 && subseg2 <= 92){
-                                                                                                                                                            respuesta = respuesta + " maza pesada; ";
-                                                                                                                                                            }
-                                                                                                                    else if (subseg2 >= 93 && subseg2 <= 96){
-                                                                                                                                                            respuesta = respuesta + " nunchaku; ";
-                                                                                                                                                            }
-                                                                                                                    else if (subseg2 >= 97 && subseg2 <= 100)   {
-                                                                                                                                                                respuesta = respuesta + " siangham; ";
-                                                                                                                                                                }
+                                                                                                                    if (subseg2 >= 1 && subseg2 <= 3) {respuesta = respuesta + " bastón; ";}
+                                                                                                                    else if (subseg2 >= 4 && subseg2 <= 8) {respuesta = respuesta + " cimitarra; ";}
+                                                                                                                    else if (subseg2 >= 9 && subseg2 <= 12) {respuesta = respuesta + " daga; ";}
+                                                                                                                    else if (subseg2 >= 13 && subseg2 <= 22) {respuesta = respuesta + " espada bastarda; ";}
+                                                                                                                    else if (subseg2 >= 23 && subseg2 <= 27) {respuesta = respuesta + " espada corta; ";}
+                                                                                                                    else if (subseg2 >= 28 && subseg2 <= 40) {respuesta = respuesta + " espada larga; ";}
+                                                                                                                    else if (subseg2 >= 41 && subseg2 <= 50) {respuesta = respuesta + " espadón; ";}
+                                                                                                                    else if (subseg2 >= 51 && subseg2 <= 54) {respuesta = respuesta + " estoque; ";}
+                                                                                                                    else if (subseg2 >= 55 && subseg2 <= 64) {respuesta = respuesta + " gran hacha; ";}
+                                                                                                                    else if (subseg2 >= 65 && subseg2 <= 75) {respuesta = respuesta + " hacha de guerra enana; ";}
+                                                                                                                    else if (subseg2 >= 76 && subseg2 <= 79) {respuesta = respuesta + " kama; ";}
+                                                                                                                    else if (subseg2 >= 80 && subseg2 <= 83) {respuesta = respuesta + " lanza corta; ";}
+                                                                                                                    else if (subseg2 >= 84 && subseg2 <= 87) {respuesta = respuesta + " maza ligera; ";}
+                                                                                                                    else if (subseg2 >= 88 && subseg2 <= 92) {respuesta = respuesta + " maza pesada; ";}
+                                                                                                                    else if (subseg2 >= 93 && subseg2 <= 96) {respuesta = respuesta + " nunchaku; ";}
+                                                                                                                    else if (subseg2 >= 97 && subseg2 <= 100) {respuesta = respuesta + " siangham; ";}
                                                                                                                     }
                                                                             else if (segmento2 >= 51 && segmento2 <= 70){
-                                                                                                                        let subgseg3 = tiroDeDados(1, 100);
-                                                                                                                        if (subseg3 >= 1 && subseg3 <= 3)   {
-                                                                                                                                                            respuesta = respuesta + " alabarda; ";
-                                                                                                                                                            }
-                                                                                                                        else if (subseg3 >= 4 && subseg3 <= 5)  {
-                                                                                                                                                                respuesta = respuesta + " alfanjón; ";
-                                                                                                                                                                }
-                                                                                                                        else if (subseg3 >= 6 && subseg3 <= 9)  {
-                                                                                                                                                                respuesta = respuesta + " ballesta de mano; ";
-                                                                                                                                                                }
-                                                                                                                        else if (subseg3 >= 10 && subseg3 <= 12)    {
-                                                                                                                                                                    respuesta = respuesta + " ballesta de repetición; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 13 && subseg3 <= 14)    {
-                                                                                                                                                                    respuesta = respuesta + " bisarma; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 15 && subseg3 <= 16)    {
-                                                                                                                                                                    respuesta = respuesta + " cachiporra; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 17 && subseg3 <= 19)    {
-                                                                                                                                                                    respuesta = respuesta + " cadena armada; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 20 && subseg3 <= 21)    {
-                                                                                                                                                                    respuesta = respuesta + " clava; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 22 && subseg3 <= 24)    {
-                                                                                                                                                                    respuesta = respuesta + " espada de dos hojas; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 25 && subseg3 <= 26)    {
-                                                                                                                                                                    respuesta = respuesta + " gran clava; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 27 && subseg3 <= 28)    {
-                                                                                                                                                                    respuesta = respuesta + " guadaña; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 29 && subseg3 <= 30)    {
-                                                                                                                                                                    respuesta = respuesta + " guantelete; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 31 && subseg3 <= 32)    {
-                                                                                                                                                                    respuesta = respuesta + " guantelete armado; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 33 && subseg3 <= 34)    {
-                                                                                                                                                                    respuesta = respuesta + " guja; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 35 && subseg3 <= 38)    {
-                                                                                                                                                                    respuesta = respuesta + " hacha de batalla; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 39 && subseg3 <= 40)    {
-                                                                                                                                                                    respuesta = respuesta + " hacha de mano; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 41 && subseg3 <= 43)    {
-                                                                                                                                                                    respuesta = respuesta + " hacha doble orca; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 44 && subseg3 <= 45)    {
-                                                                                                                                                                    respuesta = respuesta + " hoz; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 46 && subseg3 <= 48)    {
-                                                                                                                                                                    respuesta = respuesta + " kukri; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 49 && subseg3 <= 50)    {
-                                                                                                                                                                    respuesta = respuesta + " lanza larga; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 51 && subseg3 <= 52)    {
-                                                                                                                                                                    respuesta = respuesta + " lanza ligera de caballería; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 53 && subseg3 <= 54)    {
-                                                                                                                                                                    respuesta = respuesta + " lanza pesada de caballería; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 55 && subseg3 <= 57)    {
-                                                                                                                                                                    respuesta = respuesta + " látigo; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 58 && subseg3 <= 60)    {
-                                                                                                                                                                    respuesta = respuesta + " mangual doble; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 61 && subseg3 <= 64)    {
-                                                                                                                                                                    respuesta = respuesta + " mangual ligero; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 65 && subseg3 <= 69)    {
-                                                                                                                                                                    respuesta = respuesta + " mangual pesado; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 70 && subseg3 <= 72)    {
-                                                                                                                                                                    respuesta = respuesta + " martillo de guerra; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 73 && subseg3 <= 75)    {
-                                                                                                                                                                    respuesta = respuesta + " martillo ganchudo gnomo; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 76 && subseg3 <= 77)    {
-                                                                                                                                                                    respuesta = respuesta + " martillo ligero; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 78 && subseg3 <= 80)    {
-                                                                                                                                                                    respuesta = respuesta + " maza de armas; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 81 && subseg3 <= 83)    {
-                                                                                                                                                                    respuesta = respuesta + " media lanza; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 84 && subseg3 <= 85)    {
-                                                                                                                                                                    respuesta = respuesta + " pico ligero; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 86 && subseg3 <= 87)    {
-                                                                                                                                                                    respuesta = respuesta + " pico pesado; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 88 && subseg3 <= 89)    {
-                                                                                                                                                                    respuesta = respuesta + " puñal; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 90 && subseg3 <= 91)    {
-                                                                                                                                                                    respuesta = respuesta + " red; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 92 && subseg3 <= 93)    {
-                                                                                                                                                                    respuesta = respuesta + " ronca; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 94 && subseg3 <= 95)    {
-                                                                                                                                                                    respuesta = respuesta + " shuriken; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 96 && subseg3 <= 97)    {
-                                                                                                                                                                    respuesta = respuesta + " tridente; ";
-                                                                                                                                                                    }
-                                                                                                                        else if (subseg3 >= 98 && subseg3 <= 100)   {
-                                                                                                                                                                    respuesta = respuesta + " urgrosh enano; ";
-                                                                                                                                                                    }
+                                                                                                                        let subseg3 = tiroDeDados(1, 100);
+                                                                                                                        if (subseg3 >= 1 && subseg3 <= 3) {respuesta = respuesta + " alabarda; ";}
+                                                                                                                        else if (subseg3 >= 4 && subseg3 <= 5) {respuesta = respuesta + " alfanjón; ";}
+                                                                                                                        else if (subseg3 >= 6 && subseg3 <= 9) {respuesta = respuesta + " ballesta de mano; ";}
+                                                                                                                        else if (subseg3 >= 10 && subseg3 <= 12) {respuesta = respuesta + " ballesta de repetición; ";}
+                                                                                                                        else if (subseg3 >= 13 && subseg3 <= 14) {respuesta = respuesta + " bisarma; ";}
+                                                                                                                        else if (subseg3 >= 15 && subseg3 <= 16) {respuesta = respuesta + " cachiporra; ";}
+                                                                                                                        else if (subseg3 >= 17 && subseg3 <= 19) {respuesta = respuesta + " cadena armada; ";}
+                                                                                                                        else if (subseg3 >= 20 && subseg3 <= 21) {respuesta = respuesta + " clava; ";}
+                                                                                                                        else if (subseg3 >= 22 && subseg3 <= 24) {respuesta = respuesta + " espada de dos hojas; ";}
+                                                                                                                        else if (subseg3 >= 25 && subseg3 <= 26) {respuesta = respuesta + " gran clava; ";}
+                                                                                                                        else if (subseg3 >= 27 && subseg3 <= 28) {respuesta = respuesta + " guadaña; ";}
+                                                                                                                        else if (subseg3 >= 29 && subseg3 <= 30) {respuesta = respuesta + " guantelete; ";}
+                                                                                                                        else if (subseg3 >= 31 && subseg3 <= 32) {respuesta = respuesta + " guantelete armado; ";}
+                                                                                                                        else if (subseg3 >= 33 && subseg3 <= 34) {respuesta = respuesta + " guja; ";}
+                                                                                                                        else if (subseg3 >= 35 && subseg3 <= 38) {respuesta = respuesta + " hacha de batalla; ";}
+                                                                                                                        else if (subseg3 >= 39 && subseg3 <= 40) {respuesta = respuesta + " hacha de mano; ";}
+                                                                                                                        else if (subseg3 >= 41 && subseg3 <= 43) {respuesta = respuesta + " hacha doble orca; ";}
+                                                                                                                        else if (subseg3 >= 44 && subseg3 <= 45) {respuesta = respuesta + " hoz; ";}
+                                                                                                                        else if (subseg3 >= 46 && subseg3 <= 48) {respuesta = respuesta + " kukri; ";}
+                                                                                                                        else if (subseg3 >= 49 && subseg3 <= 50) {respuesta = respuesta + " lanza larga; ";}
+                                                                                                                        else if (subseg3 >= 51 && subseg3 <= 52) {respuesta = respuesta + " lanza ligera de caballería; ";}
+                                                                                                                        else if (subseg3 >= 53 && subseg3 <= 54) {respuesta = respuesta + " lanza pesada de caballería; ";}
+                                                                                                                        else if (subseg3 >= 55 && subseg3 <= 57) {respuesta = respuesta + " látigo; ";}
+                                                                                                                        else if (subseg3 >= 58 && subseg3 <= 60) {respuesta = respuesta + " mangual doble; ";}
+                                                                                                                        else if (subseg3 >= 61 && subseg3 <= 64) {respuesta = respuesta + " mangual ligero; ";}
+                                                                                                                        else if (subseg3 >= 65 && subseg3 <= 69) {respuesta = respuesta + " mangual pesado; ";}
+                                                                                                                        else if (subseg3 >= 70 && subseg3 <= 72) {respuesta = respuesta + " martillo de guerra; ";}
+                                                                                                                        else if (subseg3 >= 73 && subseg3 <= 75) {respuesta = respuesta + " martillo ganchudo gnomo; ";}
+                                                                                                                        else if (subseg3 >= 76 && subseg3 <= 77) {respuesta = respuesta + " martillo ligero; ";}
+                                                                                                                        else if (subseg3 >= 78 && subseg3 <= 80) {respuesta = respuesta + " maza de armas; ";}
+                                                                                                                        else if (subseg3 >= 81 && subseg3 <= 83) {respuesta = respuesta + " media lanza; ";}
+                                                                                                                        else if (subseg3 >= 84 && subseg3 <= 85) {respuesta = respuesta + " pico ligero; ";}
+                                                                                                                        else if (subseg3 >= 86 && subseg3 <= 87) {respuesta = respuesta + " pico pesado; ";}
+                                                                                                                        else if (subseg3 >= 88 && subseg3 <= 89) {respuesta = respuesta + " puñal; ";}
+                                                                                                                        else if (subseg3 >= 90 && subseg3 <= 91) {respuesta = respuesta + " red; ";}
+                                                                                                                        else if (subseg3 >= 92 && subseg3 <= 93) {respuesta = respuesta + " ronca; ";}
+                                                                                                                        else if (subseg3 >= 94 && subseg3 <= 95) {respuesta = respuesta + " shuriken; ";}
+                                                                                                                        else if (subseg3 >= 96 && subseg3 <= 97) {respuesta = respuesta + " tridente; ";}
+                                                                                                                        else if (subseg3 >= 98 && subseg3 <= 100) {respuesta = respuesta + " urgrosh enano; ";}
                                                                                                                         }                                                
                                                                             else if (segmento2 >= 71 && segmento2 <= 100)   {
-                                                                                                                            let subgseg4 = tiroDeDados(1, 100);
+                                                                                                                            let subseg4 = tiroDeDados(1, 100);
                                                                                                                             if (subseg4 >= 1 && subseg4 <= 10)  {
                                                                                                                                                                 let subseg5 = tiroDeDados(1, 100);
                                                                                                                                                                 if (subseg5 >= 1 && subseg5 <= 50) { respuesta = respuesta + " flechas(50); "; }
@@ -744,66 +610,26 @@ function mundano(dados, lados)  {
                                                                             }
 
                                 else if (segmento >= 84 && segmento <= 100) {
-                                                                            if (segmento2 >= 1 && segmento2 <= 3)   {
-                                                                                                                    respuesta = respuesta + " mochila vacía; ";
-                                                                                                                    }
-                                                                            else if (segmento2 >= 4 && segmento2 <= 6)  {
-                                                                                                                        respuesta = respuesta + " palanqueta; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 7 && segmento2 <= 11) {
-                                                                                                                        respuesta = respuesta + " linterna de ojo de buey; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 12 && segmento2 <= 16){
-                                                                                                                        respuesta = respuesta + " cerradura sencilla; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 17 && segmento2 <= 21){
-                                                                                                                        respuesta = respuesta + " cerradura corriente; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 22 && segmento2 <= 28){
-                                                                                                                        respuesta = respuesta + " cerradura de calidad; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 29 && segmento2 <= 35){
-                                                                                                                        respuesta = respuesta + " cerradura superior; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 36 && segmento2 <= 40){
-                                                                                                                        respuesta = respuesta + " grilletes de gran calidad; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 41 && segmento2 <= 43){
-                                                                                                                        respuesta = respuesta + " espejito de acero pulido; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 44 && segmento2 <= 46){
-                                                                                                                        respuesta = respuesta + " cuerda de serda(50'); ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 47 && segmento2 <= 53){
-                                                                                                                        respuesta = respuesta + " catalejo; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 54 && segmento2 <= 58){
-                                                                                                                        respuesta = respuesta + " herramientas de gran calidad para artesano; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 59 && segmento2 <= 63){
-                                                                                                                        respuesta = respuesta + " material de escalada; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 64 && segmento2 <= 68){
-                                                                                                                        respuesta = respuesta + " material de disfraz; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 69 && segmento2 <= 73){
-                                                                                                                        respuesta = respuesta + " material de curandero; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 74 && segmento2 <= 77){
-                                                                                                                        respuesta = respuesta + " símbolo sagrado de plata; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 78 && segmento2 <= 81){
-                                                                                                                        respuesta = respuesta + " reloj de arena; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 82 && segmento2 <= 88){
-                                                                                                                        respuesta = respuesta + " lupa; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 89 && segmento2 <= 95){
-                                                                                                                        respuesta = respuesta + " instrumento musical de gran calidad; ";
-                                                                                                                        }
-                                                                            else if (segmento2 >= 96 && segmento2 <= 100){
-                                                                                                                        respuesta = respuesta + " herramienta de ladrón de gran calidad; ";
-                                                                                                                        }
+                                                                            if (segmento2 >= 1 && segmento2 <= 3) {respuesta = respuesta + " mochila vacía; ";}
+                                                                            else if (segmento2 >= 4 && segmento2 <= 6)  {respuesta = respuesta + " palanqueta; ";}
+                                                                            else if (segmento2 >= 7 && segmento2 <= 11) {respuesta = respuesta + " linterna de ojo de buey; ";}
+                                                                            else if (segmento2 >= 12 && segmento2 <= 16) {respuesta = respuesta + " cerradura sencilla; ";}
+                                                                            else if (segmento2 >= 17 && segmento2 <= 21) {respuesta = respuesta + " cerradura corriente; ";}
+                                                                            else if (segmento2 >= 22 && segmento2 <= 28) {respuesta = respuesta + " cerradura de calidad; ";}
+                                                                            else if (segmento2 >= 29 && segmento2 <= 35) {respuesta = respuesta + " cerradura superior; ";}
+                                                                            else if (segmento2 >= 36 && segmento2 <= 40) {respuesta = respuesta + " grilletes de gran calidad; ";}
+                                                                            else if (segmento2 >= 41 && segmento2 <= 43) {respuesta = respuesta + " espejito de acero pulido; ";}
+                                                                            else if (segmento2 >= 44 && segmento2 <= 46) {respuesta = respuesta + " cuerda de serda(50'); ";}
+                                                                            else if (segmento2 >= 47 && segmento2 <= 53) {respuesta = respuesta + " catalejo; ";}
+                                                                            else if (segmento2 >= 54 && segmento2 <= 58) {respuesta = respuesta + " herramientas de gran calidad para artesano; ";}
+                                                                            else if (segmento2 >= 59 && segmento2 <= 63) {respuesta = respuesta + " material de escalada; ";}
+                                                                            else if (segmento2 >= 64 && segmento2 <= 68) {respuesta = respuesta + " material de disfraz; ";}
+                                                                            else if (segmento2 >= 69 && segmento2 <= 73) {respuesta = respuesta + " material de curandero; ";}
+                                                                            else if (segmento2 >= 74 && segmento2 <= 77) {respuesta = respuesta + " símbolo sagrado de plata; ";}
+                                                                            else if (segmento2 >= 78 && segmento2 <= 81) {respuesta = respuesta + " reloj de arena; ";}
+                                                                            else if (segmento2 >= 82 && segmento2 <= 88) {respuesta = respuesta + " lupa; ";}
+                                                                            else if (segmento2 >= 89 && segmento2 <= 95) {respuesta = respuesta + " instrumento musical de gran calidad; ";}
+                                                                            else if (segmento2 >= 96 && segmento2 <= 100){respuesta = respuesta + " herramienta de ladrón de gran calidad; ";}
                                                                             }
                                                                 }
                                 return respuesta;
@@ -817,223 +643,91 @@ function menor(dados, lados){
                                     let segmento = tiroDeDados(1, 100); // define el primer segmento
 
                                     if (segmento >= 1 && segmento <= 4) { //Armas y Escudos
-                                                                        for(let j=0; j<1; j++)  {
-                                                                        let menorRandom = tiroDeDados(1, 100);
-                                                                        if (menorRandom >= 1 && menorRandom <= 60)  {
-                                                                                                                    respuesta = respuesta + " Escudo+1; ";
-                                                                                                                    }
-                                                                        else if (menorRandom >= 61 && menorRandom <= 80){
-                                                                                                                        respuesta = respuesta + " Armadura+1; ";
-                                                                                                                        }
-                                                                        else if (menorRandom >= 81 && menorRandom <= 85){
-                                                                                                                        respuesta = respuesta + " Escudo+2; ";
-                                                                                                                        }
-                                                                        else if (menorRandom >= 86 && menorRandom <= 87){
-                                                                                                                        respuesta = respuesta + " Armadura+2; ";
-                                                                                                                        }
-                                                                        else if (menorRandom >= 88 && menorRandom <= 89){
-                                                                                                                        respuesta = respuesta + " Armadura Específica; ";
-                                                                                                                        }
-                                                                        else if (menorRandom >= 90 && menorRandom <= 91){
-                                                                                                                        respuesta = respuesta + " Escudo Específico; ";
-                                                                                                                        }
-                                                                        else if (menorRandom >= 92 && menorRandom <= 100)   {
-                                                                                                                            respuesta = respuesta + " Aptitud especial; "; j--; //se vuelve a tirar
-                                                                                                                            }
-                                                                                                }
+                                                                        for(j=0; j<1; j++)  {
+                                                                                            let menorRandom = tiroDeDados(1, 100);
+                                                                                            if (menorRandom >= 1 && menorRandom <= 60)  {respuesta = respuesta + " Escudo+1; ";}
+                                                                                            else if (menorRandom >= 61 && menorRandom <= 80) {respuesta = respuesta + " Armadura+1; ";}
+                                                                                            else if (menorRandom >= 81 && menorRandom <= 85) {respuesta = respuesta + " Escudo+2; ";}
+                                                                                            else if (menorRandom >= 86 && menorRandom <= 87) {respuesta = respuesta + " Armadura+2; ";}
+                                                                                            else if (menorRandom >= 88 && menorRandom <= 89) {respuesta = respuesta + " Armadura Específica; ";}
+                                                                                            else if (menorRandom >= 90 && menorRandom <= 91) {respuesta = respuesta + " Escudo Específico; ";}
+                                                                                            else if (menorRandom >= 92 && menorRandom <= 100) {respuesta = respuesta + " Aptitud especial; "; j--;} //se vuelve a tirar
+                                                                                            }
                                                                         }
 
                                     else if (segmento >= 5 && segmento <= 9){ //Armas
-                                                                            for(let j=0; j<1; j++)  {
-                                                                            let menorRandom = tiroDeDados(1, 100);
-                                                                            if (menorRandom >= 1 && menorRandom <= 70)  {
-                                                                                                                        respuesta = respuesta + " Arma+1; ";
-                                                                                                                        }
-                                                                            else if (menorRandom >= 71 && menorRandom <= 85){
-                                                                                                                            respuesta = respuesta + " Arma+2; ";
-                                                                                                                            }
-                                                                            else if (menorRandom >= 86 && menorRandom <= 90){
-                                                                                                                            respuesta = respuesta + " Arma Específica; ";
-                                                                                                                            }
-                                                                            else if (menorRandom >= 91 && menorRandom <= 100){
-                                                                                                                            respuesta = respuesta + " Aptitud especial; "; j--; //se vuelve a tirar
-                                                                                                                            }
-                                                                                                    }
+                                                                            for(j=0; j<1; j++)  {
+                                                                                                let menorRandom = tiroDeDados(1, 100);
+                                                                                                if (menorRandom >= 1 && menorRandom <= 70)  {respuesta = respuesta + " Arma+1; ";}
+                                                                                                else if (menorRandom >= 71 && menorRandom <= 85){ respuesta = respuesta + " Arma+2; "; }
+                                                                                                else if (menorRandom >= 86 && menorRandom <= 90){ respuesta = respuesta + " Arma Específica; ";}
+                                                                                                else if (menorRandom >= 91 && menorRandom <= 100){ respuesta = respuesta + " Aptitud especial; "; j--;} //se vuelve a tira
+                                                                                                }
                                                                             }
 
                                     else if (segmento >= 10 && segmento <= 44)  { //Pociones
                                                                                 let menorRandom = tiroDeDados(1, 100);
-                                                                                if (menorRandom >= 1 && menorRandom <= 10)  {
-                                                                                                                            respuesta = respuesta + " " + pocionesYAceites[0] + "; ";
-                                                                                                                            }
-                                                                                else if (menorRandom >= 11 && menorRandom <= 13){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[1] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 14 && menorRandom <= 15){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[2] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 16 && menorRandom <= 17){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[3] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 18 && menorRandom <= 19){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[4] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 20 && menorRandom <= 22){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[5] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 23 && menorRandom <= 25){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[6] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom == 26) {
-                                                                                                            respuesta = respuesta + " " + pocionesYAceites[7] + "; ";
-                                                                                                            }
-                                                                                else if (menorRandom >= 27 && menorRandom <= 29){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[8] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom == 30) {
-                                                                                                            respuesta = respuesta + " " + pocionesYAceites[9] + "; ";
-                                                                                                            }
-                                                                                else if (menorRandom >= 31 && menorRandom <= 32){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[10] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 33 && menorRandom <= 34){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[11] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom == 35) {
-                                                                                                            respuesta = respuesta + " " + pocionesYAceites[12] + "; ";
-                                                                                                            }
-                                                                                else if (menorRandom >= 36 && menorRandom <= 38){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[13] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom == 39) {
-                                                                                                            respuesta = respuesta + " " + pocionesYAceites[14] + "; ";
-                                                                                                            }
-                                                                                else if (menorRandom >= 40 && menorRandom <= 41){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[15] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 42 && menorRandom <= 44){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[16] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom == 45) {
-                                                                                                            respuesta = respuesta + " " + pocionesYAceites[17] + "; ";
-                                                                                                            }
-                                                                                else if (menorRandom >= 46 && menorRandom <= 47){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[18] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 48 && menorRandom <= 50){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[19] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 51 && menorRandom <= 53){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[20] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 54 && menorRandom <= 56){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[21] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 57 && menorRandom <= 59){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[22] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 60 && menorRandom <= 62){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[23] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 63 && menorRandom <= 67){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[24] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom == 68) {
-                                                                                                            respuesta = respuesta + " " + pocionesYAceites[25] + "; ";
-                                                                                                            }
-                                                                                else if (menorRandom >= 69 && menorRandom <= 71){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[26] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 72 && menorRandom <= 74){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[27] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 75 && menorRandom <= 76){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[28] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 77 && menorRandom <= 78){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[29] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 79 && menorRandom <= 81){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[30] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 82 && menorRandom <= 84){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[31] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 85 && menorRandom <= 86){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[32] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom == 87) {
-                                                                                                            respuesta = respuesta + " " + pocionesYAceites[33] + "; ";
-                                                                                                            }
-                                                                                else if (menorRandom >= 88 && menorRandom <= 89){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[34] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 90 && menorRandom <= 91){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[35] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 92 && menorRandom <= 93){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[36] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 94 && menorRandom <= 96){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[37] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom == 97){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[38] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 98 && menorRandom <= 99){
-                                                                                                                                respuesta = respuesta + " " + pocionesYAceites[39] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom == 100){
-                                                                                                            respuesta = respuesta + " " + pocionesYAceites[40] + "; ";
-                                                                                                            }
+                                                                                if (menorRandom >= 1 && menorRandom <= 10) {respuesta = respuesta + " " + pocionesYAceites[0] + "; ";}
+                                                                                else if (menorRandom >= 11 && menorRandom <= 13) {respuesta = respuesta + " " + pocionesYAceites[1] + "; ";}
+                                                                                else if (menorRandom >= 14 && menorRandom <= 15) {respuesta = respuesta + " " + pocionesYAceites[2] + "; ";}
+                                                                                else if (menorRandom >= 16 && menorRandom <= 17) {respuesta = respuesta + " " + pocionesYAceites[3] + "; ";}
+                                                                                else if (menorRandom >= 18 && menorRandom <= 19) {respuesta = respuesta + " " + pocionesYAceites[4] + "; ";}
+                                                                                else if (menorRandom >= 20 && menorRandom <= 22) {respuesta = respuesta + " " + pocionesYAceites[5] + "; ";}
+                                                                                else if (menorRandom >= 23 && menorRandom <= 25) {respuesta = respuesta + " " + pocionesYAceites[6] + "; ";}
+                                                                                else if (menorRandom == 26) {respuesta = respuesta + " " + pocionesYAceites[7] + "; ";}
+                                                                                else if (menorRandom >= 27 && menorRandom <= 29) {respuesta = respuesta + " " + pocionesYAceites[8] + "; ";}
+                                                                                else if (menorRandom == 30) {respuesta = respuesta + " " + pocionesYAceites[9] + "; ";}
+                                                                                else if (menorRandom >= 31 && menorRandom <= 32) {respuesta = respuesta + " " + pocionesYAceites[10] + "; ";}
+                                                                                else if (menorRandom >= 33 && menorRandom <= 34) {respuesta = respuesta + " " + pocionesYAceites[11] + "; ";}
+                                                                                else if (menorRandom == 35) {respuesta = respuesta + " " + pocionesYAceites[12] + "; ";}
+                                                                                else if (menorRandom >= 36 && menorRandom <= 38) {respuesta = respuesta + " " + pocionesYAceites[13] + "; ";}
+                                                                                else if (menorRandom == 39) {respuesta = respuesta + " " + pocionesYAceites[14] + "; ";}
+                                                                                else if (menorRandom >= 40 && menorRandom <= 41) {respuesta = respuesta + " " + pocionesYAceites[15] + "; ";}
+                                                                                else if (menorRandom >= 42 && menorRandom <= 44) {respuesta = respuesta + " " + pocionesYAceites[16] + "; ";}
+                                                                                else if (menorRandom == 45) { respuesta = respuesta + " " + pocionesYAceites[17] + "; ";}
+                                                                                else if (menorRandom >= 46 && menorRandom <= 47) {respuesta = respuesta + " " + pocionesYAceites[18] + "; ";}
+                                                                                else if (menorRandom >= 48 && menorRandom <= 50) {respuesta = respuesta + " " + pocionesYAceites[19] + "; ";}
+                                                                                else if (menorRandom >= 51 && menorRandom <= 53) {respuesta = respuesta + " " + pocionesYAceites[20] + "; ";}
+                                                                                else if (menorRandom >= 54 && menorRandom <= 56) {respuesta = respuesta + " " + pocionesYAceites[21] + "; ";}
+                                                                                else if (menorRandom >= 57 && menorRandom <= 59) {respuesta = respuesta + " " + pocionesYAceites[22] + "; ";}
+                                                                                else if (menorRandom >= 60 && menorRandom <= 62) {respuesta = respuesta + " " + pocionesYAceites[23] + "; ";}
+                                                                                else if (menorRandom >= 63 && menorRandom <= 67) {respuesta = respuesta + " " + pocionesYAceites[24] + "; ";}
+                                                                                else if (menorRandom == 68) { respuesta = respuesta + " " + pocionesYAceites[25] + "; ";}
+                                                                                else if (menorRandom >= 69 && menorRandom <= 71) {respuesta = respuesta + " " + pocionesYAceites[26] + "; ";}
+                                                                                else if (menorRandom >= 72 && menorRandom <= 74) {respuesta = respuesta + " " + pocionesYAceites[27] + "; ";}
+                                                                                else if (menorRandom >= 75 && menorRandom <= 76) {respuesta = respuesta + " " + pocionesYAceites[28] + "; ";}
+                                                                                else if (menorRandom >= 77 && menorRandom <= 78) {respuesta = respuesta + " " + pocionesYAceites[29] + "; ";}
+                                                                                else if (menorRandom >= 79 && menorRandom <= 81) {respuesta = respuesta + " " + pocionesYAceites[30] + "; ";}
+                                                                                else if (menorRandom >= 82 && menorRandom <= 84) {respuesta = respuesta + " " + pocionesYAceites[31] + "; ";}
+                                                                                else if (menorRandom >= 85 && menorRandom <= 86) {respuesta = respuesta + " " + pocionesYAceites[32] + "; ";}
+                                                                                else if (menorRandom == 87) {respuesta = respuesta + " " + pocionesYAceites[33] + "; ";}
+                                                                                else if (menorRandom >= 88 && menorRandom <= 89) {respuesta = respuesta + " " + pocionesYAceites[34] + "; ";}
+                                                                                else if (menorRandom >= 90 && menorRandom <= 91) {respuesta = respuesta + " " + pocionesYAceites[35] + "; ";}
+                                                                                else if (menorRandom >= 92 && menorRandom <= 93) {respuesta = respuesta + " " + pocionesYAceites[36] + "; ";}
+                                                                                else if (menorRandom >= 94 && menorRandom <= 96) {respuesta = respuesta + " " + pocionesYAceites[37] + "; ";}
+                                                                                else if (menorRandom == 97) {respuesta = respuesta + " " + pocionesYAceites[38] + "; ";}
+                                                                                else if (menorRandom >= 98 && menorRandom <= 99) {respuesta = respuesta + " " + pocionesYAceites[39] + "; ";}
+                                                                                else if (menorRandom == 100) {respuesta = respuesta + " " + pocionesYAceites[40] + "; ";}
+                                                                                            
                                                                                 }
                                     else if (segmento >= 45 && segmento <= 46)  { //Anillos
                                                                                 let menorRandom = tiroDeDados(1, 100);
-                                                                                if (menorRandom >= 1 && menorRandom <= 10)  {
-                                                                                                                            respuesta = respuesta + " anillo de " + anillos[0] + "; ";
-                                                                                                                            }
-                                                                                else if (menorRandom >= 11 && menorRandom <= 13){
-                                                                                                                                respuesta = respuesta + " anillo de " + anillos[1] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 14 && menorRandom <= 15){
-                                                                                                                                respuesta = respuesta + " anillo de " + anillos[2] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 14 && menorRandom <= 15){
-                                                                                                                                respuesta = respuesta + " anillo de " + anillos[3] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 14 && menorRandom <= 15){
-                                                                                                                                respuesta = respuesta + " anillo de " + anillos[4] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 14 && menorRandom <= 15){
-                                                                                                                                respuesta = respuesta + " anillo de " + anillos[5] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 14 && menorRandom <= 15){
-                                                                                                                                respuesta = respuesta + " anillo de " + anillos[6] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 14 && menorRandom <= 15){
-                                                                                                                                respuesta = respuesta + " anillo de " + anillos[7] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 14 && menorRandom <= 15){
-                                                                                                                                respuesta = respuesta + " anillo de " + anillos[8] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 14 && menorRandom <= 15){
-                                                                                                                                respuesta = respuesta + " anillo de " + anillos[9] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 14 && menorRandom <= 15){
-                                                                                                                                respuesta = respuesta + " anillo de " + anillos[10] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 14 && menorRandom <= 15){
-                                                                                                                                respuesta = respuesta + " anillo de " + anillos[14] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 14 && menorRandom <= 15){
-                                                                                                                                respuesta = respuesta + " anillo de " + anillos[15] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 14 && menorRandom <= 15){
-                                                                                                                                respuesta = respuesta + " anillo de " + anillos[16] + "; ";
-                                                                                                                                }
-                                                                                else if (menorRandom >= 14 && menorRandom <= 15){
-                                                                                                                                respuesta = respuesta + " anillo de " + anillos[17] + "; ";
-                                                                                                                                }
+                                                                                if (menorRandom >= 1 && menorRandom <= 10) {respuesta = respuesta + " anillo de " + anillos[0] + "; ";}
+                                                                                else if (menorRandom >= 11 && menorRandom <= 13) {respuesta = respuesta + " anillo de " + anillos[1] + "; ";}
+                                                                                else if (menorRandom >= 14 && menorRandom <= 15) {respuesta = respuesta + " anillo de " + anillos[2] + "; ";}
+                                                                                else if (menorRandom >= 14 && menorRandom <= 15) { respuesta = respuesta + " anillo de " + anillos[3] + "; ";}
+                                                                                else if (menorRandom >= 14 && menorRandom <= 15) {respuesta = respuesta + " anillo de " + anillos[4] + "; ";}
+                                                                                else if (menorRandom >= 14 && menorRandom <= 15) {respuesta = respuesta + " anillo de " + anillos[5] + "; ";}
+                                                                                else if (menorRandom >= 14 && menorRandom <= 15) {respuesta = respuesta + " anillo de " + anillos[6] + "; ";}
+                                                                                else if (menorRandom >= 14 && menorRandom <= 15) {respuesta = respuesta + " anillo de " + anillos[7] + "; ";}
+                                                                                else if (menorRandom >= 14 && menorRandom <= 15) { respuesta = respuesta + " anillo de " + anillos[8] + "; ";}
+                                                                                else if (menorRandom >= 14 && menorRandom <= 15) { respuesta = respuesta + " anillo de " + anillos[9] + "; ";}
+                                                                                else if (menorRandom >= 14 && menorRandom <= 15) {respuesta = respuesta + " anillo de " + anillos[10] + "; ";}
+                                                                                else if (menorRandom >= 14 && menorRandom <= 15) { respuesta = respuesta + " anillo de " + anillos[14] + "; ";}
+                                                                                else if (menorRandom >= 14 && menorRandom <= 15) {respuesta = respuesta + " anillo de " + anillos[15] + "; ";}
+                                                                                else if (menorRandom >= 14 && menorRandom <= 15) {respuesta = respuesta + " anillo de " + anillos[16] + "; ";}
+                                                                                else if (menorRandom >= 14 && menorRandom <= 15) {respuesta = respuesta + " anillo de " + anillos[17] + "; ";}
+                                                                                }
                                     else if (segmento >= 47 && segmento <= 75)  { //Rollos
                                                                                 let segRollo = tiroDeDados(1, 100); //se decide si va a ser arcano o divino
                                                                                 let cantidadRollo = tiroDeDados(1, 3); //cantidad de conjuros a recibir
@@ -1249,6 +943,7 @@ function menor(dados, lados){
                                                                                                                                                                         else if (conj >= 94 && conj <= 100) {respuesta = respuesta + " " + conjurosDivinos0[13] + "; ";}
                                                                                                                                                                         }
                                                                                                                             else if (nivelConjuro >= 6 && nivelConjuro <= 50)   { // nivel de conjuro divino 1
+                                                                                                                                                                                let conj = tiroDeDados(1, 100);
                                                                                                                                                                                 if (conj == 1) {respuesta = respuesta + " " + conjurosDivinos1[0] + "; ";}
                                                                                                                                                                                 else if (conj >= 2 && conj <= 3) {respuesta = respuesta + " " + conjurosDivinos1[1] + "; ";}
                                                                                                                                                                                 else if (conj >= 4 && conj <= 6) {respuesta = respuesta + " " + conjurosDivinos1[2] + "; ";}
@@ -1293,23 +988,158 @@ function menor(dados, lados){
                                                                                                                                                                                 else if (conj >= 94 && conj <= 98) {respuesta = respuesta + " " + conjurosDivinos1[41] + "; ";}
                                                                                                                                                                                 else if (conj >= 99 && conj <= 100) {respuesta = respuesta + " " + conjurosDivinos1[42] + "; ";}
                                                                                                                                                                                 }
+                                                                                                                            else if (nivelConjuro >= 51 && nivelConjuro <= 95)  { // nivel de conjuro divino 2
+                                                                                                                                                                                let conj = tiroDeDados(1, 100);
+                                                                                                                                                                                if (conj == 1) {respuesta = respuesta + " " + conjurosDivinos2[0] + "; ";}
+                                                                                                                                                                                else if (conj >= 2 && conj <= 3) {respuesta = respuesta + " " + conjurosDivinos2[1] + "; ";}
+                                                                                                                                                                                else if (conj == 4) {respuesta = respuesta + " " + conjurosDivinos2[3] + "; ";}
+                                                                                                                                                                                else if (conj >= 5 && conj <= 6) {respuesta = respuesta + " " + conjurosDivinos2[4] + "; ";}
+                                                                                                                                                                                else if (conj >= 7 && conj <= 8) {respuesta = respuesta + " " + conjurosDivinos2[5] + "; ";}
+                                                                                                                                                                                else if (conj == 9) {respuesta = respuesta + " " + conjurosDivinos2[6] + "; ";}
+                                                                                                                                                                                else if (conj >= 10 && conj <= 11) {respuesta = respuesta + " " + conjurosDivinos2[7] + "; ";}
+                                                                                                                                                                                else if (conj == 12) {respuesta = respuesta + " " + conjurosDivinos2[8] + "; ";}
+                                                                                                                                                                                else if (conj >= 13 && conj <= 14) {respuesta = respuesta + " " + conjurosDivinos2[9] + "; ";}
+                                                                                                                                                                                else if (conj >= 15 && conj <= 16) {respuesta = respuesta + " " + conjurosDivinos2[10] + "; ";}
+                                                                                                                                                                                else if (conj >= 17 && conj <= 18) {respuesta = respuesta + " " + conjurosDivinos2[11] + "; ";}
+                                                                                                                                                                                else if (conj >= 19 && conj <= 20) {respuesta = respuesta + " " + conjurosDivinos2[12] + "; ";}
+                                                                                                                                                                                else if (conj >= 21 && conj <= 22) {respuesta = respuesta + " " + conjurosDivinos2[13] + "; ";}
+                                                                                                                                                                                else if (conj >= 23 && conj <= 26) {respuesta = respuesta + " " + conjurosDivinos2[14] + "; ";}
+                                                                                                                                                                                else if (conj >= 27 && conj <= 28) {respuesta = respuesta + " " + conjurosDivinos2[15] + "; ";}
+                                                                                                                                                                                else if (conj >= 29 && conj <= 30) {respuesta = respuesta + " " + conjurosDivinos2[16] + "; ";}
+                                                                                                                                                                                else if (conj >= 31 && conj <= 32) {respuesta = respuesta + " " + conjurosDivinos2[17] + "; ";}
+                                                                                                                                                                                else if (conj >= 33 && conj <= 34) {respuesta = respuesta + " " + conjurosDivinos2[18] + "; ";}
+                                                                                                                                                                                else if (conj >= 35 && conj <= 37) {respuesta = respuesta + " " + conjurosDivinos2[19] + "; ";}
+                                                                                                                                                                                else if (conj >= 38 && conj <= 39) {respuesta = respuesta + " " + conjurosDivinos2[20] + "; ";}
+                                                                                                                                                                                else if (conj >= 40 && conj <= 41) {respuesta = respuesta + " " + conjurosDivinos2[21] + "; ";}
+                                                                                                                                                                                else if (conj >= 42 && conj <= 43) {respuesta = respuesta + " " + conjurosDivinos2[22] + "; ";}
+                                                                                                                                                                                else if (conj == 44) {respuesta = respuesta + " " + conjurosDivinos2[23] + "; ";}
+                                                                                                                                                                                else if (conj >= 45 && conj <= 47) {respuesta = respuesta + " " + conjurosDivinos2[24] + "; ";}
+                                                                                                                                                                                else if (conj >= 48 && conj <= 50) {respuesta = respuesta + " " + conjurosDivinos2[25] + "; ";}
+                                                                                                                                                                                else if (conj == 51) {respuesta = respuesta + " " + conjurosDivinos2[26] + "; ";}
+                                                                                                                                                                                else if (conj == 52) {respuesta = respuesta + " " + conjurosDivinos2[27] + "; ";}
+                                                                                                                                                                                else if (conj >= 53 && conj <= 54) {respuesta = respuesta + " " + conjurosDivinos2[28] + "; ";}
+                                                                                                                                                                                else if (conj >= 55 && conj <= 56) {respuesta = respuesta + " " + conjurosDivinos2[29] + "; ";}
+                                                                                                                                                                                else if (conj >= 57 && conj <= 59) {respuesta = respuesta + " " + conjurosDivinos2[30] + "; ";}
+                                                                                                                                                                                else if (conj >= 60 && conj <= 61) {respuesta = respuesta + " " + conjurosDivinos2[31] + "; ";}
+                                                                                                                                                                                else if (conj >= 62 && conj <= 64) {respuesta = respuesta + " " + conjurosDivinos2[32] + "; ";}
+                                                                                                                                                                                else if (conj == 65) {respuesta = respuesta + " " + conjurosDivinos2[33] + "; ";}
+                                                                                                                                                                                else if (conj >= 66 && conj <= 67) {respuesta = respuesta + " " + conjurosDivinos2[34] + "; ";}
+                                                                                                                                                                                else if (conj >= 68 && conj <= 69) {respuesta = respuesta + " " + conjurosDivinos2[35] + "; ";}
+                                                                                                                                                                                else if (conj >= 70 && conj <= 71) {respuesta = respuesta + " " + conjurosDivinos2[36] + "; ";}
+                                                                                                                                                                                else if (conj >= 72 && conj <= 73) {respuesta = respuesta + " " + conjurosDivinos2[37] + "; ";}
+                                                                                                                                                                                else if (conj >= 74 && conj <= 75) {respuesta = respuesta + " " + conjurosDivinos2[38] + "; ";}
+                                                                                                                                                                                else if (conj == 76) {respuesta = respuesta + " " + conjurosDivinos2[39] + "; ";}
+                                                                                                                                                                                else if (conj == 77) {respuesta = respuesta + " " + conjurosDivinos2[40] + "; ";}
+                                                                                                                                                                                else if (conj >= 78 && conj <= 80) {respuesta = respuesta + " " + conjurosDivinos2[41] + "; ";}
+                                                                                                                                                                                else if (conj >= 81 && conj <= 83) {respuesta = respuesta + " " + conjurosDivinos2[42] + "; ";}
+                                                                                                                                                                                else if (conj >= 84 && conj <= 86) {respuesta = respuesta + " " + conjurosDivinos2[43] + "; ";}
+                                                                                                                                                                                else if (conj >= 87 && conj <= 89) {respuesta = respuesta + " " + conjurosDivinos2[44] + "; ";}
+                                                                                                                                                                                else if (conj >= 90 && conj <= 91) {respuesta = respuesta + " " + conjurosDivinos2[45] + "; ";}
+                                                                                                                                                                                else if (conj == 92) {respuesta = respuesta + " " + conjurosDivinos2[46] + "; ";}
+                                                                                                                                                                                else if (conj == 93) {respuesta = respuesta + " " + conjurosDivinos2[47] + "; ";}
+                                                                                                                                                                                else if (conj == 94) {respuesta = respuesta + " " + conjurosDivinos2[48] + "; ";}
+                                                                                                                                                                                else if (conj == 95) {respuesta = respuesta + " " + conjurosDivinos2[49] + "; ";}
+                                                                                                                                                                                else if (conj == 96) {respuesta = respuesta + " " + conjurosDivinos2[50] + "; ";}
+                                                                                                                                                                                else if (conj >= 97 && conj <= 98) {respuesta = respuesta + " " + conjurosDivinos2[51] + "; ";}
+                                                                                                                                                                                else if (conj >= 99 && conj <= 100) {respuesta = respuesta + " " + conjurosDivinos2[52] + "; ";}
+                                                                                                                                                                                }
+                                                                                                                            else if (nivelConjuro >= 96 && nivelConjuro <= 100)  { // nivel de conjuro divino 3
+                                                                                                                                                                                let conj = tiroDeDados(1, 100);
+                                                                                                                                                                                if (conj >= 1 && conj <= 2) {respuesta = respuesta + " " + conjurosDivinos3[0] + "; ";}
+                                                                                                                                                                                else if (conj >= 3 && conj <= 4) {respuesta = respuesta + " " + conjurosDivinos3[1] + "; ";}
+                                                                                                                                                                                else if (conj >= 5 && conj <= 6) {respuesta = respuesta + " " + conjurosDivinos3[2] + "; ";}
+                                                                                                                                                                                else if (conj >= 7 && conj <= 8) {respuesta = respuesta + " " + conjurosDivinos3[3] + "; ";}
+                                                                                                                                                                                else if (conj >= 9 && conj <= 14) {respuesta = respuesta + " " + conjurosDivinos3[4] + "; ";}
+                                                                                                                                                                                else if (conj >= 15 && conj <= 16) {respuesta = respuesta + " " + conjurosDivinos3[5] + "; ";}
+                                                                                                                                                                                else if (conj >= 17 && conj <= 18) {respuesta = respuesta + " " + conjurosDivinos3[6] + "; ";}
+                                                                                                                                                                                else if (conj >= 19 && conj <= 20) {respuesta = respuesta + " " + conjurosDivinos3[7] + "; ";}
+                                                                                                                                                                                else if (conj >= 21 && conj <= 22) {respuesta = respuesta + " " + conjurosDivinos3[8] + "; ";}
+                                                                                                                                                                                else if (conj >= 23 && conj <= 24) {respuesta = respuesta + " " + conjurosDivinos3[9] + "; ";}
+                                                                                                                                                                                else if (conj >= 25 && conj <= 26) {respuesta = respuesta + " " + conjurosDivinos3[10] + "; ";}
+                                                                                                                                                                                else if (conj >= 27 && conj <= 30) {respuesta = respuesta + " " + conjurosDivinos3[11] + "; ";}
+                                                                                                                                                                                else if (conj >= 31 && conj <= 32) {respuesta = respuesta + " " + conjurosDivinos3[12] + "; ";}
+                                                                                                                                                                                else if (conj >= 33 && conj <= 34) {respuesta = respuesta + " " + conjurosDivinos3[13] + "; ";}
+                                                                                                                                                                                else if (conj >= 35 && conj <= 36) {respuesta = respuesta + " " + conjurosDivinos3[14] + "; ";}
+                                                                                                                                                                                else if (conj >= 37 && conj <= 38) {respuesta = respuesta + " " + conjurosDivinos3[15] + "; ";}
+                                                                                                                                                                                else if (conj >= 39 && conj <= 40) {respuesta = respuesta + " " + conjurosDivinos3[16] + "; ";}
+                                                                                                                                                                                else if (conj >= 41 && conj <= 43) {respuesta = respuesta + " " + conjurosDivinos3[17] + "; ";}
+                                                                                                                                                                                else if (conj >= 44 && conj <= 45) {respuesta = respuesta + " " + conjurosDivinos3[18] + "; ";}
+                                                                                                                                                                                else if (conj >= 46 && conj <= 47) {respuesta = respuesta + " " + conjurosDivinos3[19] + "; ";}
+                                                                                                                                                                                else if (conj >= 48 && conj <= 49) {respuesta = respuesta + " " + conjurosDivinos3[20] + "; ";}
+                                                                                                                                                                                else if (conj >= 50 && conj <= 51) {respuesta = respuesta + " " + conjurosDivinos3[21] + "; ";}
+                                                                                                                                                                                else if (conj >= 52 && conj <= 53) {respuesta = respuesta + " " + conjurosDivinos3[22] + "; ";}
+                                                                                                                                                                                else if (conj >= 54 && conj <= 56) {respuesta = respuesta + " " + conjurosDivinos3[23] + "; ";}
+                                                                                                                                                                                else if (conj >= 57 && conj <= 58) {respuesta = respuesta + " " + conjurosDivinos3[24] + "; ";}
+                                                                                                                                                                                else if (conj >= 59 && conj <= 60) {respuesta = respuesta + " " + conjurosDivinos3[25] + "; ";}
+                                                                                                                                                                                else if (conj >= 61 && conj <= 62) {respuesta = respuesta + " " + conjurosDivinos3[26] + "; ";}
+                                                                                                                                                                                else if (conj >= 63 && conj <= 65) {respuesta = respuesta + " " + conjurosDivinos3[27] + "; ";}
+                                                                                                                                                                                else if (conj >= 66 && conj <= 67) {respuesta = respuesta + " " + conjurosDivinos3[28] + "; ";}
+                                                                                                                                                                                else if (conj >= 68 && conj <= 69) {respuesta = respuesta + " " + conjurosDivinos3[29] + "; ";}
+                                                                                                                                                                                else if (conj >= 70 && conj <= 72) {respuesta = respuesta + " " + conjurosDivinos3[30] + "; ";}
+                                                                                                                                                                                else if (conj >= 73 && conj <= 74) {respuesta = respuesta + " " + conjurosDivinos3[31] + "; ";}
+                                                                                                                                                                                else if (conj >= 75 && conj <= 76) {respuesta = respuesta + " " + conjurosDivinos3[32] + "; ";}
+                                                                                                                                                                                else if (conj >= 77 && conj <= 79) {respuesta = respuesta + " " + conjurosDivinos3[33] + "; ";}
+                                                                                                                                                                                else if (conj >= 80 && conj <= 81) {respuesta = respuesta + " " + conjurosDivinos3[34] + "; ";}
+                                                                                                                                                                                else if (conj >= 82 && conj <= 83) {respuesta = respuesta + " " + conjurosDivinos3[35] + "; ";}
+                                                                                                                                                                                else if (conj >= 84 && conj <= 85) {respuesta = respuesta + " " + conjurosDivinos3[36] + "; ";}
+                                                                                                                                                                                else if (conj >= 86 && conj <= 87) {respuesta = respuesta + " " + conjurosDivinos3[37] + "; ";}
+                                                                                                                                                                                else if (conj >= 88 && conj <= 90) {respuesta = respuesta + " " + conjurosDivinos3[38] + "; ";}
+                                                                                                                                                                                else if (conj == 91) {respuesta = respuesta + " " + conjurosDivinos3[39] + "; ";}
+                                                                                                                                                                                else if (conj >= 92 && conj <= 93) {respuesta = respuesta + " " + conjurosDivinos3[40] + "; ";}
+                                                                                                                                                                                else if (conj >= 94 && conj <= 95) {respuesta = respuesta + " " + conjurosDivinos3[41] + "; ";}
+                                                                                                                                                                                else if (conj >= 96 && conj <= 97) {respuesta = respuesta + " " + conjurosDivinos3[42] + "; ";}
+                                                                                                                                                                                else if (conj >= 98 && conj <= 99) {respuesta = respuesta + " " + conjurosDivinos3[43] + "; ";}
+                                                                                                                                                                                else if (conj == 100) {respuesta = respuesta + " " + conjurosDivinos3[44] + "; ";}
+                                                                                                                                                                                }
                                                                                                                             }
                                                                                 }
                                     else if (segmento >= 76 && segmento <= 91)  { //Varitas
-
+                                                                                let segmVaritas = tiroDeDados(1, 100); //define el primer segmento de varitas
+                                                                                if (segmVaritas >= 1 && segmVaritas <= 2) {respuesta = respuesta + " " + varitas[0] + "; ";} 
+                                                                                else if (segmVaritas >= 3 && segmVaritas <= 4) {respuesta = respuesta + " " + varitas[1] + "; ";} 
+                                                                                else if (segmVaritas >= 5 && segmVaritas <= 7) {respuesta = respuesta + " " + varitas[2] + "; ";} 
+                                                                                else if (segmVaritas >= 8 && segmVaritas <= 10) {respuesta = respuesta + " " + varitas[3] + "; ";} 
+                                                                                else if (segmVaritas >= 11 && segmVaritas <= 13) {respuesta = respuesta + " " + varitas[4] + "; ";} 
+                                                                                else if (segmVaritas >= 14 && segmVaritas <= 16) {respuesta = respuesta + " " + varitas[5] + "; ";} 
+                                                                                else if (segmVaritas >= 17 && segmVaritas <= 19) {respuesta = respuesta + " " + varitas[6] + "; ";} 
+                                                                                else if (segmVaritas >= 20 && segmVaritas <= 22) {respuesta = respuesta + " " + varitas[7] + "; ";} 
+                                                                                else if (segmVaritas >= 23 && segmVaritas <= 25) {respuesta = respuesta + " " + varitas[8] + "; ";} 
+                                                                                else if (segmVaritas >= 26 && segmVaritas <= 28) {respuesta = respuesta + " " + varitas[9] + "; ";} 
+                                                                                else if (segmVaritas >= 29 && segmVaritas <= 31) {respuesta = respuesta + " " + varitas[10] + "; ";} 
+                                                                                else if (segmVaritas >= 32 && segmVaritas <= 34) {respuesta = respuesta + " " + varitas[11] + "; ";} 
+                                                                                else if (segmVaritas >= 35 && segmVaritas <= 36) {respuesta = respuesta + " " + varitas[12] + "; ";} 
+                                                                                else if (segmVaritas == 37) {respuesta = respuesta + " " + varitas[13] + "; ";}
+                                                                                else if (segmVaritas >= 38 && segmVaritas <= 40) {respuesta = respuesta + " " + varitas[14] + "; ";}
+                                                                                else if (segmVaritas >= 41 && segmVaritas <= 43) {respuesta = respuesta + " " + varitas[15] + "; ";}
+                                                                                else if (segmVaritas >= 44 && segmVaritas <= 46) {respuesta = respuesta + " " + varitas[16] + "; ";}
+                                                                                else if (segmVaritas >= 47 && segmVaritas <= 49) {respuesta = respuesta + " " + varitas[17] + "; ";}
+                                                                                else if (segmVaritas >= 50 && segmVaritas <= 51) {respuesta = respuesta + " " + varitas[18] + "; ";}
+                                                                                else if (segmVaritas >= 52 && segmVaritas <= 54) {respuesta = respuesta + " " + varitas[19] + "; ";}
+                                                                                else if (segmVaritas >= 55 && segmVaritas <= 57) {respuesta = respuesta + " " + varitas[20] + "; ";}
+                                                                                else if (segmVaritas >= 58 && segmVaritas <= 60) {respuesta = respuesta + " " + varitas[21] + "; ";}
+                                                                                else if (segmVaritas >= 61 && segmVaritas <= 63) {respuesta = respuesta + " " + varitas[22] + "; ";}
+                                                                                else if (segmVaritas >= 64 && segmVaritas <= 66) {respuesta = respuesta + " " + varitas[23] + "; ";}
+                                                                                else if (segmVaritas >= 67 && segmVaritas <= 68) {respuesta = respuesta + " " + varitas[24] + "; ";}
+                                                                                else if (segmVaritas >= 69 && segmVaritas <= 71) {respuesta = respuesta + " " + varitas[25] + "; ";}
+                                                                                else if (segmVaritas >= 72 && segmVaritas <= 74) {respuesta = respuesta + " " + varitas[26] + "; ";}
+                                                                                else if (segmVaritas >= 75 && segmVaritas <= 77) {respuesta = respuesta + " " + varitas[27] + "; ";}
+                                                                                else if (segmVaritas >= 78 && segmVaritas <= 80) {respuesta = respuesta + " " + varitas[28] + "; ";}
+                                                                                else if (segmVaritas >= 81 && segmVaritas <= 83) {respuesta = respuesta + " " + varitas[29] + "; ";}
+                                                                                else if (segmVaritas >= 84 && segmVaritas <= 86) {respuesta = respuesta + " " + varitas[30] + "; ";}
+                                                                                else if (segmVaritas >= 87 && segmVaritas <= 89) {respuesta = respuesta + " " + varitas[31] + "; ";}
+                                                                                else if (segmVaritas >= 90 && segmVaritas <= 91) {respuesta = respuesta + " " + varitas[32] + "; ";}
+                                                                                else if (segmVaritas >= 92 && segmVaritas <= 94) {respuesta = respuesta + " " + varitas[33] + "; ";}
+                                                                                else if (segmVaritas >= 95 && segmVaritas <= 97) {respuesta = respuesta + " " + varitas[34] + "; ";}
+                                                                                else if (segmVaritas >= 98 && segmVaritas <= 100) {respuesta = respuesta + " " + varitas[35] + "; ";}
                                                                                 }
                                     else if (segmento >= 92 && segmento <= 100) { //Objeto maravilloso
-
+                                                                                let objetoElegido = Math.floor((Math.random() * 100));
+                                                                                respuesta = respuesta + " " + objMaravMenores[objetoElegido] + "; ";
                                                                                 }
-                                                                                }
-                                    else if (segmento >= 47 && segmento <= 75)  { //Rollos
-                                                                                let menorRandom = tiroDeDados(1,100)
-                                                                                if (menorRandom >= 1 && menorRandom <= 70)  {
-
-                                                                                                                            }
-                                                                                }
-                                                            }
-                            }
+                                                                }
+                                return respuesta;
+                                }
+                            
 
 function artes(dados, lados){
                             cantidad = tiroDeDados(dados, lados); // el resultado del tiro de dados
@@ -1317,7 +1147,7 @@ function artes(dados, lados){
                             let artes1 = ["escultura","cuadro","joyería","cubiertos","partitura","mapa","texto antiguo","contenedor"];
                             let artesRandom;
                             for(i=0; i<cantidad; i++)   {
-                                                        artesRandom = Math.floor((Math.random() * 8));
+                                                        artesRandom = artes1[Math.floor((Math.random() * 7))];
                                                         respuesta = respuesta + artesRandom + "; ";
                                                         }
                             return respuesta;
