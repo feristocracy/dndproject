@@ -121,6 +121,7 @@ input   {
 #nivel  {
         margin: 0;
         position: absolute;
+        left: 21%;
         top: 25%;
         display: none;
         }
@@ -128,6 +129,7 @@ input   {
 #porcentuales   {
                 margin: 0;
                 position: absolute;
+                left: 21%;
                 top: 34%;
                 display: none;
                 }
@@ -456,7 +458,7 @@ input   {
                  transform: translate(-50%, -50%);
                  box-sizing: border-box;
                  padding: 70px 30px;
-                 transition: height .4s;
+                 transition: .4s;
                 }
 
 .login_contenedor .logo
