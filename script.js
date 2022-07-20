@@ -3,7 +3,7 @@
 // fermaldonadosolis@gmail.com
 
 let clic = 1;
-let pocionesYAceites = ["poción para curar heridas leves","poción para soportar los elementos","poción para esconderse de los animales","poción para esconderse de los animales","poción para esconderse de los muertos vivientes","poción salto","poción armadura de mago","poción colmillo mágico","aceite piedra mágica",
+const pocionesYAceites = ["poción para curar heridas leves","poción para soportar los elementos","poción para esconderse de los animales","poción para esconderse de los animales","poción para esconderse de los muertos vivientes","poción salto","poción armadura de mago","poción colmillo mágico","aceite piedra mágica",
                         "aceite arma mágica","poción pasar sin dejar rastro","poción quitar el miedo","poción santuario","poción escudo de la fé +2","aceite garrote","aceite bendecir arma","poción agrandar persona","poción reducir persona","poción auxilio divino","poción piel robliza +2","poción resistencia de oso",
                           "poción contorno borroso","poción fuerza de toro","poción gracia felina","poción curar heridas moderadas","aceite oscuridad","poción visión en la oscuridad","poción lentificar veneno","poción esplendor de águila","poción astucia de zorro","poción de invisibilidad","poción restablecimiento menor",
                             "poción levitar","poción desorientar","poción sabiduría de buho","poción protección contra las flechas 10/magia","poción quitar parálisis","10 poción resistir energía","poción escudo de la fé +3","poción trepar cual arácnido","poción alineamiento indetectable", "poción piel robliza +3", "poción escudo de la fé +4",
@@ -12,86 +12,86 @@ let pocionesYAceites = ["poción para curar heridas leves","poción para soporta
                                 "poción piel robliza +4","poción escudo de la fé","poción esperanza alentadora","30 poción resistir energía","poción piel robliza +5","poción colmillo mágico mayor +2","poción arma mágica mayor +2","aceite vestidura mágica +2","poción protección contra las flechas 15/magia","poción colmillo mágico mayor +3","aceite arma mágica mayor +3",
                                 "aceite vestidura mágica +3","poción colmillo mágico mayor +4","aceite vestidura mágica +4","poción colmillo mágico mayor +5","aceite arma mágica mayor +5","aceite vestidura mágica +5"];
 
-let anillos = ["protección +1","caída de pluma","sustento","escalado","salto","nadar","contraconjuros","escudo mental","protección +2","escudo de fuerza","ariete","escalada, mejorado","salto, mejorado","nadar, mejorado","amistad con los animales","resistir energía, menor","poder camaleónico","caminar sobre las aguas","protección +3",
+const anillos = ["protección +1","caída de pluma","sustento","escalado","salto","nadar","contraconjuros","escudo mental","protección +2","escudo de fuerza","ariete","escalada, mejorado","salto, mejorado","nadar, mejorado","amistad con los animales","resistir energía, menor","poder camaleónico","caminar sobre las aguas","protección +3",
                 "almacenar conjuros, menor","invisibilidad","magia (I)","evasión","visión de rayos x","intermitencia","resistir energía, mayor","protección +4","magia (II)","libertad de movimiento","resistir energía, superior","escudar al amigo (pareja)","protección +5","estrellas fugaces","almacenar conjuros","magia (III)","telecinesia",
                 "regeneración","tres deseos","retornar conjuros","magia (IV)","llamar djinni","comandar elementales de aire","comandar elementales de tierra","comandar elementales de fuego","comandar elementales de agua","almacenar conjuros, mayor"];
 
-let conjurosArcanos0 = ["abrir/cerrar","atontar","conocer la dirección","convocar instrumento","cuchichear mensaje","detectar magia","detectar veneno","leer magia","llamarada","luces danzantes","luz","mano del mago"," marca arcana","nona","perturbar muertos vivientes","prestidigitación","rayo de escarcha","remendar","resistencia","salpicadura de ácido","sonido fantasma","toque de fatiga"];
+const conjurosArcanos0 = ["abrir/cerrar","atontar","conocer la dirección","convocar instrumento","cuchichear mensaje","detectar magia","detectar veneno","leer magia","llamarada","luces danzantes","luz","mano del mago"," marca arcana","nona","perturbar muertos vivientes","prestidigitación","rayo de escarcha","remendar","resistencia","salpicadura de ácido","sonido fantasma","toque de fatiga"];
 
-let conjurosArcanos1 = ["agrandar persona","alarma","alineamiento indetectable","animar cuerda","arma mágica","armadura de mago","aura mágica de Nystul","borrar","caída de pluma","causar miedo","comprensión idiomática","confusión menor","contacto electrizante","convocar monstruo (I)","curar heridas leves","detectar muertos vivientes","detectar puertas secretas","disco flotante de Tenser",
+const conjurosArcanos1 = ["agrandar persona","alarma","alineamiento indetectable","animar cuerda","arma mágica","armadura de mago","aura mágica de Nystul","borrar","caída de pluma","causar miedo","comprensión idiomática","confusión menor","contacto electrizante","convocar monstruo (I)","curar heridas leves","detectar muertos vivientes","detectar puertas secretas","disco flotante de Tenser",
                            "disfrazarse","dormir","escudo","grasa","hechizar persona","hipnotismo","identificar","imagen silenciosa","impacto verdadero","manos ardientes","montura","niebla de obscurecimiento","protección contbra el caos/el mal/el bien/la ley","proyectil mágico","quitar miedo","rayo de debilitamiento","reducir persona","retirada expedita","rociada de color",
                             "salto", "sirviente invisible","soportar los elementos","toque gélido","trabar portal","ventriloquía" ];
 
-let conjurosArcanos2 = ["apertura","astucia de zorro","atontar monstruo","boca mágica","calmar emociones","cautivar","ceguera/sordera","cerradura arcana","comandar muertos vivientes","contorno borroso","convocar enjambre","convocar monstruo (II)","curar heridas moderadas","desorientar","detectar pensamientos","esfera flamífera","esplendor de águila","estallar","explosión de sonido",
+const conjurosArcanos2 = ["apertura","astucia de zorro","atontar monstruo","boca mágica","calmar emociones","cautivar","ceguera/sordera","cerradura arcana","comandar muertos vivientes","contorno borroso","convocar enjambre","convocar monstruo (II)","curar heridas moderadas","desorientar","detectar pensamientos","esfera flamífera","esplendor de águila","estallar","explosión de sonido",
                             "falsa vida","flecha ácida de Melf","fuerza de toro","gracia felina","imagen menor","imagen múltiple","invisibilidad","lentificar veneno","levitar","llama continua","localizar objeto","mano espectral","mensajero animal","nube brumosa","obscurecer objeto","oscuridad","particulas nutilantes","pauta hipnótica","pirotectnia","protección contra las flechas","ráfaga de viento",
                             "rayo abrasador","resistencia de oso","resistir energía","sabiduría de búho","silencio","sobresaltar","telaraña","terribles carcajadas de tasha","toque de idiotez","toque de necrófago","trampa de leomund","trance animal","trepar cual arácnido","truco de la cuerda","ver lo invisible","viento susurrante","visión en la oscuridad"];
 
-let conjurosArcanos3 = ["acelerar","afiladura","apacible descanso","arma mágica mayor","bola de fuego","clariaudiencia/clarividencia","circulo mágico contra e bien/el caos/el mal/la ley","convocar monstruo (III)","carcel fantasmal","cubiculo de leomund","curar heridas graves","desplazamiento","detener muertos vivientes","disparar magia","don de lenguas","encoger objeto","escritura ilusoria","esculpir sonido","esfera de invisibilidad",
+const conjurosArcanos3 = ["acelerar","afiladura","apacible descanso","arma mágica mayor","bola de fuego","clariaudiencia/clarividencia","circulo mágico contra e bien/el caos/el mal/la ley","convocar monstruo (III)","carcel fantasmal","cubiculo de leomund","curar heridas graves","desplazamiento","detener muertos vivientes","disparar magia","don de lenguas","encoger objeto","escritura ilusoria","esculpir sonido","esfera de invisibilidad",
                             "esperanza alentadora","flecha flamigera","forma gaseosa","forma gaseosa","furia","hablar con los animales","heroísmo","imagen mayor","impronta de la serpiente sepia","inmovilizar persona","indetectabilidad","intermitencia","labia","luz del día","muro de viento","nube apestosa","página secreta","protección contra la energía","ralentizar","rayo agotador","rayo relampagueante",
                             "respiración acuática","runas explosivas","sueño profundo","sugestión","toque vampírico","tormenta de aguanieve","vista arcana","volar"];
 
-let conjurosArcanos4 = ["agrandar persona en grupo","alarido","ancla dimensional","asesino fantasmal","bruma sólida","cobijo seguro de leomund","confusión","conjuración sombría","contagio","convocar monstruo (IV)","creación menor","curar heridas críticas","desesperación aplastante","detectar escudriñamiento","enervación","escudo de fuego","escudriñamiento","esfera elástica de Otiluke","geas menor",
+const conjurosArcanos4 = ["agrandar persona en grupo","alarido","ancla dimensional","asesino fantasmal","bruma sólida","cobijo seguro de leomund","confusión","conjuración sombría","contagio","convocar monstruo (IV)","creación menor","curar heridas críticas","desesperación aplastante","detectar escudriñamiento","enervación","escudo de fuego","escudriñamiento","esfera elástica de Otiluke","geas menor",
                             "globo menor de invulnerabilidad","hablar con las plantas","hechizar monstruo","invisibilidad mayor","lanzar maldición","lanzar maldición","libertad de movimiento","localizar criatura","miedo","mnemotecnia de Rary","modificar recuerdo","muro de fuego","muro de hielo","muro ilusorio","neutralizar veneno","ojo arcano","piel pétrea","pauta iridiscente","polimorfarse","puerta dimensional","reanimar a los muertos",
                             "reducir persona en grupo","repeler sabandijas","quitar maldición","tentáculos negros de Evard","terreno alucinatorio","tormenta de hielo","trampa de hielo","trampa de fuego","transformar piedra","zona de silencio"];
 
-let conjurosArcanos5 = ["asolar","bruma mental","canción de discordia","cofre secreto de Leomund","Cono de frío","contactar con otro plano","convocar monstruo (V)","creacióm mayor","crecimiento animal","curar heridas leves en grupo","debilidad mental","disipar magia mayor","dominar persona","elaborar","espejo arcano","evocación sombría","exorcismo","imagen persistente","inmovilizar monstruo","ligadura de los planos, menor",
+const conjurosArcanos5 = ["asolar","bruma mental","canción de discordia","cofre secreto de Leomund","Cono de frío","contactar con otro plano","convocar monstruo (V)","creacióm mayor","crecimiento animal","curar heridas leves en grupo","debilidad mental","disipar magia mayor","dominar persona","elaborar","espejo arcano","evocación sombría","exorcismo","imagen persistente","inmovilizar monstruo","ligadura de los planos, menor",
                             "mano interpuesta de Bigby","mastín giel de Mordenkainen","mensaje onírico","muro de fuerza","muro de piedra","nube aniquiladora","ofuscar videncia","ojos fisgones","olas de fatiga","pasamiento","permanencia","pesadilla","polimorfar funesto","romper encantamiento","sanctasanctórum privado de Mordenjainen","símbolo de dolor","símbolo de sueño","similitud","recado","teleportar","telecinesia","transmigración",
                             "transmutar barro en roca","transmutar roca en barro","vínculo telepático de Rary","vuelo de largo recorrido"];
 
-let conjurosArcanos6 = ["analizar esencia mágica","animar objetos","astucia de zorro en grupo","bruma ácida","caminar por la sombra","campo antimagia","círculo de muerte","conocimiento de leyendas","contingencia","controlar las aguas","convocar monstruo (VI)","crear muertos vivientes","curar heridasa moderadas en grupo","de la carne a la piedra","de la muerte viviente a la muerte","de la piedra a la carne","desintegrar","disipar magia mayor",
+const conjurosArcanos6 = ["analizar esencia mágica","animar objetos","astucia de zorro en grupo","bruma ácida","caminar por la sombra","campo antimagia","círculo de muerte","conocimiento de leyendas","contingencia","controlar las aguas","convocar monstruo (VI)","crear muertos vivientes","curar heridasa moderadas en grupo","de la carne a la piedra","de la muerte viviente a la muerte","de la piedra a la carne","desintegrar","disipar magia mayor",
                         "doble engañoso","elacubración de Mordenkainen","encontrar la senda","esfera congelante de Otiluke","esplendor de águila en grupo","festín de los héroes","fuerza de toro en grupo","geas/empeño","globo de invulnerabilidad","gracia felina en grupo","guardas y custodias","heroísmo, mayor","imagen permanente","muro de hierro","rechazo","relámpago zigzagueante","remover tierra","resistencia de oso en grupo","sabiduría de búho en grupo",
                         "símbolo de miedo","símbolo de persuasión","sugestión en grupo","transformación de Tenser","velo","cibración sintonizada"];
 
-let conjurosArcanos7 = ["bola de fuego de explosión retardada","conjuración sombría mayor","controlar el clima","controlar muertos vivientes","convocaciones instantáneas de Drawmij","convocar monstruo (VII)","dedo de la muerte","demencia","deseo limitado","desplazamiento de plano","destierro","escudriñamiento mayor","espada de Mordenkainen","estatua","excursión etérea","inmovilizar persona en grupo","jaula de fuerza","magnífica mansión de Mordenkainen","mano aferradora de Bigby",
+const conjurosArcanos7 = ["bola de fuego de explosión retardada","conjuración sombría mayor","controlar el clima","controlar muertos vivientes","convocaciones instantáneas de Drawmij","convocar monstruo (VII)","dedo de la muerte","demencia","deseo limitado","desplazamiento de plano","destierro","escudriñamiento mayor","espada de Mordenkainen","estatua","excursión etérea","inmovilizar persona en grupo","jaula de fuerza","magnífica mansión de Mordenkainen","mano aferradora de Bigby",
                         "olas de agotamiento","palabra de poder cegador","proyectar imagen","puerta en fase","recluir","retorno de conjuros","rociada prismática","símbolo de aturdimiento","símbolo de debilidad","simulacro","teleportar mayor","teleportar objeto","visión","vista arcana mayor"];
 
-let conjurosArcanos8 = ["alarido mayor","antipatía","atrapar el alma","baile irresistible de Otto","cerradura dimensional","clonar","convocar monstruo (VIII)","crear muerto viviente mayor","cuerpo de hierro","discernir ubicación","esfera telecinética de Otiluke","estasis temporal","evocación sombría mayor","exigencia","explosión solar","hechizar monstruo en grupo","horrible marchitamiento",
+const conjurosArcanos8 = ["alarido mayor","antipatía","atrapar el alma","baile irresistible de Otto","cerradura dimensional","clonar","convocar monstruo (VIII)","crear muerto viviente mayor","cuerpo de hierro","discernir ubicación","esfera telecinética de Otiluke","estasis temporal","evocación sombría mayor","exigencia","explosión solar","hechizar monstruo en grupo","horrible marchitamiento",
                         "instante de presciencia","laberinto","ligadura","ligadura de los planos mayor","mente en blanco","muro prismático","nube incendiaria","ojos fisgones mayor","palabra de poder aturdidor","pantalla","pauta centelleante","polimorfar cualquier cosa","protección contra los conjuros","puño cerrado de Bigby","rayo polar","símbolo de locura","símbolo de muerte","simpatía"];
 
-let conjurosArcanos9 = ["cambiar de forma","cautiverio","círculo de teletransporte","consumir energía","convocar monstruo (IX)","deseo","disyunción de Mordenkainen","dominar monstruo","esféra prismática","etereidad","inmovilizar monstruo en grupo","lamento de la banshee","libertad","ligadura del alma","mano aplastante de Bigby","némesis inexorable","palaba de poder mortal","parar el tiempo","presciencia",
+const conjurosArcanos9 = ["cambiar de forma","cautiverio","círculo de teletransporte","consumir energía","convocar monstruo (IX)","deseo","disyunción de Mordenkainen","dominar monstruo","esféra prismática","etereidad","inmovilizar monstruo en grupo","lamento de la banshee","libertad","ligadura del alma","mano aplastante de Bigby","némesis inexorable","palaba de poder mortal","parar el tiempo","presciencia",
                         "proyección astral","refugio","tromba de meteoritos","umbral","umbras"];
 
-let conjurosDivinos0 = ["conocer la dirección","crear agua","curar heridas menores","detectar magia","detectar veneno","inflingir heridas menores","leer magia","llamarada","luz","orientación divina","purificar comida y agua","remendar","resistencia","virtud"];
+const conjurosDivinos0 = ["conocer la dirección","crear agua","curar heridas menores","detectar magia","detectar veneno","inflingir heridas menores","leer magia","llamarada","luz","orientación divina","purificar comida y agua","remendar","resistencia","virtud"];
 
-let conjurosDivinos1 = ["alarma","arma mágica","bendecir","bendecir agua","bendecir arma","buenas bayas","calmar animales","causar miedo","colmillo mágico","comprensión idiomática","convocar aliado natural (I)","convocar monstruo (I)","curar heridas leves","detectar animales o plantas","detectar el bien/el caos/el mal/la ley","detectar muertos vivientes","detectar trampas y fosas","enmarañar","esconderse de los animales","esconderse de los muertos vivientes","escudo de entropía","escudo de la fé",
+const conjurosDivinos1 = ["alarma","arma mágica","bendecir","bendecir agua","bendecir arma","buenas bayas","calmar animales","causar miedo","colmillo mágico","comprensión idiomática","convocar aliado natural (I)","convocar monstruo (I)","curar heridas leves","detectar animales o plantas","detectar el bien/el caos/el mal/la ley","detectar muertos vivientes","detectar trampas y fosas","enmarañar","esconderse de los animales","esconderse de los muertos vivientes","escudo de entropía","escudo de la fé",
                         "fatalidad","favor divino","flamear","fuego feérico","garrote","hablar con los animales","hechizar animal","inflingir heridas leves","maldecir agua","niebla de obscurecimiento","orden imperiosa","pasar sin dejar rastro","perdición","piedra mágica","protección congtra el caos/el mal/el bien/la ley","quitar miedo","reloj de la muerte","salto","santuario","soportar los elementos","zancada prodigiosa"];
 
-let conjurosDivinos2 = ["ablandar tierra y piedra","alineamiento indetectable","apacible descanso","arma espiritual","augurio","calentar metal","calmar emociones","campanas fúnebres","cautivar","consagrar","convocar aliado natural (II)","convocar plaga (o enjambre)","convocar monstruo (II)","curar heridas moderadas","deformar madera","encontrar trampas","escudar a otro","esfera flamígera","esplendor de águila","estallar",
+const conjurosDivinos2 = ["ablandar tierra y piedra","alineamiento indetectable","apacible descanso","arma espiritual","augurio","calentar metal","calmar emociones","campanas fúnebres","cautivar","consagrar","convocar aliado natural (II)","convocar plaga (o enjambre)","convocar monstruo (II)","curar heridas moderadas","deformar madera","encontrar trampas","escudar a otro","esfera flamígera","esplendor de águila","estallar",
                         "explosión de sonido","filo flamígero","fuerza de toro","gracias felina","hablar con las plantas","helar metal","inflingir heridas moderadas","inmovilizar animal","inmovilizar persona","integrar","lentificar veneno","mensajero animal","nube brumosa","oscuridad","piel robliza","profanar","quitar parálisis","ráfaga de viento","reducir animal","resistencia de oso","resistir energía","restablecimiento menor",
                         "sabiduría de búho","silencio","situación","trance animal","trampa de fuego","trampa de lazo","transformar madera","trepar cual arácnido","zona de verdad"];
 
-let conjurosDivinos3 = ["apagar","brotar de espinas","caminar sobre las aguas","ceguera/sordera","círculo mágico contra el bien/el caos/el mal/la ley","colmillo mágico mayor","contagio","convocar aliado natural (III)","convocar monstruo (III)","crear comida y agua","crecimiento vegetal","curar heridas graves","disipar magia","dominar animal","fundirse con la piedra","glifo custodio","hablar con las plantas","hablar con los muertos",
+const conjurosDivinos3 = ["apagar","brotar de espinas","caminar sobre las aguas","ceguera/sordera","círculo mágico contra el bien/el caos/el mal/la ley","colmillo mágico mayor","contagio","convocar aliado natural (III)","convocar monstruo (III)","crear comida y agua","crecimiento vegetal","curar heridas graves","disipar magia","dominar animal","fundirse con la piedra","glifo custodio","hablar con las plantas","hablar con los muertos",
                         "inflingir heridas graves","lanzar maldición","llama continua","llamar al relámpago","localizar objeto","luz abrasadora","luz del día","mano auxiliadora","muro de viento","neutralizar veneno","obscurecer objeto","obscuridad profunda","plegaria","protección contra la energía","purgar invisibilidad","quitar ceguera/sordera","quitar enfermedad","quitar maldición","reanimar a los muertos","reducir plantas","respiración acuática","sanar a una montura","tormenta de aguanieve",
                         "trampa de lazo","transformar piedra","vestidura mágica","visión en la oscuridad"];
 
-let conjurosDivinos4 = ["adivinación","aliado de los planos menor","ancla dimensional","arma mágica mayor","asolar","caparazón antivegetal","caminar por el aire","comandar plantas","contacto herrumbroso","controlas las aguas","convocar aliado natural (IV)","convocar monstruo (IV)","curar heridas críticas","custodia contra la muerte","discernir mentiras","don de lenguas","espada sagrada","exorcismo","imbuir aptitud para los conjuros","inflingir heridas críticas","indetectabilidad","inmunidad a conjuros",
+const conjurosDivinos4 = ["adivinación","aliado de los planos menor","ancla dimensional","arma mágica mayor","asolar","caparazón antivegetal","caminar por el aire","comandar plantas","contacto herrumbroso","controlas las aguas","convocar aliado natural (IV)","convocar monstruo (IV)","curar heridas críticas","custodia contra la muerte","discernir mentiras","don de lenguas","espada sagrada","exorcismo","imbuir aptitud para los conjuros","inflingir heridas críticas","indetectabilidad","inmunidad a conjuros",
                         "libertad de movimiento","piedras puntiagudas","poder divino","recado","reencarnar","repeler sabandijas","restablecimiento","romper encantamiento","sabandijas gigantes","veneno","zancada arbórep"];
 
-let conjurosDivinos5 = ["arma disruptora","comandar mayor","comunión","comunión con la naturaleza","controlar los vientos","convocar monstruo (V)","convocar aliado natural (V)","crecimiento animal","curar heridas leves en grupo","desacralizar","descarga flamígera","desplazamiento de plano","disipar el bien/el mal/el caos/la ley","dotar de consciencia","escudriñamiento","expiación","inflingir heridas ligeras en grupo","llamar a la tormenta de relámpagos",
+const conjurosDivinos5 = ["arma disruptora","comandar mayor","comunión","comunión con la naturaleza","controlar los vientos","convocar monstruo (V)","convocar aliado natural (V)","crecimiento animal","curar heridas leves en grupo","desacralizar","descarga flamígera","desplazamiento de plano","disipar el bien/el mal/el caos/la ley","dotar de consciencia","escudriñamiento","expiación","inflingir heridas ligeras en grupo","llamar a la tormenta de relámpagos",
                         "marca de la justicia","muro de espinas","muro de fuego","muro de piedra","piel pétrea","plaga de insectos","poder de la justicia","polimorfar funesto","rematar a los vivos","resistencia a conjuros","revivir a los muertos","romper encantamiento","sacralizar","símbolo de dolor","símbolo de sueño","tormenta de hielo","transmutar barro en roca","transmutar roca en barro","visión verdadera"];
 
-let conjurosDivinos6 = ["aliado de los planos","animar objetos","barrera de cuchillos","bastón de conjuro","caminar con el viento","caparazón antivida","convocar aliado natural (VI)","convocar monstruo (VI)","crear muertos vivientes","curar heridas moderadas en grupo","dañar","de la muerte viviente a la muerte","destierro","disipar magia mayor","encontrar la senda","esplendor de águila","festín de los héroes","fuerza de toro en grupo",
+const conjurosDivinos6 = ["aliado de los planos","animar objetos","barrera de cuchillos","bastón de conjuro","caminar con el viento","caparazón antivida","convocar aliado natural (VI)","convocar monstruo (VI)","crear muertos vivientes","curar heridas moderadas en grupo","dañar","de la muerte viviente a la muerte","destierro","disipar magia mayor","encontrar la senda","esplendor de águila","festín de los héroes","fuerza de toro en grupo",
                         "geas/empeño","glifo custodio mayor","gracia felina en grupo","inflingir heridas moderadas en grupo","interdicción","madera férrea","palabra de regreso","piedra parlante","remover tierra","repeler madera","resistencia de oso en grupo","roble guardían","sabiduría de búho en grupo","sanar","semillas de fuego","símbolo de miedo","símbolo de persuasión","viajar mediante plantas"];
 
-let conjurosDivinos7 = ["animar plantas","bastón cambiante","blasfemia","controlar el clima","convocar aliado natural (VII)","convocar monstruo (VII)","curar heridas graves en grupo","destrucción","escudriñamiento mayor","excursión etérea","inflingir heridas graves en grupo","marabunta","máxima","palabra del caos","palabra sagrada","rayo solar","rechazo","refugio","regenerar","restablecimiento mayor","resurrección",
+const conjurosDivinos7 = ["animar plantas","bastón cambiante","blasfemia","controlar el clima","convocar aliado natural (VII)","convocar monstruo (VII)","curar heridas graves en grupo","destrucción","escudriñamiento mayor","excursión etérea","inflingir heridas graves en grupo","marabunta","máxima","palabra del caos","palabra sagrada","rayo solar","rechazo","refugio","regenerar","restablecimiento mayor","resurrección",
                         "símbolo de aturdimiento","símbolo de debilidad","transmutar metal en madera"];
 
-let conjurosDivinos8 = ["aliados de los planos mayor","aura sacrilega","aura sagrada","campo antimagia","capa del caos","cerradura dimensional","controlar plantas","convocar aliado natural (VIII)","convocar monstruo (VIII)","crear muertos vivientes mayores","curar heridas críticas en grupo","explosión solar","dedo de la muerte","discernir ubicación","escudo de la ley","inflingir heridas críticas en grupo","inmunidad a los conjuros mayor",
+const conjurosDivinos8 = ["aliados de los planos mayor","aura sacrilega","aura sagrada","campo antimagia","capa del caos","cerradura dimensional","controlar plantas","convocar aliado natural (VIII)","convocar monstruo (VIII)","crear muertos vivientes mayores","curar heridas críticas en grupo","explosión solar","dedo de la muerte","discernir ubicación","escudo de la ley","inflingir heridas críticas en grupo","inmunidad a los conjuros mayor",
                         "invertir gravedad","formas de animal","repeler piedra o metal","símbolo de locura","símbolo de muerte","terremoto","tormenta de fuego","torbellino"];
 
-let conjurosDivinos9 = ["antipatía","desbrozar","cambiar de forma","consumir energía","convocar aliado natural (IX)","convocar monstruo (IX)","enjambre elemental","etereidad","implosión","ligadura del alma","milagro","presciencia","proyección astral","regenerar","resurrección verdadera","sanar en grupo","simpatía","tormenta de venganza","umbral"];
+const conjurosDivinos9 = ["antipatía","desbrozar","cambiar de forma","consumir energía","convocar aliado natural (IX)","convocar monstruo (IX)","enjambre elemental","etereidad","implosión","ligadura del alma","milagro","presciencia","proyección astral","regenerar","resurrección verdadera","sanar en grupo","simpatía","tormenta de venganza","umbral"];
 
-let npcRandom = ["Cicatriz","Altísimo","Le falta un dedo","Mal aliento","Olor a perfume","Extraño color de ojos","Tos seca","Voz muy baja","Voz muy alta","Mal hablado","Ceceo","Tartamudeo","Tatuaje","Extraño color de piel","Calvo","Pelo muy largo","Extraño color de pelo","Cojea","Joyas características","Ropas llamativas","Mal vestido","Tic en los ojos",
-                "Nervioso y manotea","Muy atractivo","Espalda encorvada","Chaparro","En los huesos","Obeso","Se le va la onda","Mastica algo","Sucio y descuidado","Egoista","Servil","Soñoliento","Pedante","Excesivamente crítico","Amante del arte","Coleccionista","Tacaño","Derrochador","Pesimista","Optimista","Borracho","Psíquico","Cortés","Ultra religioso","Mal educado","Asistadizo","De alcurnia","Orgulloso","Mal genio",
+const npcRandom = ["Cicatriz","Altísimo","Le falta un dedo","Mal aliento","Olor a perfume","Extraño color de ojos","Tos seca","Voz muy baja","Voz muy alta","Mal hablado","Ceceo","Tartamudeo","Tatuaje","Extraño color de piel","Calvo","Pelo muy largo","Extraño color de pelo","Cojea","Joyas características","Ropas llamativas","Mal vestido","Tic en los ojos",
+                "Nervioso y manotea","Muy atractivo","Espalda encorvada","Chaparro","En los huesos","Obeso","Se le va la onda","Mastica algo","Sucio y descuidado","Egoista","Servil","Soñoliento","Pedante","Excesivamente crítico","Amante del arte","Coleccionista","Tacaño","Derrochador","Pesimista","Optimista","Borracho","Psíquico","Cortés","Ultra religioso","Mal educado","Asustadizo","De alcurnia","Orgulloso","Mal genio",
                 "Desquiciado","Valiente","Cobarde","Curioso","Veraz","Mentiroso","Perezoso","Energético","Moralista","Cruel","Sexista","Racista","Fascinado por la magia","Receloso ante la magia","Bromista","Sin una extremidad","Sexi","Coqueto","Muchas heridas","Llagas y acné","Partes metálicas","Muy viejo","Demasiado joven","Animal compañia","Gemelos","Sádico","Sabio","Chismoso","Hipster","Hippie","Fuertemente armado","Andrógeno","Lgbt","Se queda viendo fijo","Mudo","Ciego","Sordo","Hostil","Valora la fuerza",
                 "De vida Salvaje","Magia durmiente","Pss.. espía aliado","Feo","Bruto","Apostador","Cyborg","Contrabandista","Misión alterna","Avatar de ..."];
 
-let varitas = ["detectar magia","luz","manos ardientes","hechizar animal","hechizar persona","rociada de color","curar heridas leves","detectar puertas secretas","agrandar persona","proyectil mágico (1o)","contacto electrizante","convocar monstruo (I)","proyectil mágico (3ro)","proyectil mágico (5to)","resistencia de oso","fuerza de toro","gracia felina","curar heridas moderadas","oscuridad","luz del día","lentificar veneno","esplendor de águila","falsa vida",
+const varitas = ["detectar magia","luz","manos ardientes","hechizar animal","hechizar persona","rociada de color","curar heridas leves","detectar puertas secretas","agrandar persona","proyectil mágico (1o)","contacto electrizante","convocar monstruo (I)","proyectil mágico (3ro)","proyectil mágico (5to)","resistencia de oso","fuerza de toro","gracia felina","curar heridas moderadas","oscuridad","luz del día","lentificar veneno","esplendor de águila","falsa vida",
                 "astucia de zorro","toque de necrófago","inmovilizar persona","invisibilidad","apertura","levitar","flecha ácida de Melf","imágen múltiple","sabiduría de búho","estallar","silencio","convocar monstruo (II)","telaraña","proyectil mágico (7mo)","proyectil mágico (9o)","Llamar al relámpago (5to)","hechizar persona, intensificado (conjuro 3er nivel)","contagio","curar heridas graves","disipar magia",
                 "bola de fuego (5to)","afiladura","rayo relampagueante (5to)","imágen mayor","ralentizar","sugestión","convocar monstruo (III)","bola de fuego (6to)","rayo relampagueante (6to)","luz abrasadora (6to)","llamar al relámpago (8vo)","bola de fuego (8vo)","rayo relampagueante (8vo)","hechizar monstruo","curar heridas críticas","ancla dimensional","miedo","invisibilidad mayor","inmovilizar persona, intensificado (4to nivel)","tormenta de hielo",
                 "inflingir heridas críticas","neutralizar veneno","veneno","polimorfarse","rayo de debilitamiento, intensificado (4to nivel)","sugestión, intensificado (4to nivel)","convocar monstruo (IV)","muro de fuego","muro de hielo","disipar magia (10vo)","bola de fuego (10vo)","rayo relampagueante","martillo del caos (8vo)","castigo divino (8vo)","ira del orden (8vo)","azote sacrílego (8vo)","reestablecimiento","piel pétrea"];
 
-let objMaravMenores = ["fetiche de plumas de Quaal (ancla)","disolvente universal","elixir de amor","ungüento de eternidad","fetiche de plumas de Quaal (abanico)","polvo de irrastreabilidad","elixir de esconderse","elixir de furtividad","elixir de nadar","elixir de visión","lustre de plato","fetiche de plumas de Quaal (pájaro)","fetiche de plumas de Quaal (árbol)","fetiche de plumas de Quaal (barco de cisne)","elixir de la verdad","fetiche de plumas de Quaal (látigo)",
+const objMaravMenores = ["fetiche de plumas de Quaal (ancla)","disolvente universal","elixir de amor","ungüento de eternidad","fetiche de plumas de Quaal (abanico)","polvo de irrastreabilidad","elixir de esconderse","elixir de furtividad","elixir de nadar","elixir de visión","lustre de plato","fetiche de plumas de Quaal (pájaro)","fetiche de plumas de Quaal (árbol)","fetiche de plumas de Quaal (barco de cisne)","elixir de la verdad","fetiche de plumas de Quaal (látigo)",
                     "polvo de sequedad","bolsa de trucos (gris)","mano del mago","brazales de armadura (+1)","capa de resistencia (+1)","perla de poder (conjuro de nivel 1)","filacteria de fidelidad","ungüento de resbalamiento","elixir de aliento de fuego","flauta de las alcantarillas","polvo de ilusión","gafas de visión minuciosa","broche de escudo","collar de bolas de fuego (tipo 1)","polvo de aparición","sombrero de disfraz","flauta del son",
                         "carcaj de Ehlonnna","amuleto de armadura natural (+1)","morral práctico de Heward","cuerno de niebla","gema elemental","túnica de huesos","pegamento soberano","bolsa de contención (tipo 1)","botas élficas","botas de las tierras del invierno eterno","vela de la verdad","capa élfica","ojos de águila","escarabeo azote de gólem","collar de bolas de fuego (tipo 1)","piedra de alarma",
                         "bolsa de trucos (óxido)","cuenta de fuerza","carillón de apertura","herraduras de velocidad","cuerda de escalada","polvo de desaparición","lente de detección","vestidura de los druidas","figurito de poder maravilloso (cuervo de plata)","amuleto de salud (+2)","brazales de armadura (+2)","capa de carisma (+2)","capa de resistencia (+2)","guanteletes de fuerza de ogro","guantes de atrapar flechas","guantes de destreza (+2)",
@@ -99,7 +99,7 @@ let objMaravMenores = ["fetiche de plumas de Quaal (ancla)","disolvente universa
                         "yelmo de comprensión idiomática y leer magia","atuendo de fuga","botella siemprehumeante","cuchara de Murlynd","collar de bolas de fuego (tipo IV)","botas de zancadas y brincos","abanico de viento","amuleto de puños poderosos","herraduras de un céfiro","flauta del desasosiego","collar de bolas de fuego (tipo V)","guantes de nadar y trepar","bolsa de trucos (canela)","ceño refulgente menor","cuemo de bondad/maldad","túnica de objetos útiles",
                         "bote plegable","capa de la mantarraya","botella de aire","bolsa de contención (tipo III)","presea contra venenos"];
 
-let objMaravInter = ["botas de levitación","arpa hechizadora","amuleto de armadura natural (+2)","manual del gólem de carne","mano de la gloria","piedra loun (esfera rojo intenso)","piedra loun (esfera azul incandescente)","piedra loun (romboude azul pálido)","piedra loun (esfera rosa y verde)","piedra loun (romboide rosa)","piedra loun (esfera azul y escarlata)","baraja de ilusiones",
+const objMaravInter = ["botas de levitación","arpa hechizadora","amuleto de armadura natural (+2)","manual del gólem de carne","mano de la gloria","piedra loun (esfera rojo intenso)","piedra loun (esfera azul incandescente)","piedra loun (romboude azul pálido)","piedra loun (esfera rosa y verde)","piedra loun (romboide rosa)","piedra loun (esfera azul y escarlata)","baraja de ilusiones",
                     "collar de bolas de fuego (tipo VI)","vela de invocación","brazales de armadura (+3)","capa de resistencia (+3)","decantador inagotable de agua","collar de adaptación","perla de poder (conjuro de nivel 3)","talismán de la esfera","figurita de poder maravilloso (búho serpentino)","collar de bolas de fuego (tipo VII)","hilo de cuentas de plegaria (menor)",
                       "bolsa de contención (tipo IV)","figurita de poder maravilloso (grifo de bronce)","figurita de poder maravilloso (mosca de ébuno)","guante almacenador","piedra loun (romboide azul oscuro)","caballo de piedra (corredor)","manto del saltimbanqui","filactería de expulsión de muertos vivientes","guantelete oxidante","botas de velocidad","gafas de noche","manual del gólem de arcilla",
                         "medallón de los pensamientos","flauta del dolor","libro bendito de Boccab","cinturón de monje","gema del resplandor","lira de construcción","capa arácnida","caballo de piedra (destrero)","cinturón de los enanos","presea cerradora de heridas","cuerno de los tritones","perla de las sirenas","figurita de poder maravilloso (perro de ónice)","amuleto de salud (/4)","cinturón de fuerza gigante (+4)",
@@ -108,26 +108,26 @@ let objMaravInter = ["botas de levitación","arpa hechizadora","amuleto de armad
                         "brazales de arquería (mayores)","brazales de armadura (+5)","capa de resistencia (+5)","ojos de la fatalidad","perla de poder (conjuro de nivel 5)","mazo de los titanes","hilo de cuentas de plegaria","capa del murciélago","bandas de hierro de Bilarro","cubo de resistencia al frío","yelmo de telepatía","presea contra venenos","túnica de colores hipnóticos","manual de salud corporal +1","manual de ejercicio beneficioso +1","tomo de claridad de pensamiento +1","tomo de liderazgo e influencia +1",
                           "tomo de entendimiento +1"];
 
-let objMaraMayor = ["grilletes dimensionales","figurita de poder maravilloso (corcel de obsidiana)","tambores de pánico","piedra laun (naranja)","piedra laun (prisma verde pálido)","linterna de revelación","túnica de camuflaje","amuleto de armadura natural (+4)","amuleto contra detección y localización","alfombra voladora (5 por 10')","manual del gólem de hierro","amuleto de salud (+6)","cinturón de fuerza de gigante (+6)","brazales de armadura (+6)","capa de carisma (+6)","guantes de desstreza (+6)","diadema del intelecto (+6)",
+const objMaraMayor = ["grilletes dimensionales","figurita de poder maravilloso (corcel de obsidiana)","tambores de pánico","piedra laun (naranja)","piedra laun (prisma verde pálido)","linterna de revelación","túnica de camuflaje","amuleto de armadura natural (+4)","amuleto contra detección y localización","alfombra voladora (5 por 10')","manual del gólem de hierro","amuleto de salud (+6)","cinturón de fuerza de gigante (+6)","brazales de armadura (+6)","capa de carisma (+6)","guantes de desstreza (+6)","diadema del intelecto (+6)",
                     "piedra laun (prisma púrpura vibrante)","perla de poder (conjuro de nivel 6)","presea de sabiduría +6","escarabeo de protección","piedra laun (elipsoide lavanda y verde)","anillo umbral","bola de cristal","manual gólem de piedra mayal","orbe de las tormentas","bolas de teletransporte","brazales de armadura (+7)","perla de poder (conjuro de nivel 7)","amuleto de armadura natural (+5)","capa de desplazamiento mayor","bola de cristal con ver lo invisible","cuerno del valhalla",
                     "bola de cristal con detectar pensamientos","alfombra voladora (6 por 9')","amuleto de puños poderosos +3","alas de vuelo","capa de etereidad","fortaleza instantánea de Daem","manual de salud corporal +2","manual de ejercicio beneficioso +2","manual de rapidez de acción +2","tomo de claridad de pensamiento +2","tomo de liderazgo e influencia +2","tomo de entendimiento +2","ojos hechizadores","túnica de las estrellas","alfombra voladora (10x10')","craneoscuro","cubo de fuerza","brazales de armadura (+8)","perla de poder (conjuro de nivel 8)","bola de cristal con telepatía",
                     "cuerno detonante mayor","perla de poder (dos conjuros)","yelmo de teletransporte","gema de visión","túnica del archimago","vestiduras de la fé","bola de cristal con visión verdadera","perla de poder (conjuro de nivel 9)","pozo de muchos mundos","manual de salud corporal +3","manual de ejercicio beneficioso +3","manual de ejercicio beneficioso +3","manual de rapidez de acción +3","tomo de claridad de pensamiento +3","tomo de liderazgo e influencia +3","tomo de entendimiento +3","aparato de kwalish",
                     "toga de resistencia a conjuros","espejo de oposición","hilo de cuentas de plegaria mayor","amuleto de puños poderosos +4","ojos petrificantes","cuenco de comandar elementales de agua","brasero de comandar elementales de fuego","Incensario de control de elementales de aire","piedra de control de elementales de tierra","manual de salud corporal +4","manual de ejercicio beneficioso +4","manual de rapidéz de acción +4","tomo de claridad de pensamiento +4","tomo de liderazgo e influencia +4",
                     "tomo de entendimiento +4","amuleto de los planos","túnica de los ojos","yelmo de fulgor","manual de salud corporal +5","manual de ejercicio beneficioso +5","manual de rapidéz de acción +5","tomo de claridad de pensamiento +5","tomo de liderazgo e influencia +5","tomo de entendimiento +5","botella del ifrit","amuleto de puños poderosos +5","diamante del caos","umbral cúbico","frasco de hierro","espejo de poder mental","espejo atrapavidas"];
 
-let cetros = ["metamágico (ampliación, menor)","metamágico (prolongación, menor)","metamágico (silencio, menor)","inamovible","metamágico (potenciación, menor)","detección de metales y minerales","cancelación","metamágico (ampliación)","metamágico (prolongación)","metamágico (silencio)","de las maravillas","pitón","metamágico (maximización, menor)","extinguellamas","de la víbora","detección de enemigos","metamágico (ampliación, mayor)","metamágico (prolongación, mayor)",
+const cetros = ["metamágico (ampliación, menor)","metamágico (prolongación, menor)","metamágico (silencio, menor)","inamovible","metamágico (potenciación, menor)","detección de metales y minerales","cancelación","metamágico (ampliación)","metamágico (prolongación)","metamágico (silencio)","de las maravillas","pitón","metamágico (maximización, menor)","extinguellamas","de la víbora","detección de enemigos","metamágico (ampliación, mayor)","metamágico (prolongación, mayor)",
             "metamágico (silencio, mayor)","magnificencia","marchitante","metamágico (potenciación)","truenos y relámpagos","metamágico (apresuración, menor)","negación","absorción","mangual","metamágico (maximización)","gobierno","seguridad","poder señorial","metamágico (potenciación, mayor)","metamágico (apresuarción)","alerta","metamágico (maximización)","metamágico (apresuarción, mayor)"];
 
-let bastones = ["hechizador","fuego","enjambre de insectos","curación","cambio de tamaño","iluminador","escarcha","defensa","abjuración","conjuración","encantamiento","evocación","ilusión","nigromancia","transmutación","adivinación","tierra y piedra","de los bosques","vida","paso","poder"];
+const bastones = ["hechizador","fuego","enjambre de insectos","curación","cambio de tamaño","iluminador","escarcha","defensa","abjuración","conjuración","encantamiento","evocación","ilusión","nigromancia","transmutación","adivinación","tierra y piedra","de los bosques","vida","paso","poder"];
 
 //***************************************** DADOS *************************************//
-function tiroDeDados(dados, lados)   {
-                                    let resDado=0;
-                                    for (i=0; i<dados; i++) {
-                                                            resDado = resDado + Math.floor((Math.random() * lados) + 1);
-                                                            }
-                                    return resDado;
-                                    }
+const tiroDeDados = (dados, lados) => {
+                                      let resDado=0;
+                                      for (i=0; i<dados; i++) {
+                                                              resDado = resDado + Math.floor((Math.random() * lados) + 1);
+                                                              }
+                                      return resDado;
+                                      }
 
 //***************************************** BOTÓN BACK *************************************//
 function back() { //Regresar al menú principal
@@ -221,50 +221,59 @@ function randomizadorNPC() {
                             let rasgoNPC, alineamiento, raza, clase;
 
                             //************** RANDOMIZACIÓN ******************//
-                            rasgoNPC = Math.floor((Math.random() * 100) + 1);
-                            alineamiento = Math.floor((Math.random() * 100) + 1);
-                            raza = Math.floor((Math.random() * 100) + 1);
-                            clase = Math.floor((Math.random() * 100) + 1);
+                            rasgoNPC = tiroDeDados(1, 100);
+                            alineamiento = tiroDeDados(1, 100);
+                            raza = tiroDeDados(1, 100);
+                            clase = tiroDeDados(1, 100);
 
 
                             //************** RASGOS ******************//
                             rasgoNPC = npcRandom[Math.floor((Math.random() * 100))];
 
                             //************** ALINEAMIENTO ******************//
-                            if (alineamiento >=1 && alineamiento <=35) {alineamiento = "Legal Bueno"}
-                            else if (alineamiento >=36 && alineamiento <=39) {alineamiento = "Neutral Bueno"}
-                            else if (alineamiento >=40 && alineamiento <=41) {alineamiento = "Caótico Bueno"}
-                            else if (alineamiento >=42 && alineamiento <=61) {alineamiento = "Legal Neutral"}
-                            else if (alineamiento == 62) {alineamiento = "Neutral"}
-                            else if (alineamiento >=63 && alineamiento <=64) {alineamiento = "Caótico Neutral"}
-                            else if (alineamiento >=65 && alineamiento <=90) {alineamiento = "Legal Maligno"}
-                            else if (alineamiento >=91 && alineamiento <=97) {alineamiento = "Neutral Maligno"}
-                            else if (alineamiento >=98 && alineamiento <=100) {alineamiento = "Caótico Maligno"}
+                            alineamiento = rangoAlineamiento(alineamiento);
+                            function rangoAlineamiento(alineamiento){
+                                                                    if (alineamiento >=1 && alineamiento <=35) return "Legal Bueno";
+                                                                    if (alineamiento >=36 && alineamiento <=39) return "Neutral Bueno";
+                                                                    if (alineamiento >=40 && alineamiento <=41) return "Caótico Bueno";
+                                                                    if (alineamiento >=42 && alineamiento <=61) return "Legal Neutral";
+                                                                    if (alineamiento == 62) return "Neutral";
+                                                                    if (alineamiento >=63 && alineamiento <=64) return "Caótico Neutral";
+                                                                    if (alineamiento >=65 && alineamiento <=90) return "Legal Maligno";
+                                                                    if (alineamiento >=91 && alineamiento <=97) return "Neutral Maligno";
+                                                                    if (alineamiento >=98 && alineamiento <=100) return "Caótico Maligno";
+                                                                    }
 
                             //************** RAZA ******************//
-                            if (raza >=1 && raza <=50) {raza = "Humanos"}
-                            else if (raza >=51 && raza <=58) {raza = "Vastayan Rúnico"}
-                            else if (raza >=59 && raza <=66) {raza = "Vastayan Bestial"}
-                            else if (raza >=67 && raza <=74) {raza = "Vastayan Terrano"}
-                            else if (raza >=75 && raza <=82) {raza = "Troll"}
-                            else if (raza >=83 && raza <=90) {raza = "Yordle"}
-                            else if (raza >=90 && raza <=97) {raza = "Humano Techmatúrgico"}
-                            else if (raza >=98 && raza <=99) {raza = "Mestizo Elemental"}
-                            else if (raza ==100) {raza = "Oovicat"}
+                            raza = rangoRaza(raza);
+                            function rangoRaza(raza){                 
+                                                    if (raza >=1 && raza <=50) return "Humanos";
+                                                    if (raza >=51 && raza <=58) return "Vastayan Rúnico";
+                                                    if (raza >=59 && raza <=66) return "Vastayan Bestial";
+                                                    if (raza >=67 && raza <=74) return "Vastayan Terrano";
+                                                    if (raza >=75 && raza <=82) return "Troll";
+                                                    if (raza >=83 && raza <=90) return "Yordle";
+                                                    if (raza >=90 && raza <=97) return "Humano Techmatúrgico";
+                                                    if (raza >=98 && raza <=99) return "Mestizo Elemental";
+                                                    if (raza ==100) return "Oovicat";
+                                                    }
 
                             //************** CLASE ******************//
-                            if (clase >=1 && clase <=9) {clase = "Bárbaro"}
-                            else if (clase >=10 && clase <=18) {clase = "Bardo"}
-                            else if (clase >=19 && clase <=27) {clase = "Clérigo"}
-                            else if (clase >=28 && clase <=36) {clase = "Druida"}
-                            else if (clase >=37 && clase <=45) {clase = "Explorador"}
-                            else if (clase >=46 && clase <=54) {clase = "Guerrero"}
-                            else if (clase >=37 && clase <=45) {clase = "Explorador"}
-                            else if (clase >=55 && clase <=63) {clase = "Hechizero"}
-                            else if (clase >=64 && clase <=72) {clase = "Mago"}
-                            else if (clase >=73 && clase <=81) {clase = "Monje"}
-                            else if (clase >=82 && clase <=91) {clase = "Paladín"}
-                            else if (clase >=92 && clase <=100) {clase = "Pícaro"}
+                            clase = rangoClase(clase);
+                            function rangoClase(clase){
+                                                      if (clase >=1 && clase <=9) return "Bárbaro";
+                                                      if (clase >=10 && clase <=18) return "Bardo";
+                                                      if (clase >=19 && clase <=27) return "Clérigo";
+                                                      if (clase >=28 && clase <=36) return "Druida";
+                                                      if (clase >=37 && clase <=45) return "Explorador";
+                                                      if (clase >=46 && clase <=54) return "Guerrero";
+                                                      if (clase >=37 && clase <=45) return "Explorador";
+                                                      if (clase >=55 && clase <=63) return "Hechizero";
+                                                      if (clase >=64 && clase <=72) return "Mago";
+                                                      if (clase >=73 && clase <=81) return "Monje";
+                                                      if (clase >=82 && clase <=91) return "Paladín";
+                                                      if (clase >=92 && clase <=100) return "Pícaro";
+                                                      }
 
                             //************** Vaciado de campos ******************//
                             document.querySelector('#respuestas').innerHTML = '';
@@ -287,8 +296,6 @@ function randomizadorNPC() {
 
                             }
 
-
-
 //***************************************** FUNCIÓN RESET *************************************//
 function reset()    {
                     document.getElementById('enter-num').value = ''; // se borra el valor puesto en input
@@ -297,7 +304,6 @@ function reset()    {
                     document.getElementById("respuestaLoot2").style.display = "none"; //
                     document.getElementById("respuestaLoot3").style.display = "none"; //
                     }
-
 
 //***************************************** FUNCIÓN CALCULAR LOOT *************************************//
 function calcular() {
@@ -2155,6 +2161,7 @@ function intermedio(dados, lados) {
                                                             return respuesta;
                                                             }
                                   }
+                                  
 function mayor(dados, lados){
                                   let cantidad = tiroDeDados(dados, lados); // cantidad de premios a recibir
                                   let respuesta = " ";
