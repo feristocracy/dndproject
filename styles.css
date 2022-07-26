@@ -48,11 +48,11 @@ body
         transition: .4s;
         }
 
-#butt-one
+#butt-one /* Botón "calcular" */
         {
         margin: 0;
         position: absolute;
-        top: 50%;
+        top: 27%;
         left: 32%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
@@ -60,12 +60,12 @@ body
         display: none;
         }
 
-#butt-two
+#butt-two /* Botón "reset" */
         {
         margin: 0;
         position: absolute;
-        top: 50%;
-        left: 73%;
+        top: 27%;
+        left: 70%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         transition: .4s;
@@ -122,7 +122,7 @@ input   {
         margin: 0;
         position: absolute;
         left: 21%;
-        top: 25%;
+        top: 13%;
         display: none;
         }
 
@@ -130,7 +130,7 @@ input   {
                 margin: 0;
                 position: absolute;
                 left: 21%;
-                top: 34%;
+                top: 18%;
                 display: none;
                 }
 
@@ -230,15 +230,15 @@ input   {
         }
 
 #label1 {
-        top: 63%;
+        top: 34%;
         }
 
 #label2 {
-        top: 75%;
+        top: 40%;
         }
 
 #label3 {
-        top: 87%;
+        top: 63%;
         }
 
 
@@ -332,17 +332,17 @@ input   {
                 }
 
 #respuestaLoot1 {
-                top: 69%;
+                top: 37%;
                 }
 
 #respuestaLoot2 {
                 font-size: 14px;
-                top: 81%;
+                top: 51.5%;
                 }
 
 #respuestaLoot3 {
                 font-size: 15px;
-                top: 93%;
+                top: 71%;
                 }
 
 /********* Botón de RETURN *********/
