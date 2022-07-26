@@ -209,6 +209,7 @@ function divLogin2( ){
                 document.getElementById("backbtn").style.top = "5%";
                 document.getElementById('enter-num').value = ''; // se borra el valor puesto en input
                 document.getElementById('enter-num2').value = ''; //
+
                 clic = clic + 1;
                 }  
 
