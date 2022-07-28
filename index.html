@@ -12,9 +12,20 @@ fermaldonadosolis@gmail.com -->
     <link rel="stylesheet" href="styles.css"> <!-- Hoja de estilos -->
     <script src="script.js"></script> <!-- Javascript -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> <!-- Google Fonts -->
 </head>
 
 <body>
+    <!------------- CONTENEDOR CREDTIS Class ------------>
+    <div class="contenedor_creditos" class="animate__animated animate__backInUp">
+        <h1>Creator: Feristocracy</h1>
+        <h2>AKA</br>↬»✧☾⋆dArK_sEpHiRoTh_116⋆☽✧«↫</h2>
+        <img src="img/pixelhero.png" alt="Pixel Hero Feristocracy">
+        <a href="mailto:fermaldonadosolis@gmail.com" class="links">fermaldonadosolis@gmail.com</a>
+        <a href="http://github.com/feristocracy" class="links">github.com/feristocracy</a>
+        <h3 onclick="creditpresoff()">return</h3>
+    </div>
+
     <!------------- CONTENEDOR LOGIN Class ------------>
     <div class="login_contenedor">
 
@@ -22,7 +33,7 @@ fermaldonadosolis@gmail.com -->
     <div class="login_contenedor" id="mainBox">
 
         <!--LOGO Class-->
-        <img src="img/logo.png" alt="logotipo del sitio" class="logo" id="logoDD">
+        <img src="img/logo.png" alt="logotipo del sitio" class="logo" id="logoDD" onmouseenter="credits()" onmouseleave="creditsout()" onclick="creditspres()">
 
         <h1 id="titulo">D&D</br>App</h1>
 
@@ -36,7 +47,7 @@ fermaldonadosolis@gmail.com -->
 
         <!-------- Botón para que aparezca el NPC Generator ---------->
         <div class="boton" id="botnpc">
-        <button type="button" onclick="divLogin()">NPC</button>
+        <button id="botnpc2" type="button" onclick="divLogin()">NPC</button>
         </div>
 
         <!----------- Botón para que aparezca el Loot Generator -------->

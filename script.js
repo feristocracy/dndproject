@@ -120,6 +120,41 @@ const cetros = ["metamágico (ampliación, menor)","metamágico (prolongación, 
 
 const bastones = ["hechizador","fuego","enjambre de insectos","curación","cambio de tamaño","iluminador","escarcha","defensa","abjuración","conjuración","encantamiento","evocación","ilusión","nigromancia","transmutación","adivinación","tierra y piedra","de los bosques","vida","paso","poder"];
 
+
+function credits(){
+  const tituloPrincipal = document.getElementById("titulo");
+  tituloPrincipal.innerHTML = "Credits!";
+  tituloPrincipal.style.left = "23%";
+  tituloPrincipal.style.top = "30%";
+  tituloPrincipal.style.fontSize = "50px";
+  tituloPrincipal.style.color = "yellow";
+  }
+function creditsout(){
+  const tituloPrincipal = document.getElementById("titulo");
+  tituloPrincipal.style.fontSize = "36px";
+  tituloPrincipal.innerHTML = "D&D</br>App";
+  tituloPrincipal.style.left = "39%";
+  tituloPrincipal.style.top = "25%";
+  tituloPrincipal.style.color = "black";
+  }
+
+function creditspres() {
+  const contenedorCreditos = document.querySelector(".contenedor_creditos");
+  document.querySelector(".login_contenedor").style.display = "none";
+  contenedorCreditos.style.display = "block";
+  contenedorCreditos.style.width = "500px";
+  contenedorCreditos.style.height = "600px";
+  document.querySelector("body").style.background = "black";
+ }
+
+function creditpresoff(){
+                        document.querySelector(".contenedor_creditos").style.display ="none";
+                        document.querySelector(".login_contenedor").style.display = "block";
+                        document.querySelector("body").style.background = "url(img/fondo.jpg)";
+                        }
+
+
+
 //***************************************** DADOS *************************************//
 const tiroDeDados = (dados, lados) => {
                                       let resDado=0;
@@ -131,6 +166,8 @@ const tiroDeDados = (dados, lados) => {
 
 //***************************************** BOTÓN BACK *************************************//
 function back() { //Regresar al menú principal
+                document.getElementById("botnpc2").textContent = "NPC"; // se devuelve el nombre al botón
+                document.getElementById("titulo").innerHTML = "D&D</br>App";
                 document.getElementById("mainBox").style.height = "250px"; // Vuelve el contenedor al tamaño original
                 document.getElementById("mainBox").style.width = "320px"; //
                 document.getElementById("botnpc").style.top = "75%"; // vuelve el botón NPC a la posición original
@@ -162,16 +199,20 @@ function back() { //Regresar al menú principal
                 document.getElementById("butt-two").style.display = "none"; //
                 document.getElementById("calculo1").style.display = "none"; //
                 document.getElementById("botloot").style.display = "inline-block"; // El botón Loot aparece
+                
                 }
 
 //***************************************** BOTÓN NPC *************************************// 
 function divLogin( ){
-                    if(clic==1){
+                    if(clic==1){document.getElementById("botnpc2").textContent = "Random"; // se cambia el texto del botón
                                 document.getElementById("mainBox").style.height = "400px"; // Crece el contenedor
                                 document.getElementById("botnpc").style.top = "45%"; // El botón NPC cambia de posición
                                 document.getElementById("botnpc").style.left = "50%"; //
                                 document.getElementById("botloot").style.display = "none"; // Desaparece el botón "Loot"
                                 document.getElementById("titulo").style.top = "16%";
+                                document.getElementById("titulo").style.left = "27%";
+                                document.getElementById("titulo").innerHTML = "NPC</br>Generator";
+                                
                                 appear(); // Aparece el botón "back"
                                 randomizadorNPC(); // Se ejecuta la función para generar NPC's
                                 clic = clic + 1;
@@ -190,6 +231,9 @@ function appear()   { //Aparece el botón "back"
 //***************************************** BOTÓN LOOT *************************************// 
 function divLogin2( ){
     if(clic==1){
+                //document.getElementById("titulo").style.top = "16%";
+                
+                document.getElementById("titulo").innerHTML = "Loot</br>Generator";
                 document.getElementById("logoDD").style.top = "-25px"; // El logo baja
                 document.getElementById("logoDD").style.left = "85%"; // El logo se va a la derecha
                 document.getElementById("titulo").style.top = "2%"; // El titulo sube
@@ -209,6 +253,7 @@ function divLogin2( ){
                 document.getElementById("backbtn").style.top = "5%";
                 document.getElementById('enter-num').value = ''; // se borra el valor puesto en input
                 document.getElementById('enter-num2').value = ''; //
+                document.getElementById("titulo").style.left = "35%";
 
                 clic = clic + 1;
                 }  
@@ -304,6 +349,9 @@ function reset()    {
                     document.getElementById("respuestaLoot1").style.display = "none"; // desaparecen las respuestas
                     document.getElementById("respuestaLoot2").style.display = "none"; //
                     document.getElementById("respuestaLoot3").style.display = "none"; //
+                    document.getElementById("label1").style.color = "black";
+                    document.getElementById("label2").style.color = "black";
+                    document.getElementById("label3").style.color = "black";
                     }
 
 //***************************************** FUNCIÓN CALCULAR LOOT *************************************//
@@ -313,6 +361,44 @@ function calcular() {
     document.querySelector('#respuestaLoot1').innerHTML = " ";
     document.querySelector('#respuestaLoot2').innerHTML = " ";
     document.querySelector('#respuestaLoot3').innerHTML = " ";
+    document.getElementById("label1").style.color = "black";
+    document.getElementById("label2").style.color = "black";
+    document.getElementById("label3").style.color = "black";
+
+    let premios = tiroDeDados(1, 6);
+
+    if (premios == 1) {
+                      document.getElementById("label1").style.color = "#07f56e";
+                      document.getElementById("label2").style.color = "#fc0303";
+                      document.getElementById("label3").style.color = "#fc0303";
+                      }
+    else if (premios == 2){
+                          document.getElementById("label1").style.color = "#fc0303";
+                          document.getElementById("label2").style.color = "#07f56e";
+                          document.getElementById("label3").style.color = "#fc0303";
+                          }
+    else if (premios == 3){
+                          document.getElementById("label1").style.color = "#fc0303";
+                          document.getElementById("label2").style.color = "#fc0303";
+                          document.getElementById("label3").style.color = "#07f56e";
+                          }
+    else if (premios == 4){
+                          document.getElementById("label1").style.color = "#07f56e";
+                          document.getElementById("label2").style.color = "#fc0303";
+                          document.getElementById("label3").style.color = "#07f56e";
+                          }
+    else if (premios == 5){
+                          document.getElementById("label1").style.color = "#07f56e";
+                          document.getElementById("label2").style.color = "#07f56e";
+                          document.getElementById("label3").style.color = "#fc0303";
+                          }
+    else if (premios == 6){
+                          document.getElementById("label1").style.color = "#fc0303";
+                          document.getElementById("label2").style.color = "#07f56e";
+                          document.getElementById("label3").style.color = "#07f56e";
+                          }
+
+
     
 
     if (valor1 == 1){
