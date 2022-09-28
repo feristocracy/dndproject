@@ -369,7 +369,9 @@ function reset()    {
 //***************************************** FUNCIÓN CALCULAR LOOT *************************************//
 const calcular = e => {
 
-
+  respuestaLoot1.innerHTML = " ";
+  respuestaLoot2.innerHTML = " ";
+  respuestaLoot3.innerHTML = " ";
 
     let valor1 = inputNivel.value;
     let valor2 = inputPorcentuales.value;
@@ -388,12 +390,12 @@ const calcular = e => {
     respuestaLoot3.classList.remove("alert-danger");
 
     if (premios == 1) {
-      respuestaLoot1.classList.add("alert");
-      respuestaLoot1.classList.add("alert-success");
-      respuestaLoot2.classList.add("alert");
-      respuestaLoot2.classList.add("alert-danger");
-      respuestaLoot3.classList.add("alert");
-      respuestaLoot3.classList.add("alert-danger");
+                          respuestaLoot1.classList.add("alert");
+                          respuestaLoot1.classList.add("alert-success");
+                          respuestaLoot2.classList.add("alert");
+                          respuestaLoot2.classList.add("alert-danger");
+                          respuestaLoot3.classList.add("alert");
+                          respuestaLoot3.classList.add("alert-danger");
                       }
     else if (premios == 2){
       respuestaLoot1.classList.add("alert");
@@ -440,9 +442,15 @@ const calcular = e => {
     
 
     if (valor1 == 1){
-                    if (valor2 >= 1 && valor2 <= 14) {respuestaLoot1.innerHTML = "10 Cobres";}
-                    else if (valor2 >= 15 && valor2 <= 29) {respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Plata";}
-                    else if (valor2 >= 30 && valor2 <= 70) {respuestaLoot1.innerHTML = tiroDeDados(1, 6)*10 + " Plata";}
+                    if (valor2 >= 1 && valor2 <= 14) {respuestaLoot1.innerHTML = "10 Cobres";
+                                                      respuestaLoot2.innerHTML = "No hay premio :(";
+                                                      respuestaLoot3.innerHTML = "No hay premio :(";}
+                    else if (valor2 >= 15 && valor2 <= 29) {respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Plata";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";}
+                    else if (valor2 >= 30 && valor2 <= 70) {respuestaLoot1.innerHTML = tiroDeDados(1, 6)*10 + " Plata";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";}
                     else if (valor2 >= 71 && valor2 <= 90)  {
                                                             respuestaLoot1.innerHTML = tiroDeDados(2, 6)*10 + " Plata";
                                                             respuestaLoot2.innerHTML = gemas(1, 1);
@@ -462,8 +470,12 @@ const calcular = e => {
                                                           respuestaLoot3.innerHTML = "No hay premio :(";
                                                           }
 
-                          else if (valor2 >= 14 && valor2 <= 23) {respuestaLoot1.innerHTML = tiroDeDados(1, 8)*10 + " Plata";}
-                          else if (valor2 >= 24 && valor2 <= 65) {respuestaLoot1.innerHTML = tiroDeDados(2, 8)*10 + " Plata";}
+                          else if (valor2 >= 14 && valor2 <= 23) {respuestaLoot1.innerHTML = tiroDeDados(1, 8)*10 + " Plata";
+                          respuestaLoot2.innerHTML = "No hay premio :(";
+                          respuestaLoot3.innerHTML = "No hay premio :(";}
+                          else if (valor2 >= 24 && valor2 <= 65) {respuestaLoot1.innerHTML = tiroDeDados(2, 8)*10 + " Plata";
+                          respuestaLoot2.innerHTML = "No hay premio :(";
+                          respuestaLoot3.innerHTML = "No hay premio :(";}
                           else if (valor2 >= 66 && valor2 <= 85)  {
                                                                   respuestaLoot1.innerHTML = tiroDeDados(4, 6)*10 + " Plata";
                                                                   respuestaLoot2.innerHTML = gemas(1, 3);
@@ -483,10 +495,15 @@ const calcular = e => {
                                                             respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
 
-                            else if (valor2 >= 12 && valor2 <= 33) {respuestaLoot1.innerHTML = tiroDeDados(2, 8)*10 + " Plata";}
-                            else if (valor2 >= 34 && valor2 <= 51) {respuestaLoot1.innerHTML = tiroDeDados(4, 6)*10 + " Plata";}
+                            else if (valor2 >= 12 && valor2 <= 33) {respuestaLoot1.innerHTML = tiroDeDados(2, 8)*10 + " Plata";
+                            respuestaLoot2.innerHTML = "No hay premio :(";
+                            respuestaLoot3.innerHTML = "No hay premio :(";}
+                            else if (valor2 >= 34 && valor2 <= 51) {respuestaLoot1.innerHTML = tiroDeDados(4, 6)*10 + " Plata";
+                            respuestaLoot2.innerHTML = "No hay premio :(";
+                            respuestaLoot3.innerHTML = "No hay premio :(";}
                             else if (valor2 >= 52 && valor2 <= 78){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Oro";
+                                                                  respuestaLoot2.innerHTML = "No hay premio :(";
                                                                   respuestaLoot3.innerHTML = mundano(1,3);
                                                                   }
                             else if (valor2 >= 79 && valor2 <= 100) {
@@ -502,9 +519,12 @@ const calcular = e => {
                                                           respuestaLoot2.innerHTML = "No hay premio :(";
                                                           respuestaLoot3.innerHTML = "No hay premio :(";
                                                           }
-                          else if (valor2 >= 12 && valor2 <= 40) {respuestaLoot1.innerHTML = tiroDeDados(3, 8)*10 + " Plata";}
+                          else if (valor2 >= 12 && valor2 <= 40) {respuestaLoot1.innerHTML = tiroDeDados(3, 8)*10 + " Plata";
+                          respuestaLoot2.innerHTML = "No hay premio :(";
+                          respuestaLoot3.innerHTML = "No hay premio :(";}
                           else if (valor2 >= 41 && valor2 <= 70)  {
                                                                   respuestaLoot1.innerHTML = tiroDeDados(4, 10)*10 + " Oro";
+                                                                  respuestaLoot2.innerHTML = "No hay premio :(";
                                                                   respuestaLoot3.innerHTML = mundano(1, 4);
                                                                   }
 
@@ -526,9 +546,12 @@ const calcular = e => {
                                                           respuestaLoot2.innerHTML = "No hay premio :(";
                                                           respuestaLoot3.innerHTML = "No hay premio :(";
                                                           }
-                          else if (valor2 >= 11 && valor2 <= 44) {respuestaLoot1.innerHTML = tiroDeDados(3, 6)*10 + " Plata";}
+                          else if (valor2 >= 11 && valor2 <= 44) {respuestaLoot1.innerHTML = tiroDeDados(3, 6)*10 + " Plata";
+                          respuestaLoot2.innerHTML = "No hay premio :(";
+                          respuestaLoot3.innerHTML = "No hay premio :(";}
                           else if (valor2 >= 45 && valor2 <= 59){
                                                                 respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Oro";
+                                                                respuestaLoot2.innerHTML = "No hay premio :(";
                                                                 respuestaLoot3.innerHTML = mundano(1, 4);
                                                                 }
 
@@ -550,9 +573,12 @@ const calcular = e => {
                                                           respuestaLoot2.innerHTML = "No hay premio :(";
                                                           respuestaLoot3.innerHTML = "No hay premio :(";
                                                           }
-                          else if (valor2 >= 11 && valor2 <= 36) {respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Oro";}
+                          else if (valor2 >= 11 && valor2 <= 36) {respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Oro";
+                          respuestaLoot2.innerHTML = "No hay premio :(";
+                          respuestaLoot3.innerHTML = "No hay premio :(";}
                           else if (valor2 >= 37 && valor2 <= 59){
                                                                 respuestaLoot1.innerHTML = tiroDeDados(1, 6)*10 + " Oro";
+                                                                respuestaLoot2.innerHTML = "No hay premio :(";
                                                                 respuestaLoot3.innerHTML = mundano(1, 4);
                                                                 }
 
@@ -574,7 +600,9 @@ const calcular = e => {
                                                           respuestaLoot2.innerHTML = "No hay premio :(";
                                                           respuestaLoot3.innerHTML = "No hay premio :(";
                                                           }
-                          else if (valor2 >= 11 && valor2 <= 44) {respuestaLoot1.innerHTML = tiroDeDados(1, 8)*10 + " Oro";}
+                          else if (valor2 >= 11 && valor2 <= 44) {respuestaLoot1.innerHTML = tiroDeDados(1, 8)*10 + " Oro";
+                          respuestaLoot2.innerHTML = "No hay premio :(";
+                          respuestaLoot3.innerHTML = "No hay premio :(";}
                           else if (valor2 >= 45 && valor2 <= 85){
                                                                 respuestaLoot1.innerHTML = tiroDeDados(1, 10)*10 + " Oro";
                                                                 respuestaLoot2.innerHTML = gemas(1, 4);
@@ -587,6 +615,7 @@ const calcular = e => {
                                                                 }
                           else if (valor2 >= 98 && valor2 <= 100) {
                                                                   respuestaLoot1.innerHTML = tiroDeDados(3, 4)*10 + " Oro";
+                                                                  respuestaLoot2.innerHTML = "No hay premio :(";
                                                                   respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
                           }
@@ -596,7 +625,9 @@ const calcular = e => {
                                                           respuestaLoot2.innerHTML = "No hay premio :(";
                                                           respuestaLoot3.innerHTML = "No hay premio :(";
                                                           }
-                          else if (valor2 >= 11 && valor2 <= 44) {respuestaLoot1.innerHTML = tiroDeDados(1, 8)*10 + " Oro";}
+                          else if (valor2 >= 11 && valor2 <= 44) {respuestaLoot1.innerHTML = tiroDeDados(1, 8)*10 + " Oro";
+                          respuestaLoot2.innerHTML = "No hay premio :(";
+                          respuestaLoot3.innerHTML = "No hay premio :(";}
                           else if (valor2 >= 45 && valor2 <= 79){
                                                                 respuestaLoot1.innerHTML = tiroDeDados(2, 4)*10 + " Oro";
                                                                 respuestaLoot2.innerHTML = gemas(1, 8);
@@ -609,6 +640,7 @@ const calcular = e => {
                                                                 }
                           else if (valor2 >= 97 && valor2 <= 100) {
                                                                   respuestaLoot1.innerHTML = tiroDeDados(3, 4)*10 + " Oro";
+                                                                  respuestaLoot2.innerHTML = "No hay premio :(";
                                                                   respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
                           }
@@ -619,7 +651,9 @@ const calcular = e => {
                                                             respuestaLoot2.innerHTML = "No hay premio :(";
                                                             respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
-                            else if (valor2 >= 12 && valor2 <= 50) {respuestaLoot1.innerHTML = tiroDeDados(1, 12)*10 + " Platino";}
+                            else if (valor2 >= 12 && valor2 <= 50) {respuestaLoot1.innerHTML = tiroDeDados(1, 12)*10 + " Platino";
+                            respuestaLoot2.innerHTML = "No hay premio :(";
+                            respuestaLoot3.innerHTML = "No hay premio :(";}
                             else if (valor2 >= 51 && valor2 <= 79){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(2, 6)*10 + " Platino";
                                                                   respuestaLoot2.innerHTML = gemas(1, 8);
@@ -632,6 +666,7 @@ const calcular = e => {
                                                                   }
                             else if (valor2 >= 92 && valor2 <= 100) {
                                                                     respuestaLoot1.innerHTML = tiroDeDados(2, 10)*10 + " Platino";
+                                                                    respuestaLoot2.innerHTML = "No hay premio :(";
                                                                     respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                     }
                             }
@@ -642,7 +677,9 @@ const calcular = e => {
                                                             respuestaLoot2.innerHTML = "No hay premio :(";
                                                             respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
-                            else if (valor2 >= 11 && valor2 <= 39) {respuestaLoot1.innerHTML = tiroDeDados(2, 8)*10 + " Oro";}
+                            else if (valor2 >= 11 && valor2 <= 39) {respuestaLoot1.innerHTML = tiroDeDados(2, 8)*10 + " Oro";
+                            respuestaLoot2.innerHTML = "No hay premio :(";
+                            respuestaLoot3.innerHTML = "No hay premio :(";}
                             else if (valor2 >= 40 && valor2 <= 87){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(5, 4)*10 + " Oro";
                                                                   respuestaLoot2.innerHTML = gemas(1, 8);
@@ -653,7 +690,10 @@ const calcular = e => {
                                                                   respuestaLoot2.innerHTML = artes(1, 6);
                                                                   respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
-                            else if (valor2 >= 99 && valor2 <= 100) {respuestaLoot3.innerHTML = mayor(1, 1);}
+                            else if (valor2 >= 99 && valor2 <= 100) {
+                              respuestaLoot1.innerHTML = "No hay premio :(";
+                          respuestaLoot2.innerHTML = "No hay premio :(";
+                          respuestaLoot3.innerHTML = mayor(1, 1);}
                             }
 
     else if (valor1 == 11)  {
@@ -662,7 +702,9 @@ const calcular = e => {
                                                             respuestaLoot2.innerHTML = "No hay premio :(";
                                                             respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
-                            else if (valor2 >= 9 && valor2 <= 38) {respuestaLoot1.innerHTML = tiroDeDados(3, 8)*10 + " Oro";}
+                            else if (valor2 >= 9 && valor2 <= 38) {respuestaLoot1.innerHTML = tiroDeDados(3, 8)*10 + " Oro";
+                            respuestaLoot2.innerHTML = "No hay premio :(";
+                            respuestaLoot3.innerHTML = "No hay premio :(";}
                             else if (valor2 >= 39 && valor2 <= 83){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(4, 6)*10 + " Oro";
                                                                   respuestaLoot2.innerHTML = gemas(1, 10);
@@ -673,7 +715,10 @@ const calcular = e => {
                                                                   respuestaLoot2.innerHTML = artes(1, 6);
                                                                   respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
-                            else if (valor2 >= 98 && valor2 <= 100) {respuestaLoot3.innerHTML = mayor(1, 1);}
+                            else if (valor2 >= 98 && valor2 <= 100) {
+                              respuestaLoot1.innerHTML = "No hay premio :(";
+                          respuestaLoot2.innerHTML = "No hay premio :(";
+                          respuestaLoot3.innerHTML = mayor(1, 1);}
                             }
 
     else if (valor1 == 12)  {
@@ -685,6 +730,7 @@ const calcular = e => {
                             else if (valor2 >= 15 && valor2 <= 69){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(3, 10)*10 + " Oro";
                                                                   respuestaLoot2.innerHTML = gemas(1, 10);
+                                                                  respuestaLoot3.innerHTML = "No hay premio :(";
                                                                   }
                             else if (valor2 >= 70 && valor2 <= 82){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Platino";
@@ -697,6 +743,7 @@ const calcular = e => {
                                                                   respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
                             else if (valor2 >= 98 && valor2 <= 100) {
+                              respuestaLoot1.innerHTML = "No hay premio :(";
                                                                     respuestaLoot2.innerHTML = artes(1, 8);
                                                                     respuestaLoot3.innerHTML = mayor(1, 1);
                                                                     }
@@ -711,7 +758,7 @@ const calcular = e => {
                             else if (valor2 >= 9 && valor2 <= 60){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Platino";
                                                                   respuestaLoot2.innerHTML = gemas(1, 12);
-                                                                  respuestaLoot2.innerHTML = menor(1, 6);
+                                                                  respuestaLoot3.innerHTML = menor(1, 6);
                                                                   }
                             else if (valor2 >= 61 && valor2 <= 73){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Platino";
@@ -724,6 +771,8 @@ const calcular = e => {
                                                                   respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
                             else if (valor2 >= 96 && valor2 <= 100) {
+                                                                    respuestaLoot1.innerHTML = "No hay premio :(";
+                                                                    respuestaLoot2.innerHTML = "No hay premio :(";
                                                                     respuestaLoot3.innerHTML = mayor(1, 1);
                                                                     }
                             }
@@ -737,7 +786,7 @@ const calcular = e => {
                             else if (valor2 >= 10 && valor2 <= 43){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Platino";
                                                                   respuestaLoot2.innerHTML = gemas(2, 8);
-                                                                  respuestaLoot2.innerHTML = menor(1, 6);
+                                                                  respuestaLoot3.innerHTML = menor(1, 6);
                                                                   }
                             else if (valor2 >= 48 && valor2 <= 75){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Platino";
@@ -765,7 +814,7 @@ const calcular = e => {
                             else if (valor2 >= 9 && valor2 <= 44) {
                                                                   respuestaLoot1.innerHTML = tiroDeDados(1, 4)*100 + " Oro";
                                                                   respuestaLoot2.innerHTML = gemas(2, 10);
-                                                                  respuestaLoot2.innerHTML = menor(1, 10);
+                                                                  respuestaLoot3.innerHTML = menor(1, 10);
                                                                   }
                             else if (valor2 >= 45 && valor2 <= 74){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(1, 4)*100 + " Oro";
@@ -778,6 +827,7 @@ const calcular = e => {
                                                                   respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
                             else if (valor2 >= 91 && valor2 <= 100) {
+                                                                    respuestaLoot1.innerHTML = "No hay premio :(";
                                                                     respuestaLoot2.innerHTML = artes(2, 8);
                                                                     respuestaLoot3.innerHTML = mayor(1, 1);
                                                                     }
@@ -792,7 +842,7 @@ const calcular = e => {
                             else if (valor2 >= 4 && valor2 <= 40) {
                                                                   respuestaLoot1.innerHTML = tiroDeDados(1, 10)*100 + " Oro";
                                                                   respuestaLoot2.innerHTML = gemas(4, 6);
-                                                                  respuestaLoot2.innerHTML = menor(1, 10);
+                                                                  respuestaLoot3.innerHTML = menor(1, 10);
                                                                   }
                             else if (valor2 >= 41 && valor2 <= 74){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(1, 10)*100 + " Oro";
@@ -820,6 +870,7 @@ const calcular = e => {
                             else if (valor2 >= 5 && valor2 <= 32) {
                                                                   respuestaLoot1.innerHTML = tiroDeDados(3, 4)*100 + " Oro";
                                                                   respuestaLoot2.innerHTML = gemas(4, 8);
+                                                                  respuestaLoot3.innerHTML = "No hay premio :(";
                                                                   }
                             else if (valor2 >= 33 && valor2 <= 63){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(3, 4)*100 + " Oro";
@@ -847,6 +898,7 @@ const calcular = e => {
                             else if (valor2 >= 5 && valor2 <= 24) {
                                                                   respuestaLoot1.innerHTML = tiroDeDados(3, 4)*100 + " Oro";
                                                                   respuestaLoot2.innerHTML = gemas(3, 12);
+                                                                  respuestaLoot3.innerHTML = "No hay premio :(";
                                                                   }
                             else if (valor2 >= 25 && valor2 <= 65){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(3, 6)*100 + " Oro";
@@ -874,6 +926,7 @@ const calcular = e => {
                             else if (valor2 >= 3 && valor2 <= 23) {
                                                                   respuestaLoot1.innerHTML = tiroDeDados(3, 6)*100 + " Oro";
                                                                   respuestaLoot2.innerHTML = gemas(6, 6);
+                                                                  respuestaLoot3.innerHTML = "No hay premio :(";
                                                                   }
                             else if (valor2 >= 24 && valor2 <= 59){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(3, 6)*100 + " Oro";
@@ -901,6 +954,7 @@ const calcular = e => {
                             else if (valor2 >= 3 && valor2 <= 24) {
                                                                   respuestaLoot1.innerHTML = tiroDeDados(4, 6)*100 + " Oro";
                                                                   respuestaLoot2.innerHTML = gemas(4, 10);
+                                                                  respuestaLoot3.innerHTML = "No hay premio :(";
                                                                   }
                             else if (valor2 >= 25 && valor2 <= 37){
                                                                   respuestaLoot1.innerHTML = tiroDeDados(4, 6)*100 + " Oro";
@@ -919,9 +973,9 @@ const calcular = e => {
                                                                     }
                             }
 
-    document.getElementById("respuestaLoot1").style.display = "inline-block";
+    /* document.getElementById("respuestaLoot1").style.display = "inline-block";
     document.getElementById("respuestaLoot2").style.display = "inline-block";
-    document.getElementById("respuestaLoot3").style.display = "inline-block";
+    document.getElementById("respuestaLoot3").style.display = "inline-block"; */
 
                     }
 
