@@ -131,7 +131,7 @@ const respuestaLoot1 = document.getElementById("respuestaLoot1");
 const respuestaLoot2 = document.getElementById("respuestaLoot2");
 const respuestaLoot3 = document.getElementById("respuestaLoot3");
 const lootForm = document.getElementById("lootForm");
-
+const mainContainer = document.getElementById("mainContainer");
 
 
 npcModal.addEventListener("click", e => {
@@ -142,6 +142,11 @@ lootModal.addEventListener("submit", e => {
   e.preventDefault();
   calcular(e);
 });
+
+mainContainer.addEventListener("click", e => {
+  clearForm(e);
+});
+
 
 function credits() {
   const tituloPrincipal = document.getElementById("titulo");
@@ -175,7 +180,26 @@ function creditpresoff() {
                         document.querySelector("body").style.background = "url(img/fondo.jpg)";
                         }
 
-
+const clearForm = e => {
+  if (e.target.classList.contains("btn-success"))
+    {
+    lootForm.reset();
+    respuestaLoot1.innerHTML = " ";
+    respuestaLoot2.innerHTML = " ";
+    respuestaLoot3.innerHTML = " ";
+    respuestaLoot1.classList.remove("alert");
+    respuestaLoot2.classList.remove("alert");
+    respuestaLoot3.classList.remove("alert");
+    respuestaLoot1.classList.remove("alert-success");
+    respuestaLoot2.classList.remove("alert-success");
+    respuestaLoot3.classList.remove("alert-success");
+    respuestaLoot1.classList.remove("alert-danger");
+    respuestaLoot2.classList.remove("alert-danger");
+    respuestaLoot3.classList.remove("alert-danger");
+    return;
+    e.stopPropagation();
+    }
+}
 
 //***************************************** DADOS *************************************//
 const tiroDeDados = (dados, lados) => {
