@@ -1,98 +1,104 @@
-<!-- Generador automático de NPC's
-Fernando Maldonado Solís
-fermaldonadosolis@gmail.com -->
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D&D App</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Hoja de estilos -->
-    <script src="script.js"></script> <!-- Javascript -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> <!-- Animate CSS -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> <!-- Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Dungeons & Dragons Randomizer V.2</title>
 </head>
-
-<body>
-    <!------------- CONTENEDOR CREDTIS Class ------------>
-    <div class="contenedor_creditos" class="animate__animated animate__backInUp">
-        <h1>Creator: Feristocracy</h1>
-        <h2>AKA</br>↬»✧☾⋆dArK_sEpHiRoTh_116⋆☽✧«↫</h2>
-        <img src="img/pixelhero.png" alt="Pixel Hero Feristocracy">
-        <a href="mailto:fermaldonadosolis@gmail.com" class="links">fermaldonadosolis@gmail.com</a>
-        <a href="http://github.com/feristocracy" class="links">github.com/feristocracy</a>
-        <h3 onclick="creditpresoff()">return</h3>
-    </div>
-
-    <!------------- CONTENEDOR LOGIN Class ------------>
-    <div class="login_contenedor">
-
-    <!------------- CONTENEDOR Principal Class------------>
-    <div class="login_contenedor" id="mainBox">
-
-        <!--LOGO Class-->
-        <img src="img/logo.png" alt="logotipo del sitio" class="logo" id="logoDD" onmouseenter="credits()" onmouseleave="creditsout()" onclick="creditspres()">
-
-        <h1 id="titulo">D&D</br>App</h1>
-
-        <!-------- Botón para regresar al menú principal ------->
-            <div class="round" id="backbtn" onclick="back()">
-                <div id="cta">
-                    <span class="arrow primera next "></span>
-                    <span class="arrow segunda next "></span>
+<body style=" background-size: cover; background: url(img/hielo.jpg);">
+    
+    <div class="container w-100">
+        <div class="container w-100">
+            <div class="row w-100">
+                <div class="col">
+                <img class="pt-4 mx-auto d-block img-fluid" src="./img/logo.png" alt="D&D logo">
                 </div>
             </div>
-
-        <!-------- Botón para que aparezca el NPC Generator ---------->
-        <div class="boton" id="botnpc">
-        <button id="botnpc2" type="button" onclick="divLogin()">NPC</button>
+            <div class="row w-100">
+                <div class=" col">
+                    <p class="h1 text-center mt-2">Dungeons & Dragons</p>
+                    <p class="h2 text-center mb-3">Randomizer V.2</p>
+                </div>
+            </div>
+                <button type="button" class="btn btn-primary w-100 block p-3 mb-4" data-bs-toggle="modal" data-bs-target="#npcModal">NPC Generator</button>
+                <button type="button" class="btn btn-success w-100 block p-3 mb-4" data-bs-toggle="modal" data-bs-target="#lootModal">Loot Box</button>
         </div>
-
-        <!----------- Botón para que aparezca el Loot Generator -------->
-        <div class="boton" id="botloot">
-        <button type="button" onclick="divLogin2()">Loot</button>
-        </div>
-
-        <!----------- Loot Input -------->
-        <form id="nivel"> <!-- input nivel de encuentro -->
-            <input id="enter-num" type="number" placeholder="Nivel de Encuentro" name="tipTotal" value=" " required>
-        </form>
-
-        <form id="porcentuales"> <!-- input porcentuales-->
-            <input id="enter-num2" type="number" placeholder="Porcentuales" value=" " required>
-        </form>
-
-        <!-- div de los botones para calcular loot -->
-        <div class="boton" id="butt-one">
-            <button type="button" onclick="calcular()">Calcular</button>
-        </div>
-        <div class="boton" id="butt-two">
-            <button type="button" onclick="reset()">Reset</button>
-        </div>
-
-        <!-- aqui van los resultados de npc generator -->
-        <div id="respuestas" class="respuestaNpc"></div>
-        <div id="respuestas2" class="respuestaNpc"></div>
-        <div id="respuestas3" class="respuestaNpc"></div>
-        <div id="respuestas4" class="respuestaNpc"></div>
-
-        <!-- aquí van los resultados de loot generator -->
-        <div id="label1" class="label">ORO</div>
-        <div id='respuestaLoot1' class="respuestaLoot"></div>
-        <div id="label2" class="label">VALIOSOS</div>
-        <div id='respuestaLoot2' class="respuestaLoot"></div>
-        <div id="label3" class="label">OBJETOS</div>
-        <div id='respuestaLoot3'class="respuestaLoot"></div>
-
-
     </div>
 
-    <div>
+    <!----- Modal NPC ------>
+    <div class="modal fade" id="npcModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Generador de NPC</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p class="h3 text-center mb-3" id="rasgo1">RASGO</p>
+              <p class="h3 text-center mb-3" id="alineamiento1">ALINEAMIENTO</p>
+              <p class="h3 text-center mb-3" id="raza1">RAZA</p>
+              <p class="h3 text-center mb-3" id="clase1">CLASE</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-warning">Generar NPC</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-------------------->
 
-    </div>
+      <!----- Modal Loot ------>
+      <div class="modal fade" id="lootModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Loot Box</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="lootForm">
+                <div class="row">
+                    <input type="number" class="mx-2 form-control col" id="nivel" placeholder="Nivel" required>
+                    <input type="number" class="mx-2 form-control col" id="porcentuales" placeholder="Porcentuales" required>
+                </div>
+                <div class="modal-footer mt-4">
+                    <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-info" >Calcular</button>
+                </div>
+              </form>
+              <h5 class="text-center mt-2 w-100" id="respuestaLoot1"></h5>
+              <h5 class="text-center mb-3 w-100" id="respuestaLoot2"></h5>
+              <h5 class="text-center mb-3 w-100" id="respuestaLoot3"></h5>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <!----------------------->
+
+
+    <!--------- Footer ----------->
+    <footer class=" bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="mt-6 text-center p-3" style="background-color: rgba(197, 194, 194, 0.536); font-size: 12px;">
+          © 2022 Feristocracy
+          <a class="text-dark" href="https://github.com/feristocracy" target="_blank">Github</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!--------------------------->
+
+
+
+<!-- SCRIPTS -->
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+<!------------->
 
 </body>
-
 </html>

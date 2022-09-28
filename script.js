@@ -120,8 +120,30 @@ const cetros = ["metamágico (ampliación, menor)","metamágico (prolongación, 
 
 const bastones = ["hechizador","fuego","enjambre de insectos","curación","cambio de tamaño","iluminador","escarcha","defensa","abjuración","conjuración","encantamiento","evocación","ilusión","nigromancia","transmutación","adivinación","tierra y piedra","de los bosques","vida","paso","poder"];
 
+const rasgo1 = document.getElementById("rasgo1");
+const alineamiento1 = document.getElementById("alineamiento1");
+const raza1 = document.getElementById("raza1");
+const clase1 = document.getElementById("clase1");
+const npcModal = document.getElementById("npcModal");
+const inputNivel = document.getElementById("nivel");
+const inputPorcentuales = document.getElementById("porcentuales");
+const respuestaLoot1 = document.getElementById("respuestaLoot1");
+const respuestaLoot2 = document.getElementById("respuestaLoot2");
+const respuestaLoot3 = document.getElementById("respuestaLoot3");
+const lootForm = document.getElementById("lootForm");
 
-function credits(){
+
+
+npcModal.addEventListener("click", e => {
+  randomizadorNPC(e);
+});
+
+lootModal.addEventListener("submit", e => {
+  e.preventDefault();
+  calcular(e);
+});
+
+function credits() {
   const tituloPrincipal = document.getElementById("titulo");
   tituloPrincipal.innerHTML = "Credits!";
   tituloPrincipal.style.left = "23%";
@@ -129,7 +151,7 @@ function credits(){
   tituloPrincipal.style.fontSize = "50px";
   tituloPrincipal.style.color = "yellow";
   }
-function creditsout(){
+function creditsout() {
   const tituloPrincipal = document.getElementById("titulo");
   tituloPrincipal.style.fontSize = "36px";
   tituloPrincipal.innerHTML = "D&D</br>App";
@@ -147,7 +169,7 @@ function creditspres() {
   document.querySelector("body").style.background = "black";
  }
 
-function creditpresoff(){
+function creditpresoff() {
                         document.querySelector(".contenedor_creditos").style.display ="none";
                         document.querySelector(".login_contenedor").style.display = "block";
                         document.querySelector("body").style.background = "url(img/fondo.jpg)";
@@ -261,7 +283,8 @@ function divLogin2( ){
     }
 
 //***************************************** FUNCIÓN RANDOMIZADOR NPC *************************************//
-function randomizadorNPC() {
+const randomizadorNPC = e => {
+  if (e.target.classList.contains("btn-warning")) {
 
                             //************** VARIABLES ******************//
                             let rasgoNPC, alineamiento, raza, clase;
@@ -321,25 +344,14 @@ function randomizadorNPC() {
                                                       if (clase >=92 && clase <=100) return "Pícaro";
                                                       }
 
-                            //************** Vaciado de campos ******************//
-                            document.querySelector('#respuestas').innerHTML = '';
-                            document.querySelector('#respuestas2').innerHTML = '';
-                            document.querySelector('#respuestas3').innerHTML = '';
-                            document.querySelector('#respuestas4').innerHTML = '';
+                            rasgo1.innerHTML = rasgoNPC;
+                            alineamiento1.innerHTML = alineamiento;
+                            raza1.innerHTML = raza;
+                            clase1.innerHTML = clase;
 
-                            //************** Llenado de campos ******************//
-                            let respuesta = document.createTextNode(rasgoNPC); //se pueden unir variables en creatTextNode
-                            document.getElementById("respuestas").appendChild(respuesta); //solo puede haber una variable en appenChild
-
-                            let respuesta2 = document.createTextNode(alineamiento);
-                            document.getElementById("respuestas2").appendChild(respuesta2);
-
-                            let respuesta3 = document.createTextNode(raza);
-                            document.getElementById("respuestas3").appendChild(respuesta3);
-
-                            let respuesta4 = document.createTextNode(clase);
-                            document.getElementById("respuestas4").appendChild(respuesta4);
-
+                            
+                            return;
+                                                    }
                             }
 
 //***************************************** FUNCIÓN RESET *************************************//
@@ -355,529 +367,555 @@ function reset()    {
                     }
 
 //***************************************** FUNCIÓN CALCULAR LOOT *************************************//
-function calcular() {
-    let valor1 = document.getElementById("enter-num").value;
-    let valor2 = document.getElementById("enter-num2").value;
-    document.querySelector('#respuestaLoot1').innerHTML = " ";
-    document.querySelector('#respuestaLoot2').innerHTML = " ";
-    document.querySelector('#respuestaLoot3').innerHTML = " ";
-    document.getElementById("label1").style.color = "black";
-    document.getElementById("label2").style.color = "black";
-    document.getElementById("label3").style.color = "black";
+const calcular = e => {
+
+
+
+    let valor1 = inputNivel.value;
+    let valor2 = inputPorcentuales.value;
+
 
     let premios = tiroDeDados(1, 6);
 
+    respuestaLoot1.classList.remove("alert");
+    respuestaLoot2.classList.remove("alert");
+    respuestaLoot3.classList.remove("alert");
+    respuestaLoot1.classList.remove("alert-success");
+    respuestaLoot2.classList.remove("alert-success");
+    respuestaLoot3.classList.remove("alert-success");
+    respuestaLoot1.classList.remove("alert-danger");
+    respuestaLoot2.classList.remove("alert-danger");
+    respuestaLoot3.classList.remove("alert-danger");
+
     if (premios == 1) {
-                      document.getElementById("label1").style.color = "#07f56e";
-                      document.getElementById("label2").style.color = "#fc0303";
-                      document.getElementById("label3").style.color = "#fc0303";
+      respuestaLoot1.classList.add("alert");
+      respuestaLoot1.classList.add("alert-success");
+      respuestaLoot2.classList.add("alert");
+      respuestaLoot2.classList.add("alert-danger");
+      respuestaLoot3.classList.add("alert");
+      respuestaLoot3.classList.add("alert-danger");
                       }
     else if (premios == 2){
-                          document.getElementById("label1").style.color = "#fc0303";
-                          document.getElementById("label2").style.color = "#07f56e";
-                          document.getElementById("label3").style.color = "#fc0303";
+      respuestaLoot1.classList.add("alert");
+      respuestaLoot1.classList.add("alert-danger");
+      respuestaLoot2.classList.add("alert");
+      respuestaLoot2.classList.add("alert-success");
+      respuestaLoot3.classList.add("alert");
+      respuestaLoot3.classList.add("alert-danger");
                           }
     else if (premios == 3){
-                          document.getElementById("label1").style.color = "#fc0303";
-                          document.getElementById("label2").style.color = "#fc0303";
-                          document.getElementById("label3").style.color = "#07f56e";
+      respuestaLoot1.classList.add("alert");
+      respuestaLoot1.classList.add("alert-danger");
+      respuestaLoot2.classList.add("alert");
+      respuestaLoot2.classList.add("alert-danger");
+      respuestaLoot3.classList.add("alert");
+      respuestaLoot3.classList.add("alert-success");
                           }
     else if (premios == 4){
-                          document.getElementById("label1").style.color = "#07f56e";
-                          document.getElementById("label2").style.color = "#fc0303";
-                          document.getElementById("label3").style.color = "#07f56e";
+      respuestaLoot1.classList.add("alert");
+      respuestaLoot1.classList.add("alert-success");
+      respuestaLoot2.classList.add("alert");
+      respuestaLoot2.classList.add("alert-success");
+      respuestaLoot3.classList.add("alert");
+      respuestaLoot3.classList.add("alert-danger");
                           }
     else if (premios == 5){
-                          document.getElementById("label1").style.color = "#07f56e";
-                          document.getElementById("label2").style.color = "#07f56e";
-                          document.getElementById("label3").style.color = "#fc0303";
+      respuestaLoot1.classList.add("alert");
+      respuestaLoot1.classList.add("alert-success");
+      respuestaLoot2.classList.add("alert");
+      respuestaLoot2.classList.add("alert-danger");
+      respuestaLoot3.classList.add("alert");
+      respuestaLoot3.classList.add("alert-success");
                           }
     else if (premios == 6){
-                          document.getElementById("label1").style.color = "#fc0303";
-                          document.getElementById("label2").style.color = "#07f56e";
-                          document.getElementById("label3").style.color = "#07f56e";
+      respuestaLoot1.classList.add("alert");
+      respuestaLoot1.classList.add("alert-success");
+      respuestaLoot2.classList.add("alert");
+      respuestaLoot2.classList.add("alert-success");
+      respuestaLoot3.classList.add("alert");
+      respuestaLoot3.classList.add("alert-success");
                           }
 
 
     
 
     if (valor1 == 1){
-                    if (valor2 >= 1 && valor2 <= 14) {document.querySelector('#respuestaLoot1').innerHTML = "10 Cobres";}
-                    else if (valor2 >= 15 && valor2 <= 29) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*10 + " Plata";}
-                    else if (valor2 >= 30 && valor2 <= 70) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 6)*10 + " Plata";}
+                    if (valor2 >= 1 && valor2 <= 14) {respuestaLoot1.innerHTML = "10 Cobres";}
+                    else if (valor2 >= 15 && valor2 <= 29) {respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Plata";}
+                    else if (valor2 >= 30 && valor2 <= 70) {respuestaLoot1.innerHTML = tiroDeDados(1, 6)*10 + " Plata";}
                     else if (valor2 >= 71 && valor2 <= 90)  {
-                                                            document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 6)*10 + " Plata";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = gemas(1, 1);
-                                                            document.querySelector('#respuestaLoot3').innerHTML = mundano(1,1);
+                                                            respuestaLoot1.innerHTML = tiroDeDados(2, 6)*10 + " Plata";
+                                                            respuestaLoot2.innerHTML = gemas(1, 1);
+                                                            respuestaLoot3.innerHTML = mundano(1,1);
                                                             }
                     else if (valor2 >= 91 && valor2 <= 100) {
-                                                            document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*5 + " Oro";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = artes(1, 1);
-                                                            document.querySelector('#respuestaLoot3').innerHTML = menor(1, 1);
+                                                            respuestaLoot1.innerHTML = tiroDeDados(1, 4)*5 + " Oro";
+                                                            respuestaLoot2.innerHTML = artes(1, 1);
+                                                            respuestaLoot3.innerHTML = menor(1, 1);
                                                             }
                     }
 
     else if (valor1 == 2) {
                           if (valor2 >= 1 && valor2 <= 13){
-                                                          document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                          document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                          document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                          respuestaLoot1.innerHTML = "No hay premio :(";
+                                                          respuestaLoot2.innerHTML = "No hay premio :(";
+                                                          respuestaLoot3.innerHTML = "No hay premio :(";
                                                           }
 
-                          else if (valor2 >= 14 && valor2 <= 23) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 8)*10 + " Plata";}
-                          else if (valor2 >= 24 && valor2 <= 65) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 8)*10 + " Plata";}
+                          else if (valor2 >= 14 && valor2 <= 23) {respuestaLoot1.innerHTML = tiroDeDados(1, 8)*10 + " Plata";}
+                          else if (valor2 >= 24 && valor2 <= 65) {respuestaLoot1.innerHTML = tiroDeDados(2, 8)*10 + " Plata";}
                           else if (valor2 >= 66 && valor2 <= 85)  {
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(4, 6)*10 + " Plata";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(1, 3);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = mundano(1,1);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(4, 6)*10 + " Plata";
+                                                                  respuestaLoot2.innerHTML = gemas(1, 3);
+                                                                  respuestaLoot3.innerHTML = mundano(1,1);
                                                                   }
                           else if (valor2 >= 86 && valor2 <= 100) {
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 6)*10 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(1, 3);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = menor(1, 1);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(2, 6)*10 + " Oro";
+                                                                  respuestaLoot2.innerHTML = artes(1, 3);
+                                                                  respuestaLoot3.innerHTML = menor(1, 1);
                                                                   }
                           }
 
     else if (valor1 == 3)   {
                             if (valor2 >= 1 && valor2 <= 11){
-                                                            document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                            respuestaLoot1.innerHTML = "No hay premio :(";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
 
-                            else if (valor2 >= 12 && valor2 <= 33) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 8)*10 + " Plata";}
-                            else if (valor2 >= 34 && valor2 <= 51) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(4, 6)*10 + " Plata";}
+                            else if (valor2 >= 12 && valor2 <= 33) {respuestaLoot1.innerHTML = tiroDeDados(2, 8)*10 + " Plata";}
+                            else if (valor2 >= 34 && valor2 <= 51) {respuestaLoot1.innerHTML = tiroDeDados(4, 6)*10 + " Plata";}
                             else if (valor2 >= 52 && valor2 <= 78){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*10 + " Oro";
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = mundano(1,3);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Oro";
+                                                                  respuestaLoot3.innerHTML = mundano(1,3);
                                                                   }
                             else if (valor2 >= 79 && valor2 <= 100) {
-                                                                    document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 6)*10 + " Oro";
-                                                                    document.querySelector('#respuestaLoot2').innerHTML = artes(1, 3);
-                                                                    document.querySelector('#respuestaLoot3').innerHTML = menor(1, 1);
+                                                                    respuestaLoot1.innerHTML = tiroDeDados(2, 6)*10 + " Oro";
+                                                                    respuestaLoot2.innerHTML = artes(1, 3);
+                                                                    respuestaLoot3.innerHTML = menor(1, 1);
                                                                     }
                             }
 
     else if (valor1 == 4) {
                           if (valor2 >= 1 && valor2 <= 11){
-                                                          document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                          document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                          document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                          respuestaLoot1.innerHTML = "No hay premio :(";
+                                                          respuestaLoot2.innerHTML = "No hay premio :(";
+                                                          respuestaLoot3.innerHTML = "No hay premio :(";
                                                           }
-                          else if (valor2 >= 12 && valor2 <= 40) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 8)*10 + " Plata";}
+                          else if (valor2 >= 12 && valor2 <= 40) {respuestaLoot1.innerHTML = tiroDeDados(3, 8)*10 + " Plata";}
                           else if (valor2 >= 41 && valor2 <= 70)  {
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(4, 10)*10 + " Oro";
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = mundano(1, 4);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(4, 10)*10 + " Oro";
+                                                                  respuestaLoot3.innerHTML = mundano(1, 4);
                                                                   }
 
                           else if (valor2 >= 71 && valor2 <= 90){
-                                                                document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*10 + " Oro";
-                                                                document.querySelector('#respuestaLoot2').innerHTML = gemas(1, 4);
-                                                                document.querySelector('#respuestaLoot3').innerHTML = menor(1, 1);
+                                                                respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Oro";
+                                                                respuestaLoot2.innerHTML = gemas(1, 4);
+                                                                respuestaLoot3.innerHTML = menor(1, 1);
                                                                 }
                           else if (valor2 >= 91 && valor2 <= 100) {
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 8)*10 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(1, 3);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = menor(1, 1);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 8)*10 + " Oro";
+                                                                  respuestaLoot2.innerHTML = artes(1, 3);
+                                                                  respuestaLoot3.innerHTML = menor(1, 1);
                                                                   }
                           }
 
     else if (valor1 == 5) {
                           if (valor2 >= 1 && valor2 <= 10){
-                                                          document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                          document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                          document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                          respuestaLoot1.innerHTML = "No hay premio :(";
+                                                          respuestaLoot2.innerHTML = "No hay premio :(";
+                                                          respuestaLoot3.innerHTML = "No hay premio :(";
                                                           }
-                          else if (valor2 >= 11 && valor2 <= 44) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 6)*10 + " Plata";}
+                          else if (valor2 >= 11 && valor2 <= 44) {respuestaLoot1.innerHTML = tiroDeDados(3, 6)*10 + " Plata";}
                           else if (valor2 >= 45 && valor2 <= 59){
-                                                                document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*10 + " Oro";
-                                                                document.querySelector('#respuestaLoot3').innerHTML = mundano(1, 4);
+                                                                respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Oro";
+                                                                respuestaLoot3.innerHTML = mundano(1, 4);
                                                                 }
 
                           else if (valor2 >= 60 && valor2 <= 89){
-                                                                document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 6)*10 + " Oro";
-                                                                document.querySelector('#respuestaLoot2').innerHTML = gemas(1, 4);
-                                                                document.querySelector('#respuestaLoot3').innerHTML = menor(1, 3);
+                                                                respuestaLoot1.innerHTML = tiroDeDados(1, 6)*10 + " Oro";
+                                                                respuestaLoot2.innerHTML = gemas(1, 4);
+                                                                respuestaLoot3.innerHTML = menor(1, 3);
                                                                 }
                           else if (valor2 >= 90 && valor2 <= 100) {
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 8)*10 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(1, 4);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = menor(1, 4);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 8)*10 + " Oro";
+                                                                  respuestaLoot2.innerHTML = artes(1, 4);
+                                                                  respuestaLoot3.innerHTML = menor(1, 4);
                                                                   }
                           }
 
     else if (valor1 == 6) {
                           if (valor2 >= 1 && valor2 <= 10){
-                                                          document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                          document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                          document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                          respuestaLoot1.innerHTML = "No hay premio :(";
+                                                          respuestaLoot2.innerHTML = "No hay premio :(";
+                                                          respuestaLoot3.innerHTML = "No hay premio :(";
                                                           }
-                          else if (valor2 >= 11 && valor2 <= 36) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*10 + " Oro";}
+                          else if (valor2 >= 11 && valor2 <= 36) {respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Oro";}
                           else if (valor2 >= 37 && valor2 <= 59){
-                                                                document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 6)*10 + " Oro";
-                                                                document.querySelector('#respuestaLoot3').innerHTML = mundano(1, 4);
+                                                                respuestaLoot1.innerHTML = tiroDeDados(1, 6)*10 + " Oro";
+                                                                respuestaLoot3.innerHTML = mundano(1, 4);
                                                                 }
 
                           else if (valor2 >= 60 && valor2 <= 95){
-                                                                document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 8)*10 + " Oro";
-                                                                document.querySelector('#respuestaLoot2').innerHTML = gemas(1, 4);
-                                                                document.querySelector('#respuestaLoot3').innerHTML = menor(1, 3);
+                                                                respuestaLoot1.innerHTML = tiroDeDados(1, 8)*10 + " Oro";
+                                                                respuestaLoot2.innerHTML = gemas(1, 4);
+                                                                respuestaLoot3.innerHTML = menor(1, 3);
                                                                 }
                           else if (valor2 >= 96 && valor2 <= 100) {
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 10)*10 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(1, 4);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 1);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 10)*10 + " Oro";
+                                                                  respuestaLoot2.innerHTML = artes(1, 4);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
                           }
 
     else if (valor1 == 7) {
                           if (valor2 >= 1 && valor2 <= 10){
-                                                          document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                          document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                          document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                          respuestaLoot1.innerHTML = "No hay premio :(";
+                                                          respuestaLoot2.innerHTML = "No hay premio :(";
+                                                          respuestaLoot3.innerHTML = "No hay premio :(";
                                                           }
-                          else if (valor2 >= 11 && valor2 <= 44) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 8)*10 + " Oro";}
+                          else if (valor2 >= 11 && valor2 <= 44) {respuestaLoot1.innerHTML = tiroDeDados(1, 8)*10 + " Oro";}
                           else if (valor2 >= 45 && valor2 <= 85){
-                                                                document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 10)*10 + " Oro";
-                                                                document.querySelector('#respuestaLoot2').innerHTML = gemas(1, 4);
-                                                                document.querySelector('#respuestaLoot3').innerHTML = menor(1, 3);
+                                                                respuestaLoot1.innerHTML = tiroDeDados(1, 10)*10 + " Oro";
+                                                                respuestaLoot2.innerHTML = gemas(1, 4);
+                                                                respuestaLoot3.innerHTML = menor(1, 3);
                                                                 }
                           else if (valor2 >= 86 && valor2 <= 97){
-                                                                document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 6)*10 + " Oro";
-                                                                document.querySelector('#respuestaLoot2').innerHTML = artes(1, 4);
-                                                                document.querySelector('#respuestaLoot3').innerHTML = menor(1, 4);
+                                                                respuestaLoot1.innerHTML = tiroDeDados(2, 6)*10 + " Oro";
+                                                                respuestaLoot2.innerHTML = artes(1, 4);
+                                                                respuestaLoot3.innerHTML = menor(1, 4);
                                                                 }
                           else if (valor2 >= 98 && valor2 <= 100) {
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 4)*10 + " Oro";
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 1);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(3, 4)*10 + " Oro";
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
                           }
     else if (valor1 == 8) {
                           if (valor2 >= 1 && valor2 <= 10){
-                                                          document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                          document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                          document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                          respuestaLoot1.innerHTML = "No hay premio :(";
+                                                          respuestaLoot2.innerHTML = "No hay premio :(";
+                                                          respuestaLoot3.innerHTML = "No hay premio :(";
                                                           }
-                          else if (valor2 >= 11 && valor2 <= 44) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 8)*10 + " Oro";}
+                          else if (valor2 >= 11 && valor2 <= 44) {respuestaLoot1.innerHTML = tiroDeDados(1, 8)*10 + " Oro";}
                           else if (valor2 >= 45 && valor2 <= 79){
-                                                                document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 4)*10 + " Oro";
-                                                                document.querySelector('#respuestaLoot2').innerHTML = gemas(1, 8);
-                                                                document.querySelector('#respuestaLoot3').innerHTML = menor(1, 4);
+                                                                respuestaLoot1.innerHTML = tiroDeDados(2, 4)*10 + " Oro";
+                                                                respuestaLoot2.innerHTML = gemas(1, 8);
+                                                                respuestaLoot3.innerHTML = menor(1, 4);
                                                                 }
                           else if (valor2 >= 80 && valor2 <= 96){
-                                                                document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 6)*10 + " Oro";
-                                                                document.querySelector('#respuestaLoot2').innerHTML = artes(1, 4);
-                                                                document.querySelector('#respuestaLoot3').innerHTML = menor(1, 4);
+                                                                respuestaLoot1.innerHTML = tiroDeDados(2, 6)*10 + " Oro";
+                                                                respuestaLoot2.innerHTML = artes(1, 4);
+                                                                respuestaLoot3.innerHTML = menor(1, 4);
                                                                 }
                           else if (valor2 >= 97 && valor2 <= 100) {
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 4)*10 + " Oro";
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 1);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(3, 4)*10 + " Oro";
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
                           }
 
     else if (valor1 == 9)   {
                             if (valor2 >= 1 && valor2 <= 11){
-                                                            document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                            respuestaLoot1.innerHTML = "No hay premio :(";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
-                            else if (valor2 >= 12 && valor2 <= 50) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 12)*10 + " Platino";}
+                            else if (valor2 >= 12 && valor2 <= 50) {respuestaLoot1.innerHTML = tiroDeDados(1, 12)*10 + " Platino";}
                             else if (valor2 >= 51 && valor2 <= 79){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 6)*10 + " Platino";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(1, 8);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = menor(1, 4);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(2, 6)*10 + " Platino";
+                                                                  respuestaLoot2.innerHTML = gemas(1, 8);
+                                                                  respuestaLoot3.innerHTML = menor(1, 4);
                                                                   }
                             else if (valor2 >= 80 && valor2 <= 91){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(4, 4)*10 + " Platino";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(1, 4);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = menor(1, 4);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(4, 4)*10 + " Platino";
+                                                                  respuestaLoot2.innerHTML = artes(1, 4);
+                                                                  respuestaLoot3.innerHTML = menor(1, 4);
                                                                   }
                             else if (valor2 >= 92 && valor2 <= 100) {
-                                                                    document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 10)*10 + " Platino";
-                                                                    document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 1);
+                                                                    respuestaLoot1.innerHTML = tiroDeDados(2, 10)*10 + " Platino";
+                                                                    respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                     }
                             }
 
     else if (valor1 == 10)  {
                             if (valor2 >= 1 && valor2 <= 10){
-                                                            document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                            respuestaLoot1.innerHTML = "No hay premio :(";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
-                            else if (valor2 >= 11 && valor2 <= 39) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 8)*10 + " Oro";}
+                            else if (valor2 >= 11 && valor2 <= 39) {respuestaLoot1.innerHTML = tiroDeDados(2, 8)*10 + " Oro";}
                             else if (valor2 >= 40 && valor2 <= 87){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(5, 4)*10 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(1, 8);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = menor(1, 4);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(5, 4)*10 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(1, 8);
+                                                                  respuestaLoot3.innerHTML = menor(1, 4);
                                                                   }
                             else if (valor2 >= 88 && valor2 <= 98){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(4, 6)*10 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(1, 6);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 1);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(4, 6)*10 + " Oro";
+                                                                  respuestaLoot2.innerHTML = artes(1, 6);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
-                            else if (valor2 >= 99 && valor2 <= 100) {document.querySelector('#respuestaLoot3').innerHTML = mayor(1, 1);}
+                            else if (valor2 >= 99 && valor2 <= 100) {respuestaLoot3.innerHTML = mayor(1, 1);}
                             }
 
     else if (valor1 == 11)  {
                             if (valor2 >= 1 && valor2 <= 8) {
-                                                            document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                            respuestaLoot1.innerHTML = "No hay premio :(";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
-                            else if (valor2 >= 9 && valor2 <= 38) {document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 8)*10 + " Oro";}
+                            else if (valor2 >= 9 && valor2 <= 38) {respuestaLoot1.innerHTML = tiroDeDados(3, 8)*10 + " Oro";}
                             else if (valor2 >= 39 && valor2 <= 83){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(4, 6)*10 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(1, 10);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = menor(1, 4);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(4, 6)*10 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(1, 10);
+                                                                  respuestaLoot3.innerHTML = menor(1, 4);
                                                                   }
                             else if (valor2 >= 84 && valor2 <= 97){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(4, 8)*10 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(1, 6);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 1);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(4, 8)*10 + " Oro";
+                                                                  respuestaLoot2.innerHTML = artes(1, 6);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
-                            else if (valor2 >= 98 && valor2 <= 100) {document.querySelector('#respuestaLoot3').innerHTML = mayor(1, 1);}
+                            else if (valor2 >= 98 && valor2 <= 100) {respuestaLoot3.innerHTML = mayor(1, 1);}
                             }
 
     else if (valor1 == 12)  {
                             if (valor2 >= 1 && valor2 <= 15){
-                                                            document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                            respuestaLoot1.innerHTML = "No hay premio :(";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
                             else if (valor2 >= 15 && valor2 <= 69){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 10)*10 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(1, 10);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(3, 10)*10 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(1, 10);
                                                                   }
                             else if (valor2 >= 70 && valor2 <= 82){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*10 + " Platino";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(1, 8);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = menor(1, 6);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Platino";
+                                                                  respuestaLoot2.innerHTML = artes(1, 8);
+                                                                  respuestaLoot3.innerHTML = menor(1, 6);
                                                                   }
                             else if (valor2 >= 83 && valor2 <= 97){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 6)*10 + " Platino";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(1, 8);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 1);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 6)*10 + " Platino";
+                                                                  respuestaLoot2.innerHTML = artes(1, 8);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
                             else if (valor2 >= 98 && valor2 <= 100) {
-                                                                    document.querySelector('#respuestaLoot2').innerHTML = artes(1, 8);
-                                                                    document.querySelector('#respuestaLoot3').innerHTML = mayor(1, 1);
+                                                                    respuestaLoot2.innerHTML = artes(1, 8);
+                                                                    respuestaLoot3.innerHTML = mayor(1, 1);
                                                                     }
                             }
 
     else if (valor1 == 13)  {
                             if (valor2 >= 1 && valor2 <= 8){
-                                                            document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                            respuestaLoot1.innerHTML = "No hay premio :(";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
                             else if (valor2 >= 9 && valor2 <= 60){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*10 + " Platino";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(1, 12);
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = menor(1, 6);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Platino";
+                                                                  respuestaLoot2.innerHTML = gemas(1, 12);
+                                                                  respuestaLoot2.innerHTML = menor(1, 6);
                                                                   }
                             else if (valor2 >= 61 && valor2 <= 73){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*10 + " Platino";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(1, 10);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = menor(1, 6);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Platino";
+                                                                  respuestaLoot2.innerHTML = artes(1, 10);
+                                                                  respuestaLoot3.innerHTML = menor(1, 6);
                                                                   }
                             else if (valor2 >= 74 && valor2 <= 95){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 8)*10 + " Platino";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(1, 10);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 1);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 8)*10 + " Platino";
+                                                                  respuestaLoot2.innerHTML = artes(1, 10);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
                             else if (valor2 >= 96 && valor2 <= 100) {
-                                                                    document.querySelector('#respuestaLoot3').innerHTML = mayor(1, 1);
+                                                                    respuestaLoot3.innerHTML = mayor(1, 1);
                                                                     }
                             }
 
     else if (valor1 == 14)  {
                             if (valor2 >= 1 && valor2 <= 9) {
-                                                            document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                            respuestaLoot1.innerHTML = "No hay premio :(";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
                             else if (valor2 >= 10 && valor2 <= 43){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*10 + " Platino";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(2, 8);
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = menor(1, 6);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Platino";
+                                                                  respuestaLoot2.innerHTML = gemas(2, 8);
+                                                                  respuestaLoot2.innerHTML = menor(1, 6);
                                                                   }
                             else if (valor2 >= 48 && valor2 <= 75){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*10 + " Platino";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(2, 8);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = menor(1, 6);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 4)*10 + " Platino";
+                                                                  respuestaLoot2.innerHTML = gemas(2, 8);
+                                                                  respuestaLoot3.innerHTML = menor(1, 6);
                                                                   }
                             else if (valor2 >= 76 && valor2 <= 92){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 10)*10 + " Platino";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(2, 6);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 1);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 10)*10 + " Platino";
+                                                                  respuestaLoot2.innerHTML = artes(2, 6);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
                             else if (valor2 >= 93 && valor2 <= 100) {
-                                                                    document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 10)*10 + " Platino";
-                                                                    document.querySelector('#respuestaLoot2').innerHTML = artes(2, 6);
-                                                                    document.querySelector('#respuestaLoot3').innerHTML = mayor(1, 1);
+                                                                    respuestaLoot1.innerHTML = tiroDeDados(1, 10)*10 + " Platino";
+                                                                    respuestaLoot2.innerHTML = artes(2, 6);
+                                                                    respuestaLoot3.innerHTML = mayor(1, 1);
                                                                     }
                             }
 
     else if (valor1 == 15)  {
                             if (valor2 >= 1 && valor2 <= 8) {
-                                                            document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                            respuestaLoot1.innerHTML = "No hay premio :(";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
                             else if (valor2 >= 9 && valor2 <= 44) {
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(2, 10);
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = menor(1, 10);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 4)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(2, 10);
+                                                                  respuestaLoot2.innerHTML = menor(1, 10);
                                                                   }
                             else if (valor2 >= 45 && valor2 <= 74){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 4)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(2, 10);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 1);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 4)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(2, 10);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
                             else if (valor2 >= 75 && valor2 <= 90){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 4)*10 + " Platino";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(2, 8);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 1);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(2, 4)*10 + " Platino";
+                                                                  respuestaLoot2.innerHTML = artes(2, 8);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 1);
                                                                   }
                             else if (valor2 >= 91 && valor2 <= 100) {
-                                                                    document.querySelector('#respuestaLoot2').innerHTML = artes(2, 8);
-                                                                    document.querySelector('#respuestaLoot3').innerHTML = mayor(1, 1);
+                                                                    respuestaLoot2.innerHTML = artes(2, 8);
+                                                                    respuestaLoot3.innerHTML = mayor(1, 1);
                                                                     }
                             }
 
     else if (valor1 == 16)  {
                             if (valor2 >= 1 && valor2 <= 3) {
-                                                            document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                            respuestaLoot1.innerHTML = "No hay premio :(";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
                             else if (valor2 >= 4 && valor2 <= 40) {
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 10)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(4, 6);
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = menor(1, 10);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 10)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(4, 6);
+                                                                  respuestaLoot2.innerHTML = menor(1, 10);
                                                                   }
                             else if (valor2 >= 41 && valor2 <= 74){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(1, 10)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(4, 6);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = menor(1, 10);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(1, 10)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(4, 6);
+                                                                  respuestaLoot3.innerHTML = menor(1, 10);
                                                                   }
                             else if (valor2 >= 75 && valor2 <= 90){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 4)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(2, 10);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 3);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(3, 4)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = artes(2, 10);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 3);
                                                                   }
                             else if (valor2 >= 91 && valor2 <= 100) {
-                                                                    document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 4)*100 + " Oro";
-                                                                    document.querySelector('#respuestaLoot2').innerHTML = artes(2, 10);
-                                                                    document.querySelector('#respuestaLoot3').innerHTML = mayor(1, 1);
+                                                                    respuestaLoot1.innerHTML = tiroDeDados(3, 4)*100 + " Oro";
+                                                                    respuestaLoot2.innerHTML = artes(2, 10);
+                                                                    respuestaLoot3.innerHTML = mayor(1, 1);
                                                                     }
                             }
 
     else if (valor1 == 17)  {
                             if (valor2 >= 1 && valor2 <= 4) {
-                                                            document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                            respuestaLoot1.innerHTML = "No hay premio :(";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
                             else if (valor2 >= 5 && valor2 <= 32) {
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 4)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(4, 8);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(3, 4)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(4, 8);
                                                                   }
                             else if (valor2 >= 33 && valor2 <= 63){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 4)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(4, 8);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 3);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(3, 4)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(4, 8);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 3);
                                                                   }
                             else if (valor2 >= 64 && valor2 <= 83){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 8)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(2, 10);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 3);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(2, 8)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = artes(2, 10);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 3);
                                                                   }
                             else if (valor2 >= 84 && valor2 <= 100) {
-                                                                    document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(2, 8)*100 + " Oro";
-                                                                    document.querySelector('#respuestaLoot2').innerHTML = artes(2, 10);
-                                                                    document.querySelector('#respuestaLoot3').innerHTML = mayor(1, 1);
+                                                                    respuestaLoot1.innerHTML = tiroDeDados(2, 8)*100 + " Oro";
+                                                                    respuestaLoot2.innerHTML = artes(2, 10);
+                                                                    respuestaLoot3.innerHTML = mayor(1, 1);
                                                                     }
                             }
 
     else if (valor1 == 18)  {
                             if (valor2 >= 1 && valor2 <= 4) {
-                                                            document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                            respuestaLoot1.innerHTML = "No hay premio :(";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
                             else if (valor2 >= 5 && valor2 <= 24) {
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 4)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(3, 12);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(3, 4)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(3, 12);
                                                                   }
                             else if (valor2 >= 25 && valor2 <= 65){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 6)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(3, 12);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 4);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(3, 6)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(3, 12);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 4);
                                                                   }
                             else if (valor2 >= 66 && valor2 <= 80){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(4, 4)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(3, 10);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 4);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(4, 4)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = artes(3, 10);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 4);
                                                                   }
                             else if (valor2 >= 81 && valor2 <= 100) {
-                                                                    document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(5, 4)*100 + " Oro";
-                                                                    document.querySelector('#respuestaLoot2').innerHTML = artes(3, 10);
-                                                                    document.querySelector('#respuestaLoot3').innerHTML = mayor(1, 1);
+                                                                    respuestaLoot1.innerHTML = tiroDeDados(5, 4)*100 + " Oro";
+                                                                    respuestaLoot2.innerHTML = artes(3, 10);
+                                                                    respuestaLoot3.innerHTML = mayor(1, 1);
                                                                     }
                             }
 
     else if (valor1 == 19)  {
                             if (valor2 >= 1 && valor2 <= 2) {
-                                                            document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                            respuestaLoot1.innerHTML = "No hay premio :(";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
                             else if (valor2 >= 3 && valor2 <= 23) {
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 6)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(6, 6);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(3, 6)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(6, 6);
                                                                   }
                             else if (valor2 >= 24 && valor2 <= 59){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 6)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(6, 6);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 4);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(3, 6)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(6, 6);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 4);
                                                                   }
                             else if (valor2 >= 60 && valor2 <= 70){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 8)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(6, 6);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 4);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(3, 8)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = artes(6, 6);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 4);
                                                                   }
                             else if (valor2 >= 71 && valor2 <= 100) {
-                                                                    document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(3, 10)*100 + " Oro";
-                                                                    document.querySelector('#respuestaLoot2').innerHTML = artes(6, 6);
-                                                                    document.querySelector('#respuestaLoot3').innerHTML = mayor(1, 1);
+                                                                    respuestaLoot1.innerHTML = tiroDeDados(3, 10)*100 + " Oro";
+                                                                    respuestaLoot2.innerHTML = artes(6, 6);
+                                                                    respuestaLoot3.innerHTML = mayor(1, 1);
                                                                     }
                             }
 
     else if (valor1 == 20)  {
                             if (valor2 >= 1 && valor2 <= 2) {
-                                                            document.querySelector('#respuestaLoot1').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot2').innerHTML = "No hay premio :(";
-                                                            document.querySelector('#respuestaLoot3').innerHTML = "No hay premio :(";
+                                                            respuestaLoot1.innerHTML = "No hay premio :(";
+                                                            respuestaLoot2.innerHTML = "No hay premio :(";
+                                                            respuestaLoot3.innerHTML = "No hay premio :(";
                                                             }
                             else if (valor2 >= 3 && valor2 <= 24) {
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(4, 6)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(4, 10);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(4, 6)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(4, 10);
                                                                   }
                             else if (valor2 >= 25 && valor2 <= 37){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(4, 6)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = gemas(4, 10);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 4);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(4, 6)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = gemas(4, 10);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 4);
                                                                   }
                             else if (valor2 >= 38 && valor2 <= 65){
-                                                                  document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(4, 8)*100 + " Oro";
-                                                                  document.querySelector('#respuestaLoot2').innerHTML = artes(7, 6);
-                                                                  document.querySelector('#respuestaLoot3').innerHTML = intermedio(1, 4);
+                                                                  respuestaLoot1.innerHTML = tiroDeDados(4, 8)*100 + " Oro";
+                                                                  respuestaLoot2.innerHTML = artes(7, 6);
+                                                                  respuestaLoot3.innerHTML = intermedio(1, 4);
                                                                   }
                             else if (valor2 >= 66 && valor2 <= 100) {
-                                                                    document.querySelector('#respuestaLoot1').innerHTML = tiroDeDados(4, 10)*100 + " Oro";
-                                                                    document.querySelector('#respuestaLoot2').innerHTML = artes(7, 6);
-                                                                    document.querySelector('#respuestaLoot3').innerHTML = mayor(1, 3);
+                                                                    respuestaLoot1.innerHTML = tiroDeDados(4, 10)*100 + " Oro";
+                                                                    respuestaLoot2.innerHTML = artes(7, 6);
+                                                                    respuestaLoot3.innerHTML = mayor(1, 3);
                                                                     }
                             }
 
